@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "YATabBarController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    // 设置主窗口
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = [[YATabBarController alloc] init];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

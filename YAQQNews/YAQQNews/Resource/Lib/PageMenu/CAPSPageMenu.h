@@ -33,6 +33,9 @@
 
 // 手动新增
 @property (nonatomic, strong) UIFont *selectedMenuItemFont;
+@property (nonatomic, assign) CGFloat selectionIndicatorWidth;
+
+
 
 @property (nonatomic, strong) UIScrollView *menuScrollView;
 @property (nonatomic, strong) UIScrollView *controllerScrollView;
@@ -99,5 +102,10 @@ extern NSString * const CAPSPageMenuOptionMenuItemWidthBasedOnTitleTextWidth;
 extern NSString * const CAPSPageMenuOptionScrollAnimationDurationOnMenuItemTap;
 extern NSString * const CAPSPageMenuOptionCenterMenuItems;
 extern NSString * const CAPSPageMenuOptionHideTopMenuBar;
+
+// 此代码新增
+extern NSString * const CAPSPageMenuOptionSelectedMenuItemFont;
+
+
 
 @end

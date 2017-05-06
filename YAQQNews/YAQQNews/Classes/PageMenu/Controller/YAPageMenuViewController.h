@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CAPSPageMenu.h"
 
 @interface YAPageMenuViewController : CAPSPageMenu
 

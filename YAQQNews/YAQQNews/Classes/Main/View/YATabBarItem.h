@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface YATabBarItem : UITabBarItem
-
+- (instancetype)initWithTitle:(NSString *)title image:(UIImage *)image selectedImage:(UIImage *)selectedImage;
 @end

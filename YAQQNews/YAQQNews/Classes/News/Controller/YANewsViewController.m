@@ -7,6 +7,7 @@
 //
 
 #import "YANewsViewController.h"
+#import "YAPageMenuViewController.h"
 
 @interface YANewsViewController ()
 
@@ -16,7 +17,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    // 设置导航栏
+    self.navigationController.navigationBar.hidden = YES;
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    YAPageMenuViewController *pageMenuViewController = [[YAPageMenuViewController alloc] init];
+    [self addChildViewController:pageMenuViewController];
+    [self.view addSubview:pageMenuViewController.view];
 }
 
 - (void)didReceiveMemoryWarning {

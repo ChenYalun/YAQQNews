@@ -9,5 +9,7 @@
 #import "UIImage+YARenderingMode.h"
 
 @implementation UIImage (YARenderingMode)
-
+- (instancetype)ya_originImage {
+    return [self imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+}
 @end

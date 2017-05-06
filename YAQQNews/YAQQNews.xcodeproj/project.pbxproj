@@ -14,6 +14,16 @@
 		9A85F54D1EBCBF9E009243B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A85F54B1EBCBF9E009243B3 /* Main.storyboard */; };
 		9A85F54F1EBCBF9E009243B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A85F54E1EBCBF9E009243B3 /* Assets.xcassets */; };
 		9A85F5521EBCBF9E009243B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A85F5501EBCBF9E009243B3 /* LaunchScreen.storyboard */; };
+		9A85F58B1EBCC71A009243B3 /* YATabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85F58A1EBCC71A009243B3 /* YATabBarController.m */; };
+		9A85F58E1EBCC796009243B3 /* YANewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85F58D1EBCC796009243B3 /* YANewsViewController.m */; };
+		9A85F5911EBCC7D3009243B3 /* YARecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85F5901EBCC7D3009243B3 /* YARecommendViewController.m */; };
+		9A85F5941EBCC7E0009243B3 /* YALiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85F5931EBCC7E0009243B3 /* YALiveViewController.m */; };
+		9A85F5971EBCC7ED009243B3 /* YAProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85F5961EBCC7ED009243B3 /* YAProfileViewController.m */; };
+		9A85F59A1EBCC8F9009243B3 /* YATabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85F5991EBCC8F9009243B3 /* YATabBarItem.m */; };
+		9A85F59D1EBCC939009243B3 /* UIImage+YARenderingMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85F59C1EBCC939009243B3 /* UIImage+YARenderingMode.m */; };
+		9AE436511EBD60D200921FD0 /* CAPSPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE436501EBD60D200921FD0 /* CAPSPageMenu.m */; };
+		9AE4365D1EBD616600921FD0 /* YAPageMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE4365C1EBD616600921FD0 /* YAPageMenuViewController.m */; };
+		9AE436601EBD62AC00921FD0 /* YAChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE4365F1EBD62AC00921FD0 /* YAChannelViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +38,28 @@
 		9A85F54E1EBCBF9E009243B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A85F5511EBCBF9E009243B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A85F5531EBCBF9E009243B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A85F5891EBCC71A009243B3 /* YATabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YATabBarController.h; sourceTree = "<group>"; };
+		9A85F58A1EBCC71A009243B3 /* YATabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YATabBarController.m; sourceTree = "<group>"; };
+		9A85F58C1EBCC796009243B3 /* YANewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANewsViewController.h; sourceTree = "<group>"; };
+		9A85F58D1EBCC796009243B3 /* YANewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANewsViewController.m; sourceTree = "<group>"; };
+		9A85F58F1EBCC7D3009243B3 /* YARecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendViewController.h; sourceTree = "<group>"; };
+		9A85F5901EBCC7D3009243B3 /* YARecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendViewController.m; sourceTree = "<group>"; };
+		9A85F5921EBCC7E0009243B3 /* YALiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALiveViewController.h; sourceTree = "<group>"; };
+		9A85F5931EBCC7E0009243B3 /* YALiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALiveViewController.m; sourceTree = "<group>"; };
+		9A85F5951EBCC7ED009243B3 /* YAProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAProfileViewController.h; sourceTree = "<group>"; };
+		9A85F5961EBCC7ED009243B3 /* YAProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAProfileViewController.m; sourceTree = "<group>"; };
+		9A85F5981EBCC8F9009243B3 /* YATabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YATabBarItem.h; sourceTree = "<group>"; };
+		9A85F5991EBCC8F9009243B3 /* YATabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YATabBarItem.m; sourceTree = "<group>"; };
+		9A85F59B1EBCC939009243B3 /* UIImage+YARenderingMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+YARenderingMode.h"; sourceTree = "<group>"; };
+		9A85F59C1EBCC939009243B3 /* UIImage+YARenderingMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YARenderingMode.m"; sourceTree = "<group>"; };
+		9AE4364F1EBD60D200921FD0 /* CAPSPageMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAPSPageMenu.h; sourceTree = "<group>"; };
+		9AE436501EBD60D200921FD0 /* CAPSPageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAPSPageMenu.m; sourceTree = "<group>"; };
+		9AE4365B1EBD616600921FD0 /* YAPageMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAPageMenuViewController.h; sourceTree = "<group>"; };
+		9AE4365C1EBD616600921FD0 /* YAPageMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAPageMenuViewController.m; sourceTree = "<group>"; };
+		9AE4365E1EBD62AC00921FD0 /* YAChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAChannelViewController.h; sourceTree = "<group>"; };
+		9AE4365F1EBD62AC00921FD0 /* YAChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAChannelViewController.m; sourceTree = "<group>"; };
+		9AE436611EBD633E00921FD0 /* YAPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAPrefixHeader.pch; sourceTree = "<group>"; };
+		9AE436621EBD68A700921FD0 /* YAHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAHeader.h; sourceTree = "<group>"; };
 		C13B0C0E82B6FDCA5690F121 /* libPods-YAQQNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YAQQNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC104EDFAE784A563D8188D2 /* Pods-YAQQNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YAQQNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-YAQQNews/Pods-YAQQNews.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +114,9 @@
 		9A85F5411EBCBF9E009243B3 /* YAQQNews */ = {
 			isa = PBXGroup;
 			children = (
+				9AE4364B1EBD60D200921FD0 /* Resource */,
+				9A85F5841EBCC692009243B3 /* Util */,
+				9A85F56F1EBCC692009243B3 /* Classes */,
 				9A85F5451EBCBF9E009243B3 /* AppDelegate.h */,
 				9A85F5461EBCBF9E009243B3 /* AppDelegate.m */,
 				9A85F5481EBCBF9E009243B3 /* ViewController.h */,
@@ -91,6 +126,8 @@
 				9A85F5501EBCBF9E009243B3 /* LaunchScreen.storyboard */,
 				9A85F5531EBCBF9E009243B3 /* Info.plist */,
 				9A85F5421EBCBF9E009243B3 /* Supporting Files */,
+				9AE436611EBD633E00921FD0 /* YAPrefixHeader.pch */,
+				9AE436621EBD68A700921FD0 /* YAHeader.h */,
 			);
 			path = YAQQNews;
 			sourceTree = "<group>";
@@ -101,6 +138,287 @@
 				9A85F5431EBCBF9E009243B3 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9A85F56F1EBCC692009243B3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9AE436581EBD612900921FD0 /* PageMenu */,
+				9A85F5861EBCC6C3009243B3 /* Main */,
+				9A85F5751EBCC692009243B3 /* News */,
+				9A85F57F1EBCC692009243B3 /* Recommend */,
+				9A85F5701EBCC692009243B3 /* Live */,
+				9A85F57A1EBCC692009243B3 /* Profile */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		9A85F5701EBCC692009243B3 /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				9A85F5711EBCC692009243B3 /* Controller */,
+				9A85F5721EBCC692009243B3 /* Model */,
+				9A85F5731EBCC692009243B3 /* View */,
+				9A85F5741EBCC692009243B3 /* ViewModel */,
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
+		9A85F5711EBCC692009243B3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9A85F5921EBCC7E0009243B3 /* YALiveViewController.h */,
+				9A85F5931EBCC7E0009243B3 /* YALiveViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9A85F5721EBCC692009243B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9A85F5731EBCC692009243B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9A85F5741EBCC692009243B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9A85F5751EBCC692009243B3 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				9A85F5761EBCC692009243B3 /* Controller */,
+				9A85F5771EBCC692009243B3 /* Model */,
+				9A85F5781EBCC692009243B3 /* View */,
+				9A85F5791EBCC692009243B3 /* ViewModel */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		9A85F5761EBCC692009243B3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9A85F58C1EBCC796009243B3 /* YANewsViewController.h */,
+				9A85F58D1EBCC796009243B3 /* YANewsViewController.m */,
+				9AE4365E1EBD62AC00921FD0 /* YAChannelViewController.h */,
+				9AE4365F1EBD62AC00921FD0 /* YAChannelViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9A85F5771EBCC692009243B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9A85F5781EBCC692009243B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9A85F5791EBCC692009243B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9A85F57A1EBCC692009243B3 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				9A85F57B1EBCC692009243B3 /* Controller */,
+				9A85F57C1EBCC692009243B3 /* Model */,
+				9A85F57D1EBCC692009243B3 /* View */,
+				9A85F57E1EBCC692009243B3 /* ViewModel */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		9A85F57B1EBCC692009243B3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9A85F5951EBCC7ED009243B3 /* YAProfileViewController.h */,
+				9A85F5961EBCC7ED009243B3 /* YAProfileViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9A85F57C1EBCC692009243B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9A85F57D1EBCC692009243B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9A85F57E1EBCC692009243B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9A85F57F1EBCC692009243B3 /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				9A85F5801EBCC692009243B3 /* Controller */,
+				9A85F5811EBCC692009243B3 /* Model */,
+				9A85F5821EBCC692009243B3 /* View */,
+				9A85F5831EBCC692009243B3 /* ViewModel */,
+			);
+			path = Recommend;
+			sourceTree = "<group>";
+		};
+		9A85F5801EBCC692009243B3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9A85F58F1EBCC7D3009243B3 /* YARecommendViewController.h */,
+				9A85F5901EBCC7D3009243B3 /* YARecommendViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9A85F5811EBCC692009243B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9A85F5821EBCC692009243B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9A85F5831EBCC692009243B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9A85F5841EBCC692009243B3 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				9A85F5851EBCC692009243B3 /* Category */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		9A85F5851EBCC692009243B3 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				9A85F59B1EBCC939009243B3 /* UIImage+YARenderingMode.h */,
+				9A85F59C1EBCC939009243B3 /* UIImage+YARenderingMode.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		9A85F5861EBCC6C3009243B3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9A85F5871EBCC6C3009243B3 /* Controller */,
+				9A85F5881EBCC6C3009243B3 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		9A85F5871EBCC6C3009243B3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9A85F5891EBCC71A009243B3 /* YATabBarController.h */,
+				9A85F58A1EBCC71A009243B3 /* YATabBarController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9A85F5881EBCC6C3009243B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A85F5981EBCC8F9009243B3 /* YATabBarItem.h */,
+				9A85F5991EBCC8F9009243B3 /* YATabBarItem.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9AE4364B1EBD60D200921FD0 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				9AE4364C1EBD60D200921FD0 /* Image */,
+				9AE4364D1EBD60D200921FD0 /* Lib */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		9AE4364C1EBD60D200921FD0 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		9AE4364D1EBD60D200921FD0 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				9AE4364E1EBD60D200921FD0 /* PageMenu */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		9AE4364E1EBD60D200921FD0 /* PageMenu */ = {
+			isa = PBXGroup;
+			children = (
+				9AE4364F1EBD60D200921FD0 /* CAPSPageMenu.h */,
+				9AE436501EBD60D200921FD0 /* CAPSPageMenu.m */,
+			);
+			path = PageMenu;
+			sourceTree = "<group>";
+		};
+		9AE436581EBD612900921FD0 /* PageMenu */ = {
+			isa = PBXGroup;
+			children = (
+				9AE436591EBD612900921FD0 /* Controller */,
+				9AE4365A1EBD612900921FD0 /* View */,
+			);
+			path = PageMenu;
+			sourceTree = "<group>";
+		};
+		9AE436591EBD612900921FD0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9AE4365B1EBD616600921FD0 /* YAPageMenuViewController.h */,
+				9AE4365C1EBD616600921FD0 /* YAPageMenuViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9AE4365A1EBD612900921FD0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,9 +544,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AE4365D1EBD616600921FD0 /* YAPageMenuViewController.m in Sources */,
+				9AE436601EBD62AC00921FD0 /* YAChannelViewController.m in Sources */,
+				9A85F5941EBCC7E0009243B3 /* YALiveViewController.m in Sources */,
 				9A85F54A1EBCBF9E009243B3 /* ViewController.m in Sources */,
+				9A85F58B1EBCC71A009243B3 /* YATabBarController.m in Sources */,
 				9A85F5471EBCBF9E009243B3 /* AppDelegate.m in Sources */,
+				9A85F5911EBCC7D3009243B3 /* YARecommendViewController.m in Sources */,
+				9A85F59D1EBCC939009243B3 /* UIImage+YARenderingMode.m in Sources */,
+				9AE436511EBD60D200921FD0 /* CAPSPageMenu.m in Sources */,
 				9A85F5441EBCBF9E009243B3 /* main.m in Sources */,
+				9A85F59A1EBCC8F9009243B3 /* YATabBarItem.m in Sources */,
+				9A85F5971EBCC7ED009243B3 /* YAProfileViewController.m in Sources */,
+				9A85F58E1EBCC796009243B3 /* YANewsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +679,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = A4G5CBWX96;
+				GCC_PREFIX_HEADER = /Users/chenyalun/Desktop/iOS/YAQQNews/YAQQNews/YAQQNews/YAPrefixHeader.pch;
 				INFOPLIST_FILE = YAQQNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -366,6 +695,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = A4G5CBWX96;
+				GCC_PREFIX_HEADER = /Users/chenyalun/Desktop/iOS/YAQQNews/YAQQNews/YAQQNews/YAPrefixHeader.pch;
 				INFOPLIST_FILE = YAQQNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

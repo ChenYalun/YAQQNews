@@ -94,6 +94,10 @@ NSString * const CAPSPageMenuOptionScrollAnimationDurationOnMenuItemTap = @"scro
 NSString * const CAPSPageMenuOptionCenterMenuItems                      = @"centerMenuItems";
 NSString * const CAPSPageMenuOptionHideTopMenuBar                       = @"hideTopMenuBar";
 
+// 此代码新增
+NSString * const CAPSPageMenuOptionSelectedMenuItemFont                 = @"selectedMenuItemFont";
+
+
 - (instancetype)initWithViewControllers:(NSArray *)viewControllers frame:(CGRect)frame options:(NSDictionary *)options
 {
     self = [super initWithNibName:nil bundle:nil];
@@ -151,7 +155,12 @@ NSString * const CAPSPageMenuOptionHideTopMenuBar                       = @"hide
                 _centerMenuItems = [options[key] boolValue];
             } else if ([key isEqualToString:CAPSPageMenuOptionHideTopMenuBar]) {
                 _hideTopMenuBar = [options[key] boolValue];
+                
+                // 此代码新增
+            } else if ([key isEqualToString:CAPSPageMenuOptionSelectedMenuItemFont]) {
+                _selectedMenuItemFont = options[key];
             }
+        
         }
         
         if (_hideTopMenuBar) {
@@ -183,6 +192,9 @@ NSString * const CAPSPageMenuOptionHideTopMenuBar                       = @"hide
     _scrollAnimationDurationOnMenuItemTap = 500;
     _startingMenuMargin                   = 0.0;
     
+    // 代码新增
+    _selectionIndicatorWidth = 20.0;
+    
     _selectionIndicatorView = [UIView new];
     
     _currentPageIndex = 0;
@@ -191,8 +203,7 @@ NSString * const CAPSPageMenuOptionHideTopMenuBar                       = @"hide
     _selectionIndicatorColor      = [UIColor whiteColor];
     _selectedMenuItemLabelColor   = [UIColor whiteColor];
     
-    // 此代码新增
-    _selectedMenuItemFont = [UIFont boldSystemFontOfSize:19];
+  
     
     _unselectedMenuItemLabelColor = [UIColor lightGrayColor];
     _scrollMenuBackgroundColor    = [UIColor blackColor];
@@ -201,6 +212,10 @@ NSString * const CAPSPageMenuOptionHideTopMenuBar                       = @"hide
     _menuItemSeparatorColor       = [UIColor lightGrayColor];
     
     _menuItemFont = [UIFont systemFontOfSize:15.0];
+    
+    // 此代码新增
+    _selectedMenuItemFont = [UIFont systemFontOfSize:17];
+    
     _menuItemSeparatorPercentageHeight = 0.2;
     _menuItemSeparatorWidth            = 0.5;
     _menuItemSeparatorRoundEdges       = NO;
@@ -419,9 +434,11 @@ NSString * const CAPSPageMenuOptionHideTopMenuBar                       = @"hide
         if (_centerMenuItems) {
             selectionIndicatorFrame = CGRectMake(_startingMenuMargin + _menuMargin, _menuHeight - _selectionIndicatorHeight, _menuItemWidth, _selectionIndicatorHeight);
         } else {
-            selectionIndicatorFrame = CGRectMake(_menuMargin, _menuHeight - _selectionIndicatorHeight, _menuItemWidth, _selectionIndicatorHeight);
+            selectionIndicatorFrame = CGRectMake(_menuMargin, _menuHeight - _selectionIndicatorHeight, _menuItemWidth , _selectionIndicatorHeight);
         }
     }
+    
+ 
     
     _selectionIndicatorView = [[UIView alloc] initWithFrame:selectionIndicatorFrame];
     _selectionIndicatorView.backgroundColor = _selectionIndicatorColor;

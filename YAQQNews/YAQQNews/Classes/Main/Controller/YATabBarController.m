@@ -7,6 +7,11 @@
 //
 
 #import "YATabBarController.h"
+#import "YANewsViewController.h"
+#import "YARecommendViewController.h"
+#import "YALiveViewController.h"
+#import "YAProfileViewController.h"
+#import "YATabBarItem.h"
 
 @interface YATabBarController ()
 
@@ -16,7 +21,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+   
+    
+    // 设置tabbar控制器
+    YANewsViewController *newsViewController = [[YANewsViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:newsViewController];
+    
+    YARecommendViewController *recommendViewController = [[YARecommendViewController alloc] init];
+    YALiveViewController *liveViewController = [[YALiveViewController alloc] init];
+    YAProfileViewController *profileViewController = [[YAProfileViewController alloc] init];
+    
+    self.viewControllers = @[navigationController, recommendViewController, liveViewController, profileViewController];
+    
+    // 创建Item
+    YATabBarItem *newsItem = [[YATabBarItem alloc] initWithTitle:@"新闻" image:[UIImage imageNamed:@"tabbar_news_normal"]  selectedImage:[UIImage imageNamed:@"tabbar_news_selected"]];
+    YATabBarItem *recommendItem = [[YATabBarItem alloc] initWithTitle:@"推荐" image:[UIImage imageNamed:@"tabbar_recommend_normal"] selectedImage:[UIImage imageNamed:@"tabbar_recommend_selected"]];
+    YATabBarItem *liveItem = [[YATabBarItem alloc] initWithTitle:@"直播" image:[UIImage imageNamed:@"tabbar_live_normal"] selectedImage:[UIImage imageNamed:@"tabbar_live_selected"]];
+    YATabBarItem *profileItem = [[YATabBarItem alloc] initWithTitle:@"我" image:[UIImage imageNamed:@"tabbar_me_normal"] selectedImage:[UIImage imageNamed:@"tabbar_me_selected"]];
+    
+    newsViewController.tabBarItem = newsItem;
+    recommendViewController.tabBarItem = recommendItem;
+    liveViewController.tabBarItem = liveItem;
+    profileViewController.tabBarItem = profileItem;
+    
+    // 设置tabbar属性
+    self.tabBar.backgroundColor = [UIColor whiteColor];
+    
 }
 
 - (void)didReceiveMemoryWarning {
