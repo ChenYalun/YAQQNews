@@ -1,0 +1,123 @@
+//
+//  YANewsModel.m
+//  YAQQNews
+//
+//  Created by 陈亚伦 on 2017/5/6.
+//  Copyright © 2017年 陈亚伦. All rights reserved.
+//
+
+#import "YANewsModel.h"
+#import "NSDate+YADateFormater.h"
+#import <MJExtension.h>
+
+@implementation YANewsModel
+
++ (NSArray<YANewsModel *> *)newsModelWithKeyValuesArray:(id)responseObject {
+    // 保存文章id对应的评论数量
+    NSMutableDictionary *commentDict = [NSMutableDictionary dictionary];
+    
+    // 评论数量的获取
+    NSArray *commentIDArray = [YACommentID mj_objectArrayWithKeyValuesArray:responseObject[@"ids"]];
+    for (YACommentID *commentID in commentIDArray) {
+        [commentDict setValue:commentID.comments forKey:commentID.ID];
+    }
+    
+    // 保存文章id对应的评论数量
+    NSMutableDictionary *stickDict = [NSMutableDictionary dictionary];
+    
+    // 置顶新闻的获取
+    NSArray *stickNews = responseObject[@"fixed_pos_list"];
+    for (id news in stickNews) {
+        [stickDict setValue:@1 forKey:news[@"id"]];
+    }
+    
+    // 新闻模型
+    NSArray *newsArray = [YANews mj_objectArrayWithKeyValuesArray:responseObject[@"newslist"]];
+    NSMutableArray *models = [NSMutableArray array];
+    for (YANews * news in newsArray) {
+        YANewsModel *model = [[YANewsModel alloc] init];
+        
+        // 新闻标题
+        model.title = news.title;
+        
+        // 新闻来源
+        model.isShowSource = news.show_source;
+        if (news.source.length > 8) {
+            model.source = [NSString stringWithFormat:@"%@...",[news.source substringToIndex:8]];
+        } else {
+            model.source = news.source;
+        }
+        
+        
+        // ID
+        model.ID = news.ID;
+        
+        // 拇指图
+        model.thumbnails = news.thumbnails_qqnews;
+        
+        // 时间戳
+        model.timestamp = news.timestamp;
+        
+        // 视频时长
+        model.videoTotalTime = [news.videoTotalTime substringFromIndex:3];
+        
+        // 评论
+        model.commentid = news.commentid;
+        model.isShowComment = news.openAdsComment;
+        NSNumber *commentCount = commentDict[news.ID];
+        if ([commentCount integerValue] > 0) {
+            model.commentText = [NSString stringWithFormat:@"%@评", commentCount];
+        }
+        
+        
+        // 时间处理
+        model.time = [YANewsModel setupCreatedTime:news.time];
+        
+        
+        // 图片展示类型
+        model.picShowType = news.picShowType;
+        
+        // icon处理
+        if (news.labelList.count > 0) {
+            model.iconColor = news.labelList.firstObject[@"color"];
+            model.iconTitle = news.labelList.firstObject[@"word"];
+            
+         
+            
+//            model.iconTitle = model.iconLabel.word;
+//            model.iconColor = model.iconLabel.color;
+//            model.isShowIconBorder = model.iconLabel.border;
+            
+            
+        }
+       
+        
+        // 置顶
+        model.stick = [stickDict[news.ID] integerValue];
+        
+        if (model.stick) {
+            [models insertObject:model atIndex:0];
+        } else {
+            [models addObject:model];
+        }
+        
+    }
+    return models;
+}
+
+// 处理时间
++ (NSString *)setupCreatedTime:(NSString *)timeString {
+    
+    NSDate *date = [NSDate ya_dateFromISO8601StringDateFormatter:timeString locale:[NSLocale currentLocale]];
+    
+    NSInteger timeinterval = fabs(round([[NSDate date] timeIntervalSinceDate:date]));
+    
+    if (timeinterval < 3600) {
+        return [NSString stringWithFormat:@"%ld分钟前",(long)timeinterval / 60];
+    } else {
+        return nil;
+    };
+}
+
+
+@end
