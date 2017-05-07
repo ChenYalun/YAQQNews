@@ -46,6 +46,14 @@
 /** 图片浏览类型的图片数量 */
 @property (nonatomic, assign) NSUInteger imagecount;
 
+/** 正在直播 */
+@property (nonatomic, assign) BOOL isLive;
+/** 直播主题描述标题 */
+@property (nonatomic, copy) NSString *specialDataTitle;
+/** 直播主题描述前缀 */
+@property (nonatomic, copy) NSString *specialDataSubTitle;
+/** 直播主题描述数量 */
+@property (nonatomic, copy) NSString *specialDataNumText;
 /*
  fixed_pos_list": [
  {
@@ -69,4 +77,6 @@
 @property (nonatomic, assign) BOOL isShowIconBorder;
 
 + (NSArray<YANewsModel *> *)newsModelWithKeyValuesArray:(id)responseObject;
+
++ (NSArray <YANewsModel *> *)newsModelWithOriginKeyValues:(NSArray *)keyValues;
 @end

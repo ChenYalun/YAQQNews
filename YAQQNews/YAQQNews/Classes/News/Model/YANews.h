@@ -14,7 +14,11 @@ typedef NS_ENUM(NSUInteger, NewsArticleType) {
     NewsArticleTypePicture = 1, // 图片浏览
     NewsArticleTypeTopic = 100, // 专题
     NewsArticleTypeVideo = 101, // 视频
+    NewsArticleTypeSingleLive = 102, // 单个直播
+    NewsArticleTypeGroupLive = 113, // 直播组
     NewsArticleTypeImportant = 524 // 要闻必读
+    
+    // 直播中的110 不知道什么类型,但是 是单条直播
     
 };
 
@@ -101,6 +105,10 @@ typedef NS_ENUM(NSUInteger, NewsPicShowType) {
 /** 图片浏览类型的图片数量 */
 @property (nonatomic, assign) NSUInteger imagecount;
 
+/** 正在直播 */
+@property (nonatomic, assign) BOOL is_live;
+/** 直播主题描述 */
+@property (nonatomic, copy) NSDictionary *specialData;
 /*
 fixed_pos_list": [
 {

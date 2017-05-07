@@ -7,9 +7,25 @@
 //
 
 #import "YALiveChannelViewController.h"
+#import "YALiveSingleTableViewCell.h"
+#import "YALiveGroupTableViewCell.h"
+#import "YARefreshHeader.h"
+#import "YARefreshFooter.h"
+#import "YALiveChannelRequest.h"
+#import "YALiveModel.h"
+#import "YANewsModel.h"
+#import "YAHeaderLabel.h"
+
+static NSString * const kYALiveSingleTableViewCellIdentifier = @"YALiveSingleTableViewCell";
+static NSString * const kYALiveGroupTableViewCellIdentifier = @"YALiveGroupTableViewCell";
 
 @interface YALiveChannelViewController ()
-
+/** 新闻id数组 */
+@property (nonatomic, strong) NSMutableArray *ids;
+/** 新闻模型 */
+@property (nonatomic, strong) NSMutableArray <YANewsModel *> *newsList;
+/** tableView头部 */
+@property (nonatomic, strong) YAHeaderLabel *headerLabel;
 @end
 
 @implementation YALiveChannelViewController
@@ -19,36 +35,70 @@
     
 
     
+    [self.tableView registerNib:[UINib nibWithNibName:[YALiveSingleTableViewCell className] bundle:nil] forCellReuseIdentifier:kYALiveSingleTableViewCellIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:[YALiveGroupTableViewCell className] bundle:nil] forCellReuseIdentifier:kYALiveGroupTableViewCellIdentifier];
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 70, 0);
+    self.tableView.separatorColor = [UIColor clearColor];
+    
+    self.tableView.tableHeaderView = self.headerLabel;
+    
+    YALiveChannelRequest *request = [[YALiveChannelRequest alloc] initWithChannelType:LiveChannelTypeMain];
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+        // x新闻数组
+        NSArray *newsArray = [YALiveModel newsModelWithKeyValuesArray:request.responseObject];
+        [self.newsList addObjectsFromArray:newsArray];
+      
+        // id数组
+        NSArray *idArray = [YALiveModel newsIDsWithresponseObject:request.responseObject];
+        [self.ids addObjectsFromArray:idArray];
+        
+        // tableView表头
+        self.headerLabel.num = [request.responseObject[@"forecast"][@"num"] unsignedIntegerValue];
+        
+        [self.tableView reloadData];
+        
+        //NSLog(@"%@", request.responseString);
+        
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        NSLog(@"%@", request.error);
+    }];
+    
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.newsList.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
+    YANewsModel *news = self.newsList[indexPath.row];
+    if (news.articletype == NewsArticleTypeGroupLive) {
+        YALiveGroupTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kYALiveGroupTableViewCellIdentifier forIndexPath:indexPath];
+        cell.news = news;
+        return cell;
+    } else {
+        YALiveSingleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kYALiveSingleTableViewCellIdentifier forIndexPath:indexPath];
+        cell.news = news;
+        return cell;
+    }
 
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    YANewsModel *news = self.newsList[indexPath.row];
+    if (news.articletype == NewsArticleTypeGroupLive) {
+        return 145;
+    } else {
+        return 180;
+    }
+
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -92,5 +142,27 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+ #pragma mark – Getters and Setters
+- (NSMutableArray *)ids {
+    if (!_ids) {
+        _ids = [NSMutableArray array];
+    }
+    return _ids;
+}
+
+- (NSMutableArray *)newsList {
+    if (!_newsList) {
+        _newsList = [NSMutableArray array];
+    }
+    return _newsList;
+}
+
+- (YAHeaderLabel *)headerLabel {
+    if (!_headerLabel) {
+        _headerLabel = [[YAHeaderLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 45)];
+    }
+    return _headerLabel;
+}
 
 @end

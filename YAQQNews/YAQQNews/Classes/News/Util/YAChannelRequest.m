@@ -9,6 +9,13 @@
 #import "YAChannelRequest.h"
 #import "YANetWork.h"
 
+@interface YAChannelRequest ()
+/** 以page形式加载新内容 */
+@property (nonatomic, strong) NSNumber *page;
+/** 频道类型 */
+@property (nonatomic, assign) RequestChannelOptions channelType;
+@end
+
 @implementation YAChannelRequest
 
 - (instancetype)initWithChannel:(RequestChannelOptions)channel page:(NSNumber *)page {

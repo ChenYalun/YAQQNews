@@ -12,6 +12,7 @@
 
 @implementation YANewsModel
 
+// 根据传进来的请求结果进行字典转模型
 + (NSArray<YANewsModel *> *)newsModelWithKeyValuesArray:(id)responseObject {
     // 保存文章id对应的评论数量
     NSMutableDictionary *commentDict = [NSMutableDictionary dictionary];
@@ -61,6 +62,7 @@
         // 视频时长
         model.videoTotalTime = [news.videoTotalTime substringFromIndex:3];
         
+        
         // 评论
         model.commentid = news.commentid;
         model.isShowComment = news.openAdsComment;
@@ -105,6 +107,71 @@
     return models;
 }
 
+
+// 根据字典数组转化为模型数组
++ (NSArray <YANewsModel *> *)newsModelWithOriginKeyValues:(NSArray *)keyValues {
+    
+    // 新闻模型
+    NSArray *newsArray = [YANews mj_objectArrayWithKeyValuesArray:keyValues];
+    NSMutableArray *models = [NSMutableArray array];
+    for (YANews * news in newsArray) {
+        YANewsModel *model = [[YANewsModel alloc] init];
+        
+        // 新闻标题
+        model.title = news.title;
+        
+        // 新闻来源
+        model.isShowSource = news.show_source;
+        model.source = news.source;
+        
+        // 新闻类型
+        model.articletype = news.articletype;
+        
+        // ID
+        model.ID = news.ID;
+        
+        // 拇指图
+        model.thumbnails = news.thumbnails_qqnews;
+        
+        // 时间戳
+        model.timestamp = news.timestamp;
+        
+        // 视频时长
+        model.videoTotalTime = [news.videoTotalTime substringFromIndex:3];
+        
+        // 直播
+        model.isLive = news.is_live;
+        
+        // 直播描述
+        if (news.specialData) {
+            model.specialDataTitle = news.specialData[@"ztTitle"];
+            
+            model.specialDataSubTitle = [NSString stringWithFormat:@"%@：%@", news.specialData[@"titlePre"], news.title];
+                        model.specialDataNumText = [NSString stringWithFormat:@"共%ld场直播 >", [news.specialData[@"liveNum"] unsignedIntegerValue]];
+            
+        }
+
+        // 评论
+        model.commentid = news.commentid;
+        
+        // 时间处理
+        model.time = [YANewsModel setupCreatedTime:news.time];
+        
+        // 图片展示类型
+        model.picShowType = news.picShowType;
+        
+        // icon处理
+        if (news.labelList.count > 0) {
+            model.iconColor = news.labelList.firstObject[@"color"];
+            model.iconTitle = news.labelList.firstObject[@"word"];
+            
+        }
+        
+        [models addObject:model];
+    }
+    return models;
+
+}
 // 处理时间
 + (NSString *)setupCreatedTime:(NSString *)timeString {
     

@@ -16,11 +16,6 @@ typedef NS_OPTIONS(NSUInteger, RequestChannelOptions) {
 };
 
 @interface YAChannelRequest : YTKRequest
-
-/** 以page形式加载新内容 */
-@property (nonatomic, strong) NSNumber *page;
-/** 频道类型 */
-@property (nonatomic, assign) RequestChannelOptions channelType;
 // 初始化方法
 - (instancetype)initWithChannel:(RequestChannelOptions)channel page:(NSNumber *)page;
 @end
