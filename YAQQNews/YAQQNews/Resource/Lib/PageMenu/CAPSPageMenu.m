@@ -353,6 +353,9 @@ NSString * const CAPSPageMenuOptionSelectedMenuItemFont                 = @"sele
             
             CGRect itemWidthRect = [titleText boundingRectWithSize:CGSizeMake(1000, 1000) options: NSStringDrawingUsesLineFragmentOrigin attributes: @{NSFontAttributeName:_menuItemFont} context: nil];
             
+            // 手动修改的代码
+            itemWidthRect.size.width += 8;
+            
             _menuItemWidth = itemWidthRect.size.width;
             
             menuItemFrame = CGRectMake(_totalMenuItemWidthIfDifferentWidths + _menuMargin + (_menuMargin * index), 0.0, _menuItemWidth, _menuHeight);

@@ -1,22 +1,22 @@
 //
-//  YAPageMenuViewController.m
+//  YANewsPageMenuViewController.m
 //  YAQQNews
 //
 //  Created by 陈亚伦 on 2017/5/6.
 //  Copyright © 2017年 陈亚伦. All rights reserved.
 //
 
-#import "YAPageMenuViewController.h"
+#import "YANewsPageMenuViewController.h"
 #import "YAChannelViewController.h"
 
-// 红色边线的高度
-static unsigned int const kRedLayerHeight = 1;
+// 灰色边线的高度
+static unsigned int const kGrayLayerHeight = 1;
 // 指示按钮宽度
 static unsigned int const kAddButtonWidth = 35;
 // 指示按钮高度
 static unsigned int const kAddButonHeight = 43;
 
-@implementation YAPageMenuViewController
+@implementation YANewsPageMenuViewController
 
 - (instancetype)init {
     if (self = [super init]) {
@@ -74,13 +74,13 @@ static unsigned int const kAddButonHeight = 43;
         
         
         // 注意设置pageMenu的高度!
-        self = [[YAPageMenuViewController alloc] initWithViewControllers:controllerArray frame:CGRectMake(0, 20, kScreenWidth, kScreenHeight) options:parameters];
+        self = [[YANewsPageMenuViewController alloc] initWithViewControllers:controllerArray frame:CGRectMake(0, 20, kScreenWidth, kScreenHeight) options:parameters];
         
         // 设置灰色边缘
-        CALayer *lightLayer = [[CALayer alloc] init];
-        lightLayer.backgroundColor = kRGBAColor(210, 210, 210, 0.3).CGColor;
-        lightLayer.frame = CGRectMake(0, 43, kScreenWidth, kRedLayerHeight);
-        [self.view.layer addSublayer:lightLayer];
+        CALayer *grayLayer = [[CALayer alloc] init];
+        grayLayer.backgroundColor = kRGBAColor(210, 210, 210, 0.3).CGColor;
+        grayLayer.frame = CGRectMake(0, 43, kScreenWidth, kGrayLayerHeight);
+        [self.view.layer addSublayer:grayLayer];
         
         
         // 设置提示按钮

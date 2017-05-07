@@ -1,5 +1,5 @@
 //
-//  YAPageMenuViewController.h
+//  YANewsPageMenuViewController.h
 //  YAQQNews
 //
 //  Created by 陈亚伦 on 2017/5/6.
@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "CAPSPageMenu.h"
 
-@interface YAPageMenuViewController : CAPSPageMenu
+@interface YANewsPageMenuViewController : CAPSPageMenu
 
 @end

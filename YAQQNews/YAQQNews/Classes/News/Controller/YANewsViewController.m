@@ -7,7 +7,7 @@
 //
 
 #import "YANewsViewController.h"
-#import "YAPageMenuViewController.h"
+#import "YANewsPageMenuViewController.h"
 
 @interface YANewsViewController ()
 
@@ -25,7 +25,7 @@
     
     
     self.view.backgroundColor = [UIColor whiteColor];
-    YAPageMenuViewController *pageMenuViewController = [[YAPageMenuViewController alloc] init];
+    YANewsPageMenuViewController *pageMenuViewController = [[YANewsPageMenuViewController alloc] init];
     [self addChildViewController:pageMenuViewController];
     [self.view addSubview:pageMenuViewController.view];
 }

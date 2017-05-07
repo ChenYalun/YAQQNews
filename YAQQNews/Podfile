@@ -15,6 +15,7 @@ target 'YAQQNews' do
   pod ‘UITableView+FDTemplateLayoutCell’
   pod 'FDFullscreenPopGesture'
   pod 'YYWebImage'
-  pod 'YYCategories'
+  pod 'YYCategories' 
+
 
 end

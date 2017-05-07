@@ -8,6 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		3C1A006AD5AFBBE352A7024A /* libPods-YAQQNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C13B0C0E82B6FDCA5690F121 /* libPods-YAQQNews.a */; };
+		9A5C90311EBE970F00209995 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90301EBE970F00209995 /* VideoToolbox.framework */; };
+		9A5C90331EBE971C00209995 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90321EBE971C00209995 /* UIKit.framework */; };
+		9A5C90351EBE972500209995 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90341EBE972500209995 /* QuartzCore.framework */; };
+		9A5C90371EBE973200209995 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90361EBE973100209995 /* OpenGLES.framework */; };
+		9A5C90391EBE974500209995 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90381EBE974500209995 /* MobileCoreServices.framework */; };
+		9A5C903B1EBE975000209995 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C903A1EBE975000209995 /* MediaPlayer.framework */; };
+		9A5C903D1EBE975D00209995 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C903C1EBE975D00209995 /* libz.tbd */; };
+		9A5C903F1EBE976600209995 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C903E1EBE976600209995 /* libbz2.tbd */; };
+		9A5C90411EBE977300209995 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90401EBE977300209995 /* CoreVideo.framework */; };
+		9A5C90431EBE978000209995 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90421EBE978000209995 /* CoreMedia.framework */; };
+		9A5C90451EBE978700209995 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90441EBE978700209995 /* CoreGraphics.framework */; };
+		9A5C90471EBE979300209995 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90461EBE979300209995 /* AVFoundation.framework */; };
+		9A5C90491EBE979C00209995 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90481EBE979C00209995 /* AudioToolbox.framework */; };
+		9A5C904D1EBE9AE600209995 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C904C1EBE9AE600209995 /* IJKMediaFramework.framework */; };
+		9A5C904F1EBE9B8A00209995 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C904E1EBE9B8A00209995 /* libstdc++.tbd */; };
+		9A5C90521EBEB38300209995 /* YALivePageMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5C90511EBEB38300209995 /* YALivePageMenuViewController.m */; };
+		9A5C90551EBEB48B00209995 /* YALiveChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5C90541EBEB48B00209995 /* YALiveChannelViewController.m */; };
 		9A85F5441EBCBF9E009243B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85F5431EBCBF9E009243B3 /* main.m */; };
 		9A85F5471EBCBF9E009243B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85F5461EBCBF9E009243B3 /* AppDelegate.m */; };
 		9A85F54A1EBCBF9E009243B3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85F5491EBCBF9E009243B3 /* ViewController.m */; };
@@ -22,7 +39,7 @@
 		9A85F59A1EBCC8F9009243B3 /* YATabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85F5991EBCC8F9009243B3 /* YATabBarItem.m */; };
 		9A85F59D1EBCC939009243B3 /* UIImage+YARenderingMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85F59C1EBCC939009243B3 /* UIImage+YARenderingMode.m */; };
 		9AE436511EBD60D200921FD0 /* CAPSPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE436501EBD60D200921FD0 /* CAPSPageMenu.m */; };
-		9AE4365D1EBD616600921FD0 /* YAPageMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE4365C1EBD616600921FD0 /* YAPageMenuViewController.m */; };
+		9AE4365D1EBD616600921FD0 /* YANewsPageMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE4365C1EBD616600921FD0 /* YANewsPageMenuViewController.m */; };
 		9AE436601EBD62AC00921FD0 /* YAChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE4365F1EBD62AC00921FD0 /* YAChannelViewController.m */; };
 		9AE436651EBD784100921FD0 /* YANews.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE436641EBD784100921FD0 /* YANews.m */; };
 		9AE436681EBD785100921FD0 /* YANewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE436671EBD785100921FD0 /* YANewsModel.m */; };
@@ -37,6 +54,25 @@
 
 /* Begin PBXFileReference section */
 		3219EE8D764C1AB8EDA0A9D7 /* Pods-YAQQNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YAQQNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YAQQNews/Pods-YAQQNews.debug.xcconfig"; sourceTree = "<group>"; };
+		9A5C90301EBE970F00209995 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		9A5C90321EBE971C00209995 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9A5C90341EBE972500209995 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9A5C90361EBE973100209995 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		9A5C90381EBE974500209995 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		9A5C903A1EBE975000209995 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		9A5C903C1EBE975D00209995 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		9A5C903E1EBE976600209995 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		9A5C90401EBE977300209995 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		9A5C90421EBE978000209995 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		9A5C90441EBE978700209995 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9A5C90461EBE979300209995 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9A5C90481EBE979C00209995 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		9A5C904C1EBE9AE600209995 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
+		9A5C904E1EBE9B8A00209995 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		9A5C90501EBEB38300209995 /* YALivePageMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALivePageMenuViewController.h; sourceTree = "<group>"; };
+		9A5C90511EBEB38300209995 /* YALivePageMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALivePageMenuViewController.m; sourceTree = "<group>"; };
+		9A5C90531EBEB48B00209995 /* YALiveChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALiveChannelViewController.h; sourceTree = "<group>"; };
+		9A5C90541EBEB48B00209995 /* YALiveChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALiveChannelViewController.m; sourceTree = "<group>"; };
 		9A85F53F1EBCBF9E009243B3 /* YAQQNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YAQQNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A85F5431EBCBF9E009243B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9A85F5451EBCBF9E009243B3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -63,8 +99,8 @@
 		9A85F59C1EBCC939009243B3 /* UIImage+YARenderingMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YARenderingMode.m"; sourceTree = "<group>"; };
 		9AE4364F1EBD60D200921FD0 /* CAPSPageMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAPSPageMenu.h; sourceTree = "<group>"; };
 		9AE436501EBD60D200921FD0 /* CAPSPageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAPSPageMenu.m; sourceTree = "<group>"; };
-		9AE4365B1EBD616600921FD0 /* YAPageMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAPageMenuViewController.h; sourceTree = "<group>"; };
-		9AE4365C1EBD616600921FD0 /* YAPageMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAPageMenuViewController.m; sourceTree = "<group>"; };
+		9AE4365B1EBD616600921FD0 /* YANewsPageMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANewsPageMenuViewController.h; sourceTree = "<group>"; };
+		9AE4365C1EBD616600921FD0 /* YANewsPageMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANewsPageMenuViewController.m; sourceTree = "<group>"; };
 		9AE4365E1EBD62AC00921FD0 /* YAChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAChannelViewController.h; sourceTree = "<group>"; };
 		9AE4365F1EBD62AC00921FD0 /* YAChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAChannelViewController.m; sourceTree = "<group>"; };
 		9AE436611EBD633E00921FD0 /* YAPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAPrefixHeader.pch; sourceTree = "<group>"; };
@@ -94,6 +130,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A5C904F1EBE9B8A00209995 /* libstdc++.tbd in Frameworks */,
+				9A5C90491EBE979C00209995 /* AudioToolbox.framework in Frameworks */,
+				9A5C90471EBE979300209995 /* AVFoundation.framework in Frameworks */,
+				9A5C90451EBE978700209995 /* CoreGraphics.framework in Frameworks */,
+				9A5C904D1EBE9AE600209995 /* IJKMediaFramework.framework in Frameworks */,
+				9A5C90431EBE978000209995 /* CoreMedia.framework in Frameworks */,
+				9A5C90411EBE977300209995 /* CoreVideo.framework in Frameworks */,
+				9A5C903F1EBE976600209995 /* libbz2.tbd in Frameworks */,
+				9A5C903D1EBE975D00209995 /* libz.tbd in Frameworks */,
+				9A5C903B1EBE975000209995 /* MediaPlayer.framework in Frameworks */,
+				9A5C90391EBE974500209995 /* MobileCoreServices.framework in Frameworks */,
+				9A5C90371EBE973200209995 /* OpenGLES.framework in Frameworks */,
+				9A5C90351EBE972500209995 /* QuartzCore.framework in Frameworks */,
+				9A5C90331EBE971C00209995 /* UIKit.framework in Frameworks */,
+				9A5C90311EBE970F00209995 /* VideoToolbox.framework in Frameworks */,
 				3C1A006AD5AFBBE352A7024A /* libPods-YAQQNews.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +155,21 @@
 		0C96635B490ACA1923E0051A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9A5C904E1EBE9B8A00209995 /* libstdc++.tbd */,
+				9A5C904C1EBE9AE600209995 /* IJKMediaFramework.framework */,
+				9A5C90481EBE979C00209995 /* AudioToolbox.framework */,
+				9A5C90461EBE979300209995 /* AVFoundation.framework */,
+				9A5C90441EBE978700209995 /* CoreGraphics.framework */,
+				9A5C90421EBE978000209995 /* CoreMedia.framework */,
+				9A5C90401EBE977300209995 /* CoreVideo.framework */,
+				9A5C903E1EBE976600209995 /* libbz2.tbd */,
+				9A5C903C1EBE975D00209995 /* libz.tbd */,
+				9A5C903A1EBE975000209995 /* MediaPlayer.framework */,
+				9A5C90381EBE974500209995 /* MobileCoreServices.framework */,
+				9A5C90361EBE973100209995 /* OpenGLES.framework */,
+				9A5C90341EBE972500209995 /* QuartzCore.framework */,
+				9A5C90321EBE971C00209995 /* UIKit.framework */,
+				9A5C90301EBE970F00209995 /* VideoToolbox.framework */,
 				C13B0C0E82B6FDCA5690F121 /* libPods-YAQQNews.a */,
 			);
 			name = Frameworks;
@@ -194,6 +260,8 @@
 			children = (
 				9A85F5921EBCC7E0009243B3 /* YALiveViewController.h */,
 				9A85F5931EBCC7E0009243B3 /* YALiveViewController.m */,
+				9A5C90531EBEB48B00209995 /* YALiveChannelViewController.h */,
+				9A5C90541EBEB48B00209995 /* YALiveChannelViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -448,8 +516,10 @@
 		9AE436591EBD612900921FD0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9AE4365B1EBD616600921FD0 /* YAPageMenuViewController.h */,
-				9AE4365C1EBD616600921FD0 /* YAPageMenuViewController.m */,
+				9AE4365B1EBD616600921FD0 /* YANewsPageMenuViewController.h */,
+				9AE4365C1EBD616600921FD0 /* YANewsPageMenuViewController.m */,
+				9A5C90501EBEB38300209995 /* YALivePageMenuViewController.h */,
+				9A5C90511EBEB38300209995 /* YALivePageMenuViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -597,7 +667,8 @@
 			files = (
 				9AE436681EBD785100921FD0 /* YANewsModel.m in Sources */,
 				9AE436751EBDB20F00921FD0 /* NSDate+YADateFormater.m in Sources */,
-				9AE4365D1EBD616600921FD0 /* YAPageMenuViewController.m in Sources */,
+				9AE4365D1EBD616600921FD0 /* YANewsPageMenuViewController.m in Sources */,
+				9A5C90521EBEB38300209995 /* YALivePageMenuViewController.m in Sources */,
 				9AE436601EBD62AC00921FD0 /* YAChannelViewController.m in Sources */,
 				9A85F5941EBCC7E0009243B3 /* YALiveViewController.m in Sources */,
 				9A85F54A1EBCBF9E009243B3 /* ViewController.m in Sources */,
@@ -608,6 +679,7 @@
 				9A85F5911EBCC7D3009243B3 /* YARecommendViewController.m in Sources */,
 				9AE4366C1EBD78B200921FD0 /* YAChannelRequest.m in Sources */,
 				9AE4367E1EBDB28B00921FD0 /* YARightPhotoNewsCell.m in Sources */,
+				9A5C90551EBEB48B00209995 /* YALiveChannelViewController.m in Sources */,
 				9AE4367C1EBDB28B00921FD0 /* YACenterPhotoNewsCell.m in Sources */,
 				9A85F59D1EBCC939009243B3 /* UIImage+YARenderingMode.m in Sources */,
 				9AE436511EBD60D200921FD0 /* CAPSPageMenu.m in Sources */,
@@ -737,6 +809,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = A4G5CBWX96;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = /Users/chenyalun/Desktop/iOS/YAQQNews/YAQQNews/YAQQNews/YAPrefixHeader.pch;
 				INFOPLIST_FILE = YAQQNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -753,6 +829,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = A4G5CBWX96;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = /Users/chenyalun/Desktop/iOS/YAQQNews/YAQQNews/YAQQNews/YAPrefixHeader.pch;
 				INFOPLIST_FILE = YAQQNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

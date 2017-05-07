@@ -61,7 +61,7 @@ static NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshForNew)];
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(refreshForMore)];
     
-    [self.tableView.mj_header beginRefreshing];
+    //[self.tableView.mj_header beginRefreshing];
     
 }
 
@@ -183,6 +183,18 @@ static NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     YANewsModel *news = self.newsList[indexPath.row];
     
+    if (news.thumbnails.count > 3) {
+        return [tableView fd_heightForCellWithIdentifier:kYACenterPhotoNewsCellIdentifier cacheByIndexPath:indexPath configuration:^(YACenterPhotoNewsCell *cell) {
+            cell.news = self.newsList[indexPath.row];
+        }];
+    } else {
+        return [tableView fd_heightForCellWithIdentifier:kYARightPhotoNewsCellIdentifier cacheByIndexPath:indexPath configuration:^(YARightPhotoNewsCell *cell) {
+            cell.news = self.newsList[indexPath.row];
+        }];
+    }
+    
+    
+    /*
     switch (news.picShowType) {
         case NewsPicShowTypeRightPhoto:
         {
@@ -201,7 +213,7 @@ static NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell
         }
             
     }
-    
+    */
     
 }
 
