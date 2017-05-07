@@ -21,7 +21,6 @@
 		9A5C90451EBE978700209995 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90441EBE978700209995 /* CoreGraphics.framework */; };
 		9A5C90471EBE979300209995 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90461EBE979300209995 /* AVFoundation.framework */; };
 		9A5C90491EBE979C00209995 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90481EBE979C00209995 /* AudioToolbox.framework */; };
-		9A5C904D1EBE9AE600209995 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C904C1EBE9AE600209995 /* IJKMediaFramework.framework */; };
 		9A5C904F1EBE9B8A00209995 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C904E1EBE9B8A00209995 /* libstdc++.tbd */; };
 		9A5C90521EBEB38300209995 /* YALivePageMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5C90511EBEB38300209995 /* YALivePageMenuViewController.m */; };
 		9A5C90551EBEB48B00209995 /* YALiveChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5C90541EBEB48B00209995 /* YALiveChannelViewController.m */; };
@@ -34,6 +33,7 @@
 		9A5C90691EBED1D300209995 /* YARefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5C90681EBED1D300209995 /* YARefreshHeader.m */; };
 		9A5C906F1EBED2E900209995 /* YALiveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5C906E1EBED2E900209995 /* YALiveModel.m */; };
 		9A5C90721EBF13B800209995 /* YAHeaderLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5C90711EBF13B800209995 /* YAHeaderLabel.m */; };
+		9A5C90741EBF251700209995 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90731EBF251700209995 /* IJKMediaFramework.framework */; };
 		9A85F5441EBCBF9E009243B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85F5431EBCBF9E009243B3 /* main.m */; };
 		9A85F5471EBCBF9E009243B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85F5461EBCBF9E009243B3 /* AppDelegate.m */; };
 		9A85F54A1EBCBF9E009243B3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85F5491EBCBF9E009243B3 /* ViewController.m */; };
@@ -76,7 +76,6 @@
 		9A5C90441EBE978700209995 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9A5C90461EBE979300209995 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9A5C90481EBE979C00209995 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		9A5C904C1EBE9AE600209995 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		9A5C904E1EBE9B8A00209995 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		9A5C90501EBEB38300209995 /* YALivePageMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALivePageMenuViewController.h; sourceTree = "<group>"; };
 		9A5C90511EBEB38300209995 /* YALivePageMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALivePageMenuViewController.m; sourceTree = "<group>"; };
@@ -98,6 +97,7 @@
 		9A5C906E1EBED2E900209995 /* YALiveModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALiveModel.m; sourceTree = "<group>"; };
 		9A5C90701EBF13B800209995 /* YAHeaderLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAHeaderLabel.h; sourceTree = "<group>"; };
 		9A5C90711EBF13B800209995 /* YAHeaderLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAHeaderLabel.m; sourceTree = "<group>"; };
+		9A5C90731EBF251700209995 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		9A85F53F1EBCBF9E009243B3 /* YAQQNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YAQQNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A85F5431EBCBF9E009243B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9A85F5451EBCBF9E009243B3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -158,8 +158,8 @@
 				9A5C904F1EBE9B8A00209995 /* libstdc++.tbd in Frameworks */,
 				9A5C90491EBE979C00209995 /* AudioToolbox.framework in Frameworks */,
 				9A5C90471EBE979300209995 /* AVFoundation.framework in Frameworks */,
+				9A5C90741EBF251700209995 /* IJKMediaFramework.framework in Frameworks */,
 				9A5C90451EBE978700209995 /* CoreGraphics.framework in Frameworks */,
-				9A5C904D1EBE9AE600209995 /* IJKMediaFramework.framework in Frameworks */,
 				9A5C90431EBE978000209995 /* CoreMedia.framework in Frameworks */,
 				9A5C90411EBE977300209995 /* CoreVideo.framework in Frameworks */,
 				9A5C903F1EBE976600209995 /* libbz2.tbd in Frameworks */,
@@ -180,8 +180,8 @@
 		0C96635B490ACA1923E0051A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9A5C90731EBF251700209995 /* IJKMediaFramework.framework */,
 				9A5C904E1EBE9B8A00209995 /* libstdc++.tbd */,
-				9A5C904C1EBE9AE600209995 /* IJKMediaFramework.framework */,
 				9A5C90481EBE979C00209995 /* AudioToolbox.framework */,
 				9A5C90461EBE979300209995 /* AVFoundation.framework */,
 				9A5C90441EBE978700209995 /* CoreGraphics.framework */,
