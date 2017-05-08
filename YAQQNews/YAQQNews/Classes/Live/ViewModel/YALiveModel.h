@@ -15,4 +15,5 @@
 @property (nonatomic, copy) NSArray *newsIDs;
 + (NSArray<YANewsModel *> *)newsModelWithKeyValuesArray:(id)responseObject;
 + (NSArray *)newsIDsWithresponseObject:(id)responseObject;
++ (NSArray<YANewsModel *> *)newsModelWithOriginKeyValues:(id)responseObject;
 @end

@@ -7,21 +7,10 @@
 //
 
 #import <YTKNetwork/YTKNetwork.h>
+#import "YAEnumerateHeader.h"
 
-typedef NS_ENUM(NSUInteger,LiveChannelType) {
-    LiveChannelTypeMain, // 精选
-    LiveChannelTypeInfo, // 资讯
-    LiveChannelTypeArt, // 文艺
-    LiveChannelTypeEnt, // 娱乐
-    LiveChannelTypeFinance,  // 财经
-    LiveChannelTypeTV, // 电视台
-    LiveChannelTypeSports, // 体育
-    LiveChannelTypeMSJ,  // 慢视界
-    LiveChannelTypeLifes // 生活
-};
-
+// 根据直播频道刷新直播列表
 @interface YALiveChannelRequest : YTKRequest
-
 
 - (instancetype)initWithChannelType:(LiveChannelType)channel;
 @end

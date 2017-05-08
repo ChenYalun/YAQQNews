@@ -10,12 +10,10 @@
 
 @implementation YARefreshHeader
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
-@end
+//// Set the ordinary state of animated images
+//[header setImages:idleImages forState:MJRefreshStateIdle];
+//// Set the pulling state of animated images（Enter the status of refreshing as soon as loosen）
+//[header setImages:pullingImages forState:MJRefreshStatePulling];
+//// Set the refreshing state of animated images
+//[header setImages:refreshingImages forState:MJRefreshStateRefreshing];
+//@end

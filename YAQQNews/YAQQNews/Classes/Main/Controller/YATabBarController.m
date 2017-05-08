@@ -25,13 +25,16 @@
     
     // 设置tabbar控制器
     YANewsViewController *newsViewController = [[YANewsViewController alloc] init];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:newsViewController];
+    UINavigationController *newsNavigationController = [[UINavigationController alloc] initWithRootViewController:newsViewController];
     
     YARecommendViewController *recommendViewController = [[YARecommendViewController alloc] init];
+    
     YALiveViewController *liveViewController = [[YALiveViewController alloc] init];
+    UINavigationController *liveNavigationController = [[UINavigationController alloc] initWithRootViewController:liveViewController];
+    
     YAProfileViewController *profileViewController = [[YAProfileViewController alloc] init];
     
-    self.viewControllers = @[navigationController, recommendViewController, liveViewController, profileViewController];
+    self.viewControllers = @[newsNavigationController, recommendViewController, liveNavigationController, profileViewController];
     
     // 创建Item
     YATabBarItem *newsItem = [[YATabBarItem alloc] initWithTitle:@"新闻" image:[UIImage imageNamed:@"tabbar_news_normal"]  selectedImage:[UIImage imageNamed:@"tabbar_news_selected"]];

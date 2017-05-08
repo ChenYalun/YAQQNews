@@ -11,6 +11,7 @@
 
 @implementation YALiveModel
 
+// 下拉刷新字典转模型
 + (NSArray<YANewsModel *> *)newsModelWithKeyValuesArray:(id)responseObject {
     NSArray *array = responseObject[@"idlist"];
     
@@ -30,5 +31,11 @@
         [ids addObject:idDict[@"id"]];
     }
     return ids;
+}
+
+// 上拉加载字典转模型
++ (NSArray<YANewsModel *> *)newsModelWithOriginKeyValues:(id)responseObject {
+    NSArray *models = [YANewsModel newsModelWithOriginKeyValues:responseObject[@"newslist"]];
+    return models;
 }
 @end
