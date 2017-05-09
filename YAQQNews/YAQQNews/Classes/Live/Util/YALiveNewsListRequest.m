@@ -7,7 +7,7 @@
 //
 
 #import "YALiveNewsListRequest.h"
-#import "YAEnumerateHeader.h"
+
 
 @interface YALiveNewsListRequest ()
 /** 请求频道类型 */

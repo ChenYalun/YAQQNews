@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YANewsModel.h"
 
 @interface YALiveChannelViewController : UITableViewController
-
+/** 请求频道 */
+@property (nonatomic, assign) LiveChannelType channelType;
+// 重写init方法
+- (instancetype)initWithChannelType:(LiveChannelType)type;
 @end

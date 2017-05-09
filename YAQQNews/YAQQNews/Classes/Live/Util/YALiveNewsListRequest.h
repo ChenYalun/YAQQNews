@@ -7,7 +7,7 @@
 //
 
 #import <YTKNetwork/YTKNetwork.h>
-#import "YAEnumerateHeader.h"
+#import "YANewsModel.h"
 
 // 根据直播ids获取新闻cell
 @interface YALiveNewsListRequest : YTKRequest

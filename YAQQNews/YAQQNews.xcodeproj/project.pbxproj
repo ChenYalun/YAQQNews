@@ -51,6 +51,7 @@
 		9A85F59D1EBCC939009243B3 /* UIImage+YARenderingMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85F59C1EBCC939009243B3 /* UIImage+YARenderingMode.m */; };
 		9ABD1CD11EC14AF70074FBFC /* amr_sound_loading@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9ABD1CCF1EC14AF70074FBFC /* amr_sound_loading@2x.gif */; };
 		9ABD1CD21EC14AF70074FBFC /* amr_sound_loading@3x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9ABD1CD01EC14AF70074FBFC /* amr_sound_loading@3x.gif */; };
+		9ABD1CD51EC156570074FBFC /* YALiveChannelDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABD1CD41EC156570074FBFC /* YALiveChannelDataSource.m */; };
 		9AE436511EBD60D200921FD0 /* CAPSPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE436501EBD60D200921FD0 /* CAPSPageMenu.m */; };
 		9AE4365D1EBD616600921FD0 /* YANewsPageMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE4365C1EBD616600921FD0 /* YANewsPageMenuViewController.m */; };
 		9AE436601EBD62AC00921FD0 /* YAChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE4365F1EBD62AC00921FD0 /* YAChannelViewController.m */; };
@@ -104,7 +105,6 @@
 		9A5C90731EBF251700209995 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		9A81115E1EC07DC10086635B /* YALiveNewsListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALiveNewsListRequest.h; sourceTree = "<group>"; };
 		9A81115F1EC07DC10086635B /* YALiveNewsListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALiveNewsListRequest.m; sourceTree = "<group>"; };
-		9A8111621EC07F3D0086635B /* YAEnumerateHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAEnumerateHeader.h; sourceTree = "<group>"; };
 		9A8111631EC0A3860086635B /* YATableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YATableViewDataSource.h; sourceTree = "<group>"; };
 		9A8111641EC0A3860086635B /* YATableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YATableViewDataSource.m; sourceTree = "<group>"; };
 		9A85F53F1EBCBF9E009243B3 /* YAQQNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YAQQNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +133,8 @@
 		9A85F59C1EBCC939009243B3 /* UIImage+YARenderingMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YARenderingMode.m"; sourceTree = "<group>"; };
 		9ABD1CCF1EC14AF70074FBFC /* amr_sound_loading@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "amr_sound_loading@2x.gif"; sourceTree = "<group>"; };
 		9ABD1CD01EC14AF70074FBFC /* amr_sound_loading@3x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "amr_sound_loading@3x.gif"; sourceTree = "<group>"; };
+		9ABD1CD31EC156570074FBFC /* YALiveChannelDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALiveChannelDataSource.h; sourceTree = "<group>"; };
+		9ABD1CD41EC156570074FBFC /* YALiveChannelDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALiveChannelDataSource.m; sourceTree = "<group>"; };
 		9AE4364F1EBD60D200921FD0 /* CAPSPageMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAPSPageMenu.h; sourceTree = "<group>"; };
 		9AE436501EBD60D200921FD0 /* CAPSPageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAPSPageMenu.m; sourceTree = "<group>"; };
 		9AE4365B1EBD616600921FD0 /* YANewsPageMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANewsPageMenuViewController.h; sourceTree = "<group>"; };
@@ -227,6 +229,8 @@
 				9A5C90621EBECF8600209995 /* YALiveChannelRequest.m */,
 				9A81115E1EC07DC10086635B /* YALiveNewsListRequest.h */,
 				9A81115F1EC07DC10086635B /* YALiveNewsListRequest.m */,
+				9ABD1CD31EC156570074FBFC /* YALiveChannelDataSource.h */,
+				9ABD1CD41EC156570074FBFC /* YALiveChannelDataSource.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -266,7 +270,6 @@
 				9A85F5421EBCBF9E009243B3 /* Supporting Files */,
 				9AE436611EBD633E00921FD0 /* YAPrefixHeader.pch */,
 				9AE436621EBD68A700921FD0 /* YAHeader.h */,
-				9A8111621EC07F3D0086635B /* YAEnumerateHeader.h */,
 			);
 			path = YAQQNews;
 			sourceTree = "<group>";
@@ -738,6 +741,7 @@
 			files = (
 				9AE436681EBD785100921FD0 /* YANewsModel.m in Sources */,
 				9AE436751EBDB20F00921FD0 /* NSDate+YADateFormater.m in Sources */,
+				9ABD1CD51EC156570074FBFC /* YALiveChannelDataSource.m in Sources */,
 				9AE4365D1EBD616600921FD0 /* YANewsPageMenuViewController.m in Sources */,
 				9A5C90521EBEB38300209995 /* YALivePageMenuViewController.m in Sources */,
 				9AE436601EBD62AC00921FD0 /* YAChannelViewController.m in Sources */,

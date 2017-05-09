@@ -7,7 +7,7 @@
 //
 
 #import <YTKNetwork/YTKNetwork.h>
-#import "YAEnumerateHeader.h"
+#import "YANewsModel.h"
 
 // 根据直播频道刷新直播列表
 @interface YALiveChannelRequest : YTKRequest

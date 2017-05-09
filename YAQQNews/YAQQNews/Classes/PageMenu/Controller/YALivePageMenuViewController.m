@@ -24,23 +24,31 @@ static unsigned int const kGrayLayerHeight = 1;
         // 设置菜单按钮
         NSMutableArray *controllerArray = [NSMutableArray array];
         
-        YALiveChannelViewController *mainChannelViewController = [[YALiveChannelViewController alloc] init];
+        YALiveChannelViewController *mainChannelViewController = [[YALiveChannelViewController alloc] initWithChannelType:LiveChannelTypeMain];
         mainChannelViewController.title = @"精选";
-        YALiveChannelViewController *infoChannelViewController = [[YALiveChannelViewController alloc] init];
+        
+        YALiveChannelViewController *infoChannelViewController = [[YALiveChannelViewController alloc] initWithChannelType:LiveChannelTypeInfo];
         infoChannelViewController.title = @"资讯";
-        YALiveChannelViewController *artChannelViewController = [[YALiveChannelViewController alloc] init];
+        
+        YALiveChannelViewController *artChannelViewController = [[YALiveChannelViewController alloc] initWithChannelType:LiveChannelTypeArt];
         artChannelViewController.title = @"文艺";
-        YALiveChannelViewController *entChannelViewController = [[YALiveChannelViewController alloc] init];
+        
+        YALiveChannelViewController *entChannelViewController = [[YALiveChannelViewController alloc] initWithChannelType:LiveChannelTypeEnt];
         entChannelViewController.title = @"娱乐";
-        YALiveChannelViewController *financeChannelViewController = [[YALiveChannelViewController alloc] init];
+        
+        YALiveChannelViewController *financeChannelViewController = [[YALiveChannelViewController alloc] initWithChannelType:LiveChannelTypeFinance];
         financeChannelViewController.title = @"财经";
-        YALiveChannelViewController *tvChannelViewController = [[YALiveChannelViewController alloc] init];
+        
+        YALiveChannelViewController *tvChannelViewController = [[YALiveChannelViewController alloc] initWithChannelType:LiveChannelTypeTV];
         tvChannelViewController.title = @"电视台";
-        YALiveChannelViewController *sportsChannelViewController = [[YALiveChannelViewController alloc] init];
+        
+        YALiveChannelViewController *sportsChannelViewController = [[YALiveChannelViewController alloc] initWithChannelType:LiveChannelTypeSports];
         sportsChannelViewController.title = @"体育";
-        YALiveChannelViewController *msjChannelViewController = [[YALiveChannelViewController alloc] init];
+        
+        YALiveChannelViewController *msjChannelViewController = [[YALiveChannelViewController alloc] initWithChannelType:LiveChannelTypeMSJ];
         msjChannelViewController.title = @"慢视界";
-        YALiveChannelViewController *lifesChannelViewController = [[YALiveChannelViewController alloc] init];
+        
+        YALiveChannelViewController *lifesChannelViewController = [[YALiveChannelViewController alloc] initWithChannelType:LiveChannelTypeLifes];
         lifesChannelViewController.title = @"生活";
 
         [controllerArray addObjectsFromArray:@[

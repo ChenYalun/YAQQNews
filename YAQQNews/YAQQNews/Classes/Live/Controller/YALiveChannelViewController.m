@@ -17,27 +17,34 @@
 #import "YALiveSingleTableViewCell.h"
 #import "YALiveGroupTableViewCell.h"
 
+#import "YALiveChannelDataSource.h"
 
 static NSString * const kYALiveSingleTableViewCellIdentifier = @"YALiveSingleTableViewCell";
 static NSString * const kYALiveGroupTableViewCellIdentifier = @"YALiveGroupTableViewCell";
 
 @interface YALiveChannelViewController ()
-/** 新闻id数组 */
-@property (nonatomic, strong) NSMutableArray *ids;
-/** 新闻模型 */
-@property (nonatomic, strong) NSMutableArray <YANewsModel *> *newsList;
+
 /** tableView头部 */
 @property (nonatomic, strong) YAHeaderLabel *headerLabel;
-/** 数组分段指针 */
-@property (nonatomic, assign) NSUInteger lastIndex;
+/** tableView数据源 */
+@property (nonatomic, strong) YALiveChannelDataSource *dataSource;
 @end
 
 @implementation YALiveChannelViewController
+
+- (instancetype)initWithChannelType:(LiveChannelType)type {
+    if (self = [super init]) {
+        _channelType = type;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
 
+    self.tableView.dataSource = self.dataSource;
+    self.tableView.delegate = self.dataSource;
     
     [self.tableView registerNib:[UINib nibWithNibName:[YALiveSingleTableViewCell className] bundle:nil] forCellReuseIdentifier:kYALiveSingleTableViewCellIdentifier];
     [self.tableView registerNib:[UINib nibWithNibName:[YALiveGroupTableViewCell className] bundle:nil] forCellReuseIdentifier:kYALiveGroupTableViewCellIdentifier];
@@ -48,7 +55,6 @@ static NSString * const kYALiveGroupTableViewCellIdentifier = @"YALiveGroupTable
     self.tableView.tableHeaderView = self.headerLabel;
     
     
-    
     self.tableView.mj_header = [YARefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshForNew)];
     self.tableView.mj_footer = [YARefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(refreshForMore)];
     
@@ -56,23 +62,16 @@ static NSString * const kYALiveGroupTableViewCellIdentifier = @"YALiveGroupTable
 }
 
 - (void)refreshForNew {
-    YALiveChannelRequest *request = [[YALiveChannelRequest alloc] initWithChannelType:LiveChannelTypeMain];
+    YALiveChannelRequest *request = [[YALiveChannelRequest alloc] initWithChannelType:self.channelType];
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         
-        // 新闻数组
-        NSArray *newsArray = [YALiveModel newsModelWithKeyValuesArray:request.responseObject];
-        [self.newsList removeAllObjects];
-        [self.newsList addObjectsFromArray:newsArray];
-        
-        // id数组
-        NSArray *idArray = [YALiveModel newsIDsWithresponseObject:request.responseObject];
-        [self.ids addObjectsFromArray:idArray];
-        
-        // 设置id指针
-        self.lastIndex = self.newsList.count;
-        
+        [self.dataSource afterRefreshForNew:request.responseObject];
         // tableView表头
         self.headerLabel.num = [request.responseObject[@"forecast"][@"num"] unsignedIntegerValue];
+        // 没有直播预告时置为空
+        if (self.headerLabel.num == 0) {
+            self.tableView.tableHeaderView = nil;
+        }
         
         [self.tableView reloadData];
         
@@ -94,34 +93,27 @@ static NSString * const kYALiveGroupTableViewCellIdentifier = @"YALiveGroupTable
 }
 
 - (void)refreshForMore {
-    NSMutableArray *moreNews = [NSMutableArray array];
-    NSUInteger pointIndex = self.lastIndex + 20;
-    for (; (self.lastIndex < pointIndex) && (self.lastIndex < self.ids.count); self.lastIndex ++) {
-        [moreNews addObject:self.ids[self.lastIndex]];
-    }
+
     
-    // 数据请求完毕
-    if (self.lastIndex >= self.ids.count) {
+    NSArray *moreNews =  [self.dataSource beforeRefreshForMore];
+    
+    // 发送请求
+    if (!moreNews) {
         [self.tableView.mj_footer endRefreshingWithNoMoreData];
         return;
     }
     
-    // 发送请求
-    YALiveNewsListRequest *request = [[YALiveNewsListRequest alloc] initWithChannelType:LiveChannelTypeMain ids:moreNews];
+    YALiveNewsListRequest *request = [[YALiveNewsListRequest alloc] initWithChannelType:self.channelType ids:moreNews];
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        ;
         
-        // 新闻数组
-        NSArray *newsArray = [YALiveModel newsModelWithOriginKeyValues:request.responseObject];
-        [self.newsList addObjectsFromArray:newsArray];
-
+        [self.dataSource afterRefreshForMore:request.responseObject];
         
         [self.tableView reloadData];
         
         if ([self.tableView.mj_footer isRefreshing]) {
             [self.tableView.mj_footer endRefreshing];
         }
-        
-        
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         NSLog(@"%@", request.error);
         if ([self.tableView.mj_footer isRefreshing]) {
@@ -133,37 +125,7 @@ static NSString * const kYALiveGroupTableViewCellIdentifier = @"YALiveGroupTable
 
 }
 
-#pragma mark - Table view data source
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.newsList.count;
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    YANewsModel *news = self.newsList[indexPath.row];
-    if (news.articletype == NewsArticleTypeGroupLive) {
-        YALiveGroupTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kYALiveGroupTableViewCellIdentifier forIndexPath:indexPath];
-        cell.news = news;
-        return cell;
-    } else {
-        YALiveSingleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kYALiveSingleTableViewCellIdentifier forIndexPath:indexPath];
-        cell.news = news;
-        return cell;
-    }
-
-}
-
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    YANewsModel *news = self.newsList[indexPath.row];
-    if (news.articletype == NewsArticleTypeGroupLive) {
-        return 145;
-    } else {
-        return 180;
-    }
-    
-}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -209,19 +171,6 @@ static NSString * const kYALiveGroupTableViewCellIdentifier = @"YALiveGroupTable
 */
 
  #pragma mark – Getters and Setters
-- (NSMutableArray *)ids {
-    if (!_ids) {
-        _ids = [NSMutableArray array];
-    }
-    return _ids;
-}
-
-- (NSMutableArray *)newsList {
-    if (!_newsList) {
-        _newsList = [NSMutableArray array];
-    }
-    return _newsList;
-}
 
 - (YAHeaderLabel *)headerLabel {
     if (!_headerLabel) {
@@ -229,5 +178,10 @@ static NSString * const kYALiveGroupTableViewCellIdentifier = @"YALiveGroupTable
     }
     return _headerLabel;
 }
-
+- (YALiveChannelDataSource *)dataSource {
+    if (!_dataSource) {
+        _dataSource = [[YALiveChannelDataSource alloc] init];
+    }
+    return _dataSource;
+}
 @end

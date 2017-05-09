@@ -7,6 +7,7 @@
 //
 
 #import "YALiveChannelRequest.h"
+#import "YANewsModel.h"
 
 @interface YALiveChannelRequest ()
 /** 请求频道类型 */
