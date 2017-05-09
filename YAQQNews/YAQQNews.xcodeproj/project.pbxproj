@@ -49,6 +49,8 @@
 		9A85F5971EBCC7ED009243B3 /* YAProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85F5961EBCC7ED009243B3 /* YAProfileViewController.m */; };
 		9A85F59A1EBCC8F9009243B3 /* YATabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85F5991EBCC8F9009243B3 /* YATabBarItem.m */; };
 		9A85F59D1EBCC939009243B3 /* UIImage+YARenderingMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85F59C1EBCC939009243B3 /* UIImage+YARenderingMode.m */; };
+		9ABD1CD11EC14AF70074FBFC /* amr_sound_loading@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9ABD1CCF1EC14AF70074FBFC /* amr_sound_loading@2x.gif */; };
+		9ABD1CD21EC14AF70074FBFC /* amr_sound_loading@3x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9ABD1CD01EC14AF70074FBFC /* amr_sound_loading@3x.gif */; };
 		9AE436511EBD60D200921FD0 /* CAPSPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE436501EBD60D200921FD0 /* CAPSPageMenu.m */; };
 		9AE4365D1EBD616600921FD0 /* YANewsPageMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE4365C1EBD616600921FD0 /* YANewsPageMenuViewController.m */; };
 		9AE436601EBD62AC00921FD0 /* YAChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE4365F1EBD62AC00921FD0 /* YAChannelViewController.m */; };
@@ -129,6 +131,8 @@
 		9A85F5991EBCC8F9009243B3 /* YATabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YATabBarItem.m; sourceTree = "<group>"; };
 		9A85F59B1EBCC939009243B3 /* UIImage+YARenderingMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+YARenderingMode.h"; sourceTree = "<group>"; };
 		9A85F59C1EBCC939009243B3 /* UIImage+YARenderingMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+YARenderingMode.m"; sourceTree = "<group>"; };
+		9ABD1CCF1EC14AF70074FBFC /* amr_sound_loading@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "amr_sound_loading@2x.gif"; sourceTree = "<group>"; };
+		9ABD1CD01EC14AF70074FBFC /* amr_sound_loading@3x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "amr_sound_loading@3x.gif"; sourceTree = "<group>"; };
 		9AE4364F1EBD60D200921FD0 /* CAPSPageMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAPSPageMenu.h; sourceTree = "<group>"; };
 		9AE436501EBD60D200921FD0 /* CAPSPageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAPSPageMenu.m; sourceTree = "<group>"; };
 		9AE4365B1EBD616600921FD0 /* YANewsPageMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANewsPageMenuViewController.h; sourceTree = "<group>"; };
@@ -524,20 +528,30 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		9ABD1CCD1EC14AF70074FBFC /* images */ = {
+			isa = PBXGroup;
+			children = (
+				9ABD1CCE1EC14AF70074FBFC /* loading */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		9ABD1CCE1EC14AF70074FBFC /* loading */ = {
+			isa = PBXGroup;
+			children = (
+				9ABD1CCF1EC14AF70074FBFC /* amr_sound_loading@2x.gif */,
+				9ABD1CD01EC14AF70074FBFC /* amr_sound_loading@3x.gif */,
+			);
+			path = loading;
+			sourceTree = "<group>";
+		};
 		9AE4364B1EBD60D200921FD0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				9AE4364C1EBD60D200921FD0 /* Image */,
+				9ABD1CCD1EC14AF70074FBFC /* images */,
 				9AE4364D1EBD60D200921FD0 /* Lib */,
 			);
 			path = Resource;
-			sourceTree = "<group>";
-		};
-		9AE4364C1EBD60D200921FD0 /* Image */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Image;
 			sourceTree = "<group>";
 		};
 		9AE4364D1EBD60D200921FD0 /* Lib */ = {
@@ -656,8 +670,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AE4367D1EBDB28B00921FD0 /* YACenterPhotoNewsCell.xib in Resources */,
+				9ABD1CD21EC14AF70074FBFC /* amr_sound_loading@3x.gif in Resources */,
 				9A85F5521EBCBF9E009243B3 /* LaunchScreen.storyboard in Resources */,
 				9A85F54F1EBCBF9E009243B3 /* Assets.xcassets in Resources */,
+				9ABD1CD11EC14AF70074FBFC /* amr_sound_loading@2x.gif in Resources */,
 				9A5C905A1EBEC15400209995 /* YALiveSingleTableViewCell.xib in Resources */,
 				9A85F54D1EBCBF9E009243B3 /* Main.storyboard in Resources */,
 				9AE4367F1EBDB28B00921FD0 /* YARightPhotoNewsCell.xib in Resources */,
