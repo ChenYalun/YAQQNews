@@ -39,6 +39,7 @@
 		9A746AC51EC2B6A0007FAAE8 /* YACommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A746AC31EC2B6A0007FAAE8 /* YACommentTableViewCell.xib */; };
 		9A746ACE1EC2BE53007FAAE8 /* YALiveCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A746ACD1EC2BE53007FAAE8 /* YALiveCommentViewController.m */; };
 		9A746AD11EC2BFDD007FAAE8 /* YALiveContentPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A746AD01EC2BFDD007FAAE8 /* YALiveContentPageViewController.m */; };
+		9A746AD41EC343E5007FAAE8 /* YALiveCommentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A746AD31EC343E5007FAAE8 /* YALiveCommentRequest.m */; };
 		9A8111601EC07DC10086635B /* YALiveNewsListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A81115F1EC07DC10086635B /* YALiveNewsListRequest.m */; };
 		9A8111651EC0A3860086635B /* YATableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8111641EC0A3860086635B /* YATableViewDataSource.m */; };
 		9A85F5441EBCBF9E009243B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85F5431EBCBF9E009243B3 /* main.m */; };
@@ -122,6 +123,8 @@
 		9A746ACD1EC2BE53007FAAE8 /* YALiveCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YALiveCommentViewController.m; path = YAQQNews/Classes/Live/YALiveCommentViewController.m; sourceTree = SOURCE_ROOT; };
 		9A746ACF1EC2BFDD007FAAE8 /* YALiveContentPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALiveContentPageViewController.h; sourceTree = "<group>"; };
 		9A746AD01EC2BFDD007FAAE8 /* YALiveContentPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALiveContentPageViewController.m; sourceTree = "<group>"; };
+		9A746AD21EC343E5007FAAE8 /* YALiveCommentRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALiveCommentRequest.h; sourceTree = "<group>"; };
+		9A746AD31EC343E5007FAAE8 /* YALiveCommentRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALiveCommentRequest.m; sourceTree = "<group>"; };
 		9A81115E1EC07DC10086635B /* YALiveNewsListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALiveNewsListRequest.h; sourceTree = "<group>"; };
 		9A81115F1EC07DC10086635B /* YALiveNewsListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALiveNewsListRequest.m; sourceTree = "<group>"; };
 		9A8111631EC0A3860086635B /* YATableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YATableViewDataSource.h; sourceTree = "<group>"; };
@@ -261,6 +264,8 @@
 				9ABD1CD41EC156570074FBFC /* YALiveChannelDataSource.m */,
 				9ABD1CDE1EC1A57B0074FBFC /* YALiveContentRequest.h */,
 				9ABD1CDF1EC1A57B0074FBFC /* YALiveContentRequest.m */,
+				9A746AD21EC343E5007FAAE8 /* YALiveCommentRequest.h */,
+				9A746AD31EC343E5007FAAE8 /* YALiveCommentRequest.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -811,6 +816,7 @@
 				9A85F5911EBCC7D3009243B3 /* YARecommendViewController.m in Sources */,
 				9AE4366C1EBD78B200921FD0 /* YAChannelRequest.m in Sources */,
 				9AE4367E1EBDB28B00921FD0 /* YARightPhotoNewsCell.m in Sources */,
+				9A746AD41EC343E5007FAAE8 /* YALiveCommentRequest.m in Sources */,
 				9A5C90661EBED1B700209995 /* YARefreshFooter.m in Sources */,
 				9A5C90721EBF13B800209995 /* YAHeaderLabel.m in Sources */,
 				9A5C90551EBEB48B00209995 /* YALiveChannelViewController.m in Sources */,

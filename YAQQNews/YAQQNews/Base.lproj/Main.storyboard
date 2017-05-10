@@ -28,10 +28,13 @@
                                 <color key="textColor" red="0.30824904276644749" green="0.59626002176618675" blue="0.84369051395939088" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="amr_sound_loading" translatesAutoresizingMaskIntoConstraints="NO" id="s7T-ah-Uzg">
-                                <rect key="frame" x="67" y="367" width="240" height="128"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdE-u4-PBj">
+                                <rect key="frame" x="182" y="391" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.85176078680203049" green="0.84341019085299096" blue="0.84341019085299096" alpha="0.30187821061643838" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -40,7 +43,4 @@
             </objects>
         </scene>
     </scenes>
-    <resources>
-        <image name="amr_sound_loading" width="16" height="16"/>
-    </resources>
 </document>

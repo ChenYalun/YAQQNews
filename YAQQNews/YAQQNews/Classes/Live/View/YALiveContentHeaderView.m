@@ -39,7 +39,7 @@
     self.titleLabel.text = headContent.title;
     
     // 图片
-    [self.videoImageView yy_setImageWithURL:[NSURL URLWithString:headContent.videoImage] placeholder:nil options:YYWebImageOptionProgressiveBlur completion:nil];
+    [self.videoImageView yy_setImageWithURL:[NSURL URLWithString:headContent.videoImage] placeholder:nil options:YYWebImageOptionProgressiveBlur | YYWebImageOptionSetImageWithFadeAnimation completion:nil];
     
     // 在线人数
     self.personNumLabel.text = headContent.onlineNumber;

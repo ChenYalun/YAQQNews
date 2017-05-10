@@ -49,7 +49,7 @@
         self.centerImageView.hidden = NO;
         self.photoImageViewHeightConstraint.constant = 150;
         self.photoImageViewTopConstraint.constant = 10;
-        [self.centerImageView yy_setImageWithURL:[NSURL URLWithString:news.thumbnails.firstObject] placeholder:nil options:YYWebImageOptionProgressiveBlur  completion:nil];
+        [self.centerImageView yy_setImageWithURL:[NSURL URLWithString:news.thumbnails.firstObject] placeholder:nil options:YYWebImageOptionProgressiveBlur | YYWebImageOptionSetImageWithFadeAnimation  completion:nil];
     }
     
     

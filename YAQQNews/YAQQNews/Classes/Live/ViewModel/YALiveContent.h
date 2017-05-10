@@ -22,5 +22,10 @@
 @property (nonatomic, assign) BOOL screenType;
 /** 评论数组 */
 @property (nonatomic, copy) NSArray <YALiveComment *> *comments;
+
+// 获取内容模型
 + (YALiveContent *)liveContentWithKeyValue:(id)responseObject;
+
+// 获取评论模型数组
++ (NSArray *)getCommentsFromObject:(NSArray *)array;
 @end

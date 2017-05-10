@@ -9,12 +9,20 @@
 #import "YALiveCommentViewController.h"
 #import "YACommentTableViewCell.h"
 #import "YALiveContentViewController.h"
+#import "YARefreshHeader.h"
+#import "YARefreshFooter.h"
+#import "YALiveCommentRequest.h"
+#import "YALiveComment.h"
+#import <UITableView+FDTemplateLayoutCell.h>
+#import "YATableViewDataSource.h"
 
 static NSString * const kYACommentTableViewCellIdentifier = @"YACommentTableViewCell";
 
 @interface YALiveCommentViewController ()
 /** 评论数组 */
-@property (nonatomic, strong) NSMutableArray *comments;
+@property (nonatomic, strong) NSMutableArray <YALiveComment *> *comments;
+/** 文章ID */
+@property (nonatomic, copy) NSString *articleID;
 @end
 
 @implementation YALiveCommentViewController
@@ -22,60 +30,115 @@ static NSString * const kYACommentTableViewCellIdentifier = @"YACommentTableView
     [super viewDidLoad];
 
     
+    // tableView 配置
+    self.tableView.separatorColor = kRGBAColor(217, 217, 217, 0.3);
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 49, 0);
-    self.tableView.estimatedRowHeight = 20;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
     [self.tableView registerNib:[UINib nibWithNibName:[YACommentTableViewCell className] bundle:nil] forCellReuseIdentifier:kYACommentTableViewCellIdentifier];
+
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveComments:) name:@"666" object:nil];
+    // 发送数据更新通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveComments:) name:@"NotificationComments" object:nil];
+    
+    self.tableView.mj_footer = [YARefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(refreshForMore)];
+    self.tableView.mj_header = [YARefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshForNew)];
+    
 }
 
+ #pragma mark – Events
+
+- (void)refreshForNew {
+    [self refreshForDataWithMore:NO];
+}
+
+- (void)refreshForMore {
+    [self refreshForDataWithMore:YES];
+}
+
+- (void)refreshForDataWithMore:(BOOL)isForMore {
+    NSString *lastID = [NSString string];
+    
+    if (isForMore) {
+        lastID = self.comments.lastObject.ID;
+    }
+    
+    YALiveCommentRequest *request = [[YALiveCommentRequest alloc] initWithArticleID:self.articleID lastID:lastID];
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+        NSArray *array = [YALiveComment liveCommentWithObject:request.responseObject];
+        
+        // 数据加载完毕
+        if (array.count <= 0) {
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        }
+        
+        if (!isForMore) {
+            // 取出置顶评论
+            NSMutableArray *topArray = [NSMutableArray array];
+            for (YALiveComment *comment in self.comments) {
+                if (comment.isStick) {
+                    [topArray addObject:comment];
+                }
+            }
+            [self.comments removeAllObjects];
+            [self.comments addObjectsFromArray:topArray];
+        }
+        
+        [self.comments addObjectsFromArray:array];
+        [self.tableView reloadData];
+        
+        if ([self.tableView.mj_footer isRefreshing] || [self.tableView.mj_header isRefreshing]) {
+            [self.tableView.mj_footer endRefreshing];
+            [self.tableView.mj_header endRefreshing];
+        }
+        
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+        if ([self.tableView.mj_footer isRefreshing] || [self.tableView.mj_header isRefreshing]) {
+            [self.tableView.mj_footer endRefreshing];
+            [self.tableView.mj_header endRefreshing];
+        }
+    }];
+
+}
 
 
 -(void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [tableView fd_heightForCellWithIdentifier:kYACommentTableViewCellIdentifier cacheByIndexPath:indexPath configuration:^(YACommentTableViewCell *cell) {
+        cell.comment = self.comments[indexPath.row];
+    }];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
     return self.comments.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     YACommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kYACommentTableViewCellIdentifier forIndexPath:indexPath];
-    
     cell.comment = self.comments[indexPath.row];
-    
     return cell;
 }
 
+
 - (void)receiveComments:(NSNotification *)notification {
     [self setComments:notification.userInfo[@"comments"]];
+    // 传入articleID
+    self.articleID =notification.userInfo[@"articleID"];
 }
 
 - (void)setComments:(NSMutableArray *)comments {
-    _comments = comments;
+    _comments = [NSMutableArray array];
+    [_comments addObjectsFromArray:comments];
     
     [self.tableView reloadData];
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
 
 /*
 // Override to support conditional editing of the table view.

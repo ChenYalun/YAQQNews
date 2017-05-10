@@ -66,9 +66,9 @@
         
         self.liveContentHeaderView.headContent = content;
         
+        // 发送通知更新comments
         if (content.comments) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"666" object:nil userInfo:@{@"comments": content.comments}];
-        NSLog(@"%@", content);
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationComments" object:nil userInfo:@{@"comments": content.comments, @"articleID": self.news.ID}];
         }
         
         
@@ -76,9 +76,10 @@
         NSLog(@"%@", request.error);
     }];
     
+
     
-    
-    
+    // 讨论
+//    http://r.inews.qq.com/getQQNewsRoseComments?article_id=ZLV2017050701707000&reply_id=&comment_id=&rose_id
 
      
      

@@ -1,4 +1,4 @@
-//
+
 //  YALiveNewsListRequest.h
 //  YAQQNews
 //

@@ -31,12 +31,14 @@ static CGFloat const kMaxPicHeight = 270.0;
         
         // top数组
         NSArray *aArray = [YALiveContent getCommentsFromObject:responseObject[@"content"][@"live_room"][@"top"]];
+        for (YALiveComment *comment in aArray) {
+            comment.isStick = YES;
+        }
         // new数组
         NSArray *bArray = [YALiveContent getCommentsFromObject:responseObject[@"content"][@"live_room"][@"new"]];
         // 评论模型
         content.comments = [aArray arrayByAddingObjectsFromArray:bArray];
     
-        
        
     } else { // 关于类型
         content.title = responseObject[@"desc"];
@@ -48,6 +50,7 @@ static CGFloat const kMaxPicHeight = 270.0;
     
     return content;
 }
+
 
 // 获取评论模型数组
 + (NSArray *)getCommentsFromObject:(NSArray *)array {
@@ -74,6 +77,10 @@ static CGFloat const kMaxPicHeight = 270.0;
         }
         
         comment.time = timeString;
+        
+        // 评论ID("rose_40039017_6375702;pic;pic;")需要裁剪
+        NSString *commentID = dict[@"rose_data"][@"id"];
+        comment.ID = [commentID componentsSeparatedByString:@";"].firstObject;
         
         
         id object = dict[@"rose_data"][@"attachment"];
@@ -102,6 +109,8 @@ static CGFloat const kMaxPicHeight = 270.0;
             comment.url = object[@"url"];
             comment.replyNick = object[@"nick"];
             comment.replyContent = object[@"reply_content"];
+            comment.playURL = object[@"playurl"];
+                                     
             CGFloat height = [object[@"height"] floatValue];
             CGFloat width = [object[@"width"] floatValue];
             if (width < kScreenWidth - 50) {

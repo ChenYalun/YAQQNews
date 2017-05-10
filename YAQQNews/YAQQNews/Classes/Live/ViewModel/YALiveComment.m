@@ -7,7 +7,11 @@
 //
 
 #import "YALiveComment.h"
+#import "YALiveContent.h"
 
 @implementation YALiveComment
-
++ (NSArray <YALiveComment *> *)liveCommentWithObject:(id)object {
+    NSArray *array = [YALiveContent getCommentsFromObject:object[@"content"][@"live_room"][@"new"]];
+    return array;
+}
 @end

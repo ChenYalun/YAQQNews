@@ -47,12 +47,12 @@ typedef NS_ENUM(NSUInteger, CAPSPageMenuScrollDirection) {
 
 @interface CAPSPageMenu ()
 
-@property (nonatomic) NSMutableArray *mutableMenuItems;
+
 @property (nonatomic) NSMutableArray *mutableMenuItemWidths;
 @property (nonatomic) CGFloat totalMenuItemWidthIfDifferentWidths;
 @property (nonatomic) CGFloat startingMenuMargin;
 
-@property (nonatomic) UIView *selectionIndicatorView;
+
 
 @property (nonatomic) BOOL currentOrientationIsPortrait;
 @property (nonatomic) NSInteger pageIndexForOrientationChange;
@@ -441,7 +441,7 @@ NSString * const CAPSPageMenuOptionSelectedMenuItemFont                 = @"sele
         }
     }
     
- 
+
     
     _selectionIndicatorView = [[UIView alloc] initWithFrame:selectionIndicatorFrame];
     _selectionIndicatorView.backgroundColor = _selectionIndicatorColor;

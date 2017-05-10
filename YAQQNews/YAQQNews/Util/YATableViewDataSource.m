@@ -22,7 +22,7 @@
 - (instancetype)initWithItems:(NSMutableArray *)items cellIdentifier:(NSString *)cellIdentifier configureCellBlock:(configureCell)block {
     if (self = [super init]) {
         _items = items;
-        _block = block;
+        _block = [block copy];
         _cellIdentifier = cellIdentifier;
     }
     return self;
@@ -38,7 +38,7 @@
     return _items.count;
 }
 
-- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     id cell = [tableView dequeueReusableCellWithIdentifier:_cellIdentifier forIndexPath:indexPath];
     id item = [self itemAtIndexPath:indexPath];
     _block(cell, item);

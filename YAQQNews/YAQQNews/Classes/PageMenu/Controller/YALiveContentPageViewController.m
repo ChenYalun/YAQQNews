@@ -15,6 +15,24 @@
 
 @implementation YALiveContentPageViewController
 
+//- (void)configureUserInterface {
+//    [super configureUserInterface];
+//    UIView *view =  self.menuItems.firstObject;
+//    CGPoint center = view.center;
+//    
+//    CGFloat width = 35;
+//    self.selectionIndicatorView.frame = CGRectMake(center.x - width * 0.5, view.height - 2 , width , 2);
+//}
+//
+//- (void)moveSelectionIndicator:(NSInteger)pageIndex {
+//    [super moveSelectionIndicator:pageIndex];
+//    UIView *view =  self.menuItems.firstObject;
+//    CGPoint center = view.center;
+//    
+//    CGFloat width = 35;
+//    self.selectionIndicatorView.frame = CGRectMake(center.x - width * 0.5, view.height - 2 , width , 2);
+//}
+
 - (instancetype)init {
     if (self = [super init]) {
         
@@ -39,21 +57,22 @@
                                      CAPSPageMenuOptionScrollMenuBackgroundColor:[UIColor whiteColor],// 菜单背景
                                      CAPSPageMenuOptionUnselectedMenuItemLabelColor:[UIColor darkGrayColor],//未选中字体颜色
                                      CAPSPageMenuOptionSelectedMenuItemLabelColor:[UIColor blackColor],//选中文字颜色
-                                     CAPSPageMenuOptionMenuItemFont: [UIFont systemFontOfSize:16],// 普通字体
+                                     CAPSPageMenuOptionMenuItemFont: [UIFont systemFontOfSize:14],// 普通字体
                                      CAPSPageMenuOptionScrollAnimationDurationOnMenuItemTap:@200, // 动画持续200毫秒
                                      //CAPSPageMenuOptionMenuMargin: @10,// item间距10
-                                     CAPSPageMenuOptionMenuItemWidthBasedOnTitleTextWidth: @YES,// 宽度48
-                                     CAPSPageMenuOptionMenuHeight: @44, // item高度44
+//                                     CAPSPageMenuOptionMenuItemWidthBasedOnTitleTextWidth: @YES,// 宽度
+                                     CAPSPageMenuOptionMenuHeight: @30, // item高度35
                                      CAPSPageMenuOptionSelectionIndicatorColor: kGlobalColor, // 选中指示器颜色
-                                     CAPSPageMenuOptionSelectedMenuItemFont: [UIFont systemFontOfSize:17], // 选中字体
+                                     CAPSPageMenuOptionSelectionIndicatorHeight: @2, // 指示器高度
+                                     CAPSPageMenuOptionCenterMenuItems: @YES, // 居中显示
+                                     CAPSPageMenuOptionMenuItemSeparatorWidth: @10, // 指示器宽度
+                                     CAPSPageMenuOptionSelectedMenuItemFont: [UIFont systemFontOfSize:15], // 选中字体
                                      };
         
         
         
-        
-        
         // 注意设置pageMenu的高度!
-        self = [[YALiveContentPageViewController alloc] initWithViewControllers:controllerArray frame:CGRectMake(0, 20, kScreenWidth, kScreenHeight) options:parameters];
+        self = [[YALiveContentPageViewController alloc] initWithViewControllers:controllerArray frame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 200) options:parameters];
         
         
     }

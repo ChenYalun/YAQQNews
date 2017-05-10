@@ -105,7 +105,14 @@ extern NSString * const CAPSPageMenuOptionHideTopMenuBar;
 
 // 此代码新增
 extern NSString * const CAPSPageMenuOptionSelectedMenuItemFont;
+@property (nonatomic, assign) BOOL isLiveContent;
 
 
+// 暴露
+@property (nonatomic) UIView *selectionIndicatorView;
+@property (nonatomic) NSMutableArray *mutableMenuItems;
+
+- (void)configureUserInterface;
+- (void)moveSelectionIndicator:(NSInteger)pageIndex;
 
 @end

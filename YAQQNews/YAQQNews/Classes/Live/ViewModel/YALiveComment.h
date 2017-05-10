@@ -28,5 +28,13 @@
 @property (nonatomic, copy) NSString *replyNick;
 /** 被回复者评论内容 */
 @property (nonatomic, copy) NSString *replyContent;
+/** 评论id */
+@property (nonatomic, copy) NSString *ID;
+/** 视频播放url */
+@property (nonatomic, copy) NSString *playURL;
+/** 是否置顶 */
+@property (nonatomic, assign) BOOL isStick;
+
++ (NSArray <YALiveComment *> *)liveCommentWithObject:(id)object;
 @end
 

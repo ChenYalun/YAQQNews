@@ -104,7 +104,7 @@ static const CGFloat kTitleTopConstraint = 10;
     }
     
     // 图片
-    [self.rightImageView yy_setImageWithURL:[NSURL URLWithString:news.thumbnails.firstObject] placeholder:nil options:YYWebImageOptionProgressiveBlur completion:nil];
+    [self.rightImageView yy_setImageWithURL:[NSURL URLWithString:news.thumbnails.firstObject] placeholder:nil options:YYWebImageOptionProgressiveBlur | YYWebImageOptionSetImageWithFadeAnimation completion:nil];
     
     // 单行标题调整
     UIFont *font = [UIFont systemFontOfSize:15];

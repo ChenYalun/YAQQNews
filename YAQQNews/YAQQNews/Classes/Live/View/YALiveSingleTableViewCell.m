@@ -31,7 +31,7 @@
 - (void)setNews:(YANewsModel *)news {
     _news = news;
     
-     [self.newsImageView yy_setImageWithURL:[NSURL URLWithString:news.thumbnails.firstObject] placeholder:nil options:YYWebImageOptionProgressiveBlur  completion:nil];
+     [self.newsImageView yy_setImageWithURL:[NSURL URLWithString:news.thumbnails.firstObject] placeholder:nil options:YYWebImageOptionProgressiveBlur | YYWebImageOptionSetImageWithFadeAnimation  completion:nil];
     
     self.sourceLabel.text = news.source;
     self.timeLabel.text = news.time;

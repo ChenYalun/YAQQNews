@@ -29,6 +29,6 @@
     
     self.descriptionLabel.text = news.specialDataNumText;
     
-    [self.newsImageView yy_setImageWithURL:[NSURL URLWithString:news.thumbnails.firstObject] placeholder:nil options:YYWebImageOptionProgressiveBlur  completion:nil];
+    [self.newsImageView yy_setImageWithURL:[NSURL URLWithString:news.thumbnails.firstObject] placeholder:nil options:YYWebImageOptionProgressiveBlur | YYWebImageOptionSetImageWithFadeAnimation completion:nil];
 }
 @end

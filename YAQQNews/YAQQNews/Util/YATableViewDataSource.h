@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface YATableViewDataSource : NSObject
+@interface YATableViewDataSource : NSObject <UITableViewDataSource>
 // 回调block
-typedef void(^configureCell) (UITableViewCell *, id model);
+typedef void(^configureCell) (UITableViewCell *cell, id model);
 
 // 便捷构造方法
 - (instancetype)initWithItems:(NSMutableArray *)items cellIdentifier:(NSString *)cellIdentifier configureCellBlock:(configureCell)block;
