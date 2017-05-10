@@ -11,7 +11,8 @@
 #import "YALiveGroupTableViewCell.h"
 #import "YALiveModel.h"
 #import "YANewsModel.h"
-
+#import "YALiveContentViewController.h"
+#import "YALiveChannelViewController.h"
 
 static NSString * const kYALiveSingleTableViewCellIdentifier = @"YALiveSingleTableViewCell";
 static NSString * const kYALiveGroupTableViewCellIdentifier = @"YALiveGroupTableViewCell";
@@ -83,6 +84,8 @@ static NSString * const kYALiveGroupTableViewCellIdentifier = @"YALiveGroupTable
 }
 
 
+#pragma mark - UITableViewDelegate
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     YANewsModel *news = self.newsList[indexPath.row];
     if (news.articletype == NewsArticleTypeGroupLive) {
@@ -91,6 +94,13 @@ static NSString * const kYALiveGroupTableViewCellIdentifier = @"YALiveGroupTable
         return 180;
     }
     
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    YALiveContentViewController *contentViewController = [[YALiveContentViewController alloc] initWithNews:self.newsList[indexPath.row]];
+    
+    [tableView.viewController.navigationController pushViewController:contentViewController animated:YES];
 }
 
  #pragma mark – Getters and Setters

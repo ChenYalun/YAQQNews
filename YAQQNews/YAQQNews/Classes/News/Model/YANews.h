@@ -27,7 +27,8 @@ typedef NS_ENUM(NSUInteger, NewsArticleType) {
     NewsArticleTypePicture = 1, // 图片浏览
     NewsArticleTypeTopic = 100, // 专题
     NewsArticleTypeVideo = 101, // 视频
-    NewsArticleTypeSingleLive = 102, // 单个直播
+    NewsArticleTypeSingleLive = 102, // 单个直播,主播厅 万人
+    NewsArticleTypeAboutLive = 110, // 单个直播,关于 人
     NewsArticleTypeGroupLive = 113, // 直播组
     NewsArticleTypeImportant = 524 // 要闻必读
     

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="YPO-x9-esq" customClass="YALiveContentHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="299" height="195"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MgB-Oi-MQa">
+                    <rect key="frame" x="0.0" y="0.0" width="299" height="195"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Neh-iK-IvZ" userLabel="返回">
+                    <rect key="frame" x="10" y="8" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="7cU-Gf-Vbz"/>
+                        <constraint firstAttribute="height" constant="30" id="HEd-wP-k5L"/>
+                    </constraints>
+                    <state key="normal" image="navbar_icon_white_back_normal"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这里是标题这里是标题这里是标题这里是标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P50-pW-ewn" userLabel="标题">
+                    <rect key="frame" x="40" y="13" width="229" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQz-QB-vlC" userLabel="菜单">
+                    <rect key="frame" x="269" y="8" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="3IY-Na-Cju"/>
+                        <constraint firstAttribute="width" constant="30" id="Uum-gC-BYk"/>
+                    </constraints>
+                    <state key="normal" image="navbar_icon_white_more_normal"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kke-PU-cJn">
+                    <rect key="frame" x="124.5" y="85" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Bif-Wm-5EJ"/>
+                        <constraint firstAttribute="width" constant="50" id="cop-pt-9yC"/>
+                    </constraints>
+                    <state key="normal" image="timeline_video_icon"/>
+                    <connections>
+                        <action selector="startWatch:" destination="YPO-x9-esq" eventType="touchUpInside" id="gIh-bK-YGY"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="live_video_cell_icon_vcr" translatesAutoresizingMaskIntoConstraints="NO" id="fU4-xE-mZI" userLabel="直播">
+                    <rect key="frame" x="40" y="39" width="45" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="45" id="Cet-4s-5VW"/>
+                        <constraint firstAttribute="height" constant="15" id="FsX-ew-lVz"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="livepage_icon_num" translatesAutoresizingMaskIntoConstraints="NO" id="94S-fa-97g" userLabel="人数icon">
+                    <rect key="frame" x="90" y="41" width="10" height="10"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="HdM-dJ-gyD"/>
+                        <constraint firstAttribute="width" constant="10" id="agM-un-BND"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="livepage_icon_zan" translatesAutoresizingMaskIntoConstraints="NO" id="kye-bA-Ewh" userLabel="热度icon">
+                    <rect key="frame" x="139" y="41" width="10" height="10"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5465" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0K3-nB-9Sn" userLabel="人数">
+                    <rect key="frame" x="103" y="40" width="26" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29222" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8u-5E-jMf" userLabel="热度">
+                    <rect key="frame" x="152" y="40" width="31.5" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="P50-pW-ewn" firstAttribute="leading" secondItem="Neh-iK-IvZ" secondAttribute="trailing" id="5Ul-30-EPC"/>
+                <constraint firstItem="kye-bA-Ewh" firstAttribute="height" secondItem="94S-fa-97g" secondAttribute="height" id="BmZ-QW-sp0"/>
+                <constraint firstItem="MgB-Oi-MQa" firstAttribute="height" secondItem="YPO-x9-esq" secondAttribute="height" id="Dtn-r0-u2m"/>
+                <constraint firstItem="P50-pW-ewn" firstAttribute="centerY" secondItem="Neh-iK-IvZ" secondAttribute="centerY" id="EMN-lA-vip"/>
+                <constraint firstItem="Kke-PU-cJn" firstAttribute="centerX" secondItem="YPO-x9-esq" secondAttribute="centerX" id="Gsl-SR-FLj"/>
+                <constraint firstItem="MgB-Oi-MQa" firstAttribute="centerY" secondItem="YPO-x9-esq" secondAttribute="centerY" id="HLK-h0-Rwb"/>
+                <constraint firstItem="f8u-5E-jMf" firstAttribute="leading" secondItem="kye-bA-Ewh" secondAttribute="trailing" constant="3" id="Hf9-v1-AXZ"/>
+                <constraint firstItem="94S-fa-97g" firstAttribute="leading" secondItem="P50-pW-ewn" secondAttribute="leading" constant="50" id="Icw-aB-rm8"/>
+                <constraint firstItem="Neh-iK-IvZ" firstAttribute="leading" secondItem="YPO-x9-esq" secondAttribute="leading" constant="10" id="OQ8-HQ-ymW"/>
+                <constraint firstItem="f8u-5E-jMf" firstAttribute="centerY" secondItem="kye-bA-Ewh" secondAttribute="centerY" id="Q6y-ch-wAx"/>
+                <constraint firstItem="fU4-xE-mZI" firstAttribute="top" secondItem="P50-pW-ewn" secondAttribute="bottom" constant="5" id="Ume-5a-z0L"/>
+                <constraint firstItem="94S-fa-97g" firstAttribute="centerY" secondItem="fU4-xE-mZI" secondAttribute="centerY" id="W1r-VK-mca"/>
+                <constraint firstAttribute="trailing" secondItem="FQz-QB-vlC" secondAttribute="trailing" id="a2p-BO-M1Q"/>
+                <constraint firstItem="MgB-Oi-MQa" firstAttribute="centerX" secondItem="YPO-x9-esq" secondAttribute="centerX" id="bAM-g7-P9o"/>
+                <constraint firstAttribute="bottom" secondItem="Kke-PU-cJn" secondAttribute="bottom" constant="60" id="bDr-1k-CA5"/>
+                <constraint firstItem="MgB-Oi-MQa" firstAttribute="width" secondItem="YPO-x9-esq" secondAttribute="width" id="hUM-MJ-RMt"/>
+                <constraint firstItem="0K3-nB-9Sn" firstAttribute="leading" secondItem="94S-fa-97g" secondAttribute="trailing" constant="3" id="jJe-Nf-NHT"/>
+                <constraint firstItem="kye-bA-Ewh" firstAttribute="width" secondItem="94S-fa-97g" secondAttribute="width" id="llB-OY-dWq"/>
+                <constraint firstItem="FQz-QB-vlC" firstAttribute="centerY" secondItem="Neh-iK-IvZ" secondAttribute="centerY" id="ozn-ch-SbA"/>
+                <constraint firstItem="fU4-xE-mZI" firstAttribute="leading" secondItem="P50-pW-ewn" secondAttribute="leading" id="paw-Za-FZC"/>
+                <constraint firstItem="Neh-iK-IvZ" firstAttribute="top" secondItem="YPO-x9-esq" secondAttribute="top" constant="8" id="pyv-VB-V8J"/>
+                <constraint firstItem="FQz-QB-vlC" firstAttribute="leading" secondItem="P50-pW-ewn" secondAttribute="trailing" id="rAv-Mg-qX3"/>
+                <constraint firstItem="kye-bA-Ewh" firstAttribute="centerY" secondItem="94S-fa-97g" secondAttribute="centerY" id="sQw-ex-6Bo"/>
+                <constraint firstItem="0K3-nB-9Sn" firstAttribute="centerY" secondItem="94S-fa-97g" secondAttribute="centerY" id="u49-1u-t96"/>
+                <constraint firstItem="kye-bA-Ewh" firstAttribute="leading" secondItem="0K3-nB-9Sn" secondAttribute="trailing" constant="10" id="ziE-7v-0de"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="liveImageView" destination="fU4-xE-mZI" id="hLb-dr-utw"/>
+                <outlet property="personNumLabel" destination="0K3-nB-9Sn" id="sCz-c3-hxd"/>
+                <outlet property="playButton" destination="Kke-PU-cJn" id="K6v-Ua-w7O"/>
+                <outlet property="titleLabel" destination="P50-pW-ewn" id="lTu-rp-VI1"/>
+                <outlet property="videoImageView" destination="MgB-Oi-MQa" id="BIq-78-tKE"/>
+                <outlet property="zanNumLabel" destination="f8u-5E-jMf" id="7Ze-Sr-FVL"/>
+            </connections>
+            <point key="canvasLocation" x="425.5" y="52.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="live_video_cell_icon_vcr" width="88" height="32"/>
+        <image name="livepage_icon_num" width="20" height="18"/>
+        <image name="livepage_icon_zan" width="20" height="20"/>
+        <image name="navbar_icon_white_back_normal" width="61" height="61"/>
+        <image name="navbar_icon_white_more_normal" width="60" height="60"/>
+        <image name="timeline_video_icon" width="100" height="100"/>
+    </resources>
+</document>

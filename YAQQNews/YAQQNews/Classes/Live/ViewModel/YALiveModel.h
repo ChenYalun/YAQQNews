@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 @class YANewsModel;
 
+// 直播页面流cell模型
 @interface YALiveModel : NSObject
 
 /** id数组 */

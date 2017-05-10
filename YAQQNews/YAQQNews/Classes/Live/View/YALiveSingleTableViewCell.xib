@@ -31,6 +31,9 @@
                             <constraint firstAttribute="height" constant="140" id="zda-2G-BmA"/>
                         </constraints>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newsblack" translatesAutoresizingMaskIntoConstraints="NO" id="klP-Xs-dQs" userLabel="遮罩">
+                        <rect key="frame" x="0.0" y="5" width="320" height="140"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我们" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvt-7S-yaf">
                         <rect key="frame" x="10" y="152" width="20.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
@@ -88,7 +91,11 @@
                     <constraint firstItem="Gxd-IY-kUe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="IcT-1K-s6A"/>
                     <constraint firstAttribute="bottom" secondItem="Gxd-IY-kUe" secondAttribute="bottom" constant="45" id="Krd-Wy-1P0"/>
                     <constraint firstItem="iQ6-Bo-5yq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Lt5-22-ifh"/>
+                    <constraint firstItem="klP-Xs-dQs" firstAttribute="top" secondItem="Gtf-uV-t9V" secondAttribute="top" id="NgR-Rq-aqp"/>
                     <constraint firstAttribute="bottom" secondItem="gjX-lY-0bJ" secondAttribute="bottom" constant="6.5" id="Oli-fz-qeT"/>
+                    <constraint firstItem="klP-Xs-dQs" firstAttribute="width" secondItem="Gtf-uV-t9V" secondAttribute="width" id="PEQ-G2-5Vj"/>
+                    <constraint firstItem="klP-Xs-dQs" firstAttribute="trailing" secondItem="Gtf-uV-t9V" secondAttribute="trailing" id="PJ2-gg-cgI"/>
+                    <constraint firstItem="klP-Xs-dQs" firstAttribute="leading" secondItem="Gtf-uV-t9V" secondAttribute="leading" id="PsK-SO-lgF"/>
                     <constraint firstItem="Gtf-uV-t9V" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Rge-TW-taz"/>
                     <constraint firstItem="bvt-7S-yaf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Wil-Ah-yn9"/>
                     <constraint firstAttribute="bottom" secondItem="bvt-7S-yaf" secondAttribute="bottom" constant="6.5" id="aWO-5A-lhl"/>
@@ -99,6 +106,7 @@
                     <constraint firstItem="UfF-bK-gGL" firstAttribute="centerY" secondItem="9cO-ha-FzP" secondAttribute="centerY" id="eNi-PF-cDr"/>
                     <constraint firstItem="HbA-UD-8Fs" firstAttribute="width" secondItem="9cO-ha-FzP" secondAttribute="width" id="iCT-YT-Z2A"/>
                     <constraint firstItem="lPv-14-HMV" firstAttribute="leading" secondItem="HbA-UD-8Fs" secondAttribute="trailing" constant="3" id="iRY-Bs-RsD"/>
+                    <constraint firstItem="klP-Xs-dQs" firstAttribute="height" secondItem="Gtf-uV-t9V" secondAttribute="height" id="jsz-sU-oEz"/>
                     <constraint firstItem="HbA-UD-8Fs" firstAttribute="leading" secondItem="UfF-bK-gGL" secondAttribute="trailing" constant="10" id="k69-eR-Is0"/>
                     <constraint firstItem="HbA-UD-8Fs" firstAttribute="centerY" secondItem="9cO-ha-FzP" secondAttribute="centerY" id="pYU-Uw-bQb"/>
                     <constraint firstAttribute="trailing" secondItem="iQ6-Bo-5yq" secondAttribute="trailing" id="q3y-Ty-VmL"/>
@@ -128,5 +136,6 @@
         <image name="live_video_cell_icon_vcr" width="88" height="32"/>
         <image name="livepage_icon_num" width="20" height="18"/>
         <image name="livepage_icon_zan" width="20" height="20"/>
+        <image name="newsblack" width="320" height="79"/>
     </resources>
 </document>

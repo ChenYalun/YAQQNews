@@ -31,6 +31,9 @@
                             <constraint firstAttribute="height" constant="140" id="yiR-bD-AmN"/>
                         </constraints>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newsblack" translatesAutoresizingMaskIntoConstraints="NO" id="xLn-kt-BzH" userLabel="遮罩">
+                        <rect key="frame" x="0.0" y="5" width="320" height="140"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题标题标题标题标题标题标题标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRE-c9-Y1Q">
                         <rect key="frame" x="21.5" y="50" width="277.5" height="21"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -54,15 +57,20 @@
                     <constraint firstItem="GWz-Af-xH8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="0H6-C9-erX"/>
                     <constraint firstItem="6h9-eq-dyW" firstAttribute="top" secondItem="YRE-c9-Y1Q" secondAttribute="bottom" constant="5" id="1oR-7I-rKQ"/>
                     <constraint firstAttribute="bottom" secondItem="GWz-Af-xH8" secondAttribute="bottom" constant="10" id="2z4-WR-Tcg"/>
+                    <constraint firstItem="xLn-kt-BzH" firstAttribute="height" secondItem="Dkw-PI-65H" secondAttribute="height" id="8dX-iV-CGq"/>
                     <constraint firstAttribute="trailing" secondItem="rrX-ZV-X9E" secondAttribute="trailing" id="Cuc-gP-ZuL"/>
                     <constraint firstItem="YRE-c9-Y1Q" firstAttribute="top" secondItem="rrX-ZV-X9E" secondAttribute="bottom" constant="45" id="KkO-35-yeU"/>
                     <constraint firstItem="6h9-eq-dyW" firstAttribute="centerX" secondItem="YRE-c9-Y1Q" secondAttribute="centerX" id="M3b-pk-nfr"/>
                     <constraint firstItem="Dkw-PI-65H" firstAttribute="top" secondItem="rrX-ZV-X9E" secondAttribute="bottom" id="Nfh-LK-Dzx"/>
                     <constraint firstItem="Dkw-PI-65H" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="QH0-ee-BuD"/>
+                    <constraint firstItem="xLn-kt-BzH" firstAttribute="top" secondItem="Dkw-PI-65H" secondAttribute="top" id="W3T-2S-x3t"/>
                     <constraint firstItem="YRE-c9-Y1Q" firstAttribute="centerX" secondItem="Dkw-PI-65H" secondAttribute="centerX" id="WUL-V5-Nl9"/>
                     <constraint firstItem="rrX-ZV-X9E" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="WnI-Xn-RAl"/>
                     <constraint firstItem="rrX-ZV-X9E" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Wz9-BE-5LZ"/>
+                    <constraint firstItem="xLn-kt-BzH" firstAttribute="leading" secondItem="Dkw-PI-65H" secondAttribute="leading" id="fGd-3B-5ge"/>
                     <constraint firstAttribute="trailing" secondItem="Dkw-PI-65H" secondAttribute="trailing" id="jW0-lR-cEj"/>
+                    <constraint firstItem="xLn-kt-BzH" firstAttribute="width" secondItem="Dkw-PI-65H" secondAttribute="width" id="ryQ-9h-wBr"/>
+                    <constraint firstItem="xLn-kt-BzH" firstAttribute="trailing" secondItem="Dkw-PI-65H" secondAttribute="trailing" id="yRc-cQ-CNx"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -73,4 +81,7 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="newsblack" width="320" height="79"/>
+    </resources>
 </document>

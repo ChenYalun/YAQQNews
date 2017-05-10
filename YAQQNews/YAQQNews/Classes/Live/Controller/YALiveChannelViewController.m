@@ -10,14 +10,10 @@
 #import "YARefreshHeader.h"
 #import "YARefreshFooter.h"
 #import "YALiveChannelRequest.h"
-#import "YALiveModel.h"
-#import "YANewsModel.h"
 #import "YAHeaderLabel.h"
 #import "YALiveNewsListRequest.h"
-#import "YALiveSingleTableViewCell.h"
-#import "YALiveGroupTableViewCell.h"
-
 #import "YALiveChannelDataSource.h"
+
 
 static NSString * const kYALiveSingleTableViewCellIdentifier = @"YALiveSingleTableViewCell";
 static NSString * const kYALiveGroupTableViewCellIdentifier = @"YALiveGroupTableViewCell";
@@ -46,8 +42,8 @@ static NSString * const kYALiveGroupTableViewCellIdentifier = @"YALiveGroupTable
     self.tableView.dataSource = self.dataSource;
     self.tableView.delegate = self.dataSource;
     
-    [self.tableView registerNib:[UINib nibWithNibName:[YALiveSingleTableViewCell className] bundle:nil] forCellReuseIdentifier:kYALiveSingleTableViewCellIdentifier];
-    [self.tableView registerNib:[UINib nibWithNibName:[YALiveGroupTableViewCell className] bundle:nil] forCellReuseIdentifier:kYALiveGroupTableViewCellIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"YALiveSingleTableViewCell" bundle:nil] forCellReuseIdentifier:kYALiveSingleTableViewCellIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"YALiveGroupTableViewCell" bundle:nil] forCellReuseIdentifier:kYALiveGroupTableViewCellIdentifier];
     
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 70, 0);
     self.tableView.separatorColor = [UIColor clearColor];
@@ -124,7 +120,6 @@ static NSString * const kYALiveGroupTableViewCellIdentifier = @"YALiveGroupTable
     
 
 }
-
 
 /*
 // Override to support conditional editing of the table view.

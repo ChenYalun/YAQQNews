@@ -10,4 +10,6 @@
 
 @interface UIImage (YARenderingMode)
 - (instancetype)ya_originImage;
++ (UIImage *)imageToRoundImageWithImage:(UIImage *)image;
++ (UIImage*)image:(UIImage *)image scaleToSize:(CGSize)size;
 @end
