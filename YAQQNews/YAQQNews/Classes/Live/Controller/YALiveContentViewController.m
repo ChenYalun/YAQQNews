@@ -32,14 +32,12 @@
     [super viewDidLoad];
 
    
-    // 隐藏tabbar
-    self.tabBarController.tabBar.hidden = YES;
     
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.liveContentHeaderView.frame = CGRectMake(0, 20, self.view.width, 180);
     
-    YALiveContentPageViewController *pageMenuViewController = [[YALiveContentPageViewController alloc] initWithUserInfo:@{@"articleID": self.news.ID, @"aTitle": @"主播厅", @"bTitle": @"100万人"}];
+    YALiveContentPageViewController *pageMenuViewController = [[YALiveContentPageViewController alloc] initWithUserInfo:@{@"articleID": self.news.ID,@"type":[NSNumber numberWithInteger:self.news.articletype], @"liveTitle": @"主播厅", @"peopleCount": @"100万人", @"aboutTitle": @"关于"}];
 
     
     [self addChildViewController:pageMenuViewController];
@@ -66,6 +64,7 @@
     
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         YALiveContent *content = [YALiveContent liveContentWithKeyValue:request.responseObject];
+        content.title = self.news.title;
         
         self.liveContentHeaderView.headContent = content;
         
@@ -74,17 +73,18 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationComments" object:nil userInfo:@{@"comments": content.comments}];
         }
         
+        // 发送通知更新相关新闻
+        if (content.relateNews) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationComments" object:nil userInfo:@{@"relateNews": content.relateNews, @"desc": content.desc}];
+        }
+        
         
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         NSLog(@"%@", request.error);
     }];
     
 
-    
-    // 讨论
-//    http://r.inews.qq.com/getQQNewsRoseComments?article_id=ZLV2017050701707000&reply_id=&comment_id=&rose_id
 
-     
      
 }
 

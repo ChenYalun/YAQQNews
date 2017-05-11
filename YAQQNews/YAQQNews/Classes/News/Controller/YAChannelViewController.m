@@ -191,7 +191,7 @@ static NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell
         return [tableView fd_heightForCellWithIdentifier:kYARightPhotoNewsCellIdentifier cacheByIndexPath:indexPath configuration:^(YARightPhotoNewsCell *cell) {
             cell.news = self.newsList[indexPath.row];
         }];
-    }
+}
     
     
     /*

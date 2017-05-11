@@ -12,6 +12,9 @@
 - (instancetype)init {
     if (self = [super init]) {
         self.refreshingTitleHidden = YES;
+        [self setTitle:@"" forState:MJRefreshStateIdle];
+        [self setTitle:@"" forState:MJRefreshStatePulling];
+        [self setTitle:@"" forState:MJRefreshStateNoMoreData];
     }
     return self;
 }

@@ -39,6 +39,8 @@ static NSString * const kYALiveGroupTableViewCellIdentifier = @"YALiveGroupTable
     [super viewDidLoad];
     
 
+    
+    
     self.tableView.dataSource = self.dataSource;
     self.tableView.delegate = self.dataSource;
     
@@ -55,7 +57,10 @@ static NSString * const kYALiveGroupTableViewCellIdentifier = @"YALiveGroupTable
     self.tableView.mj_footer = [YARefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(refreshForMore)];
     
     [self.tableView.mj_header beginRefreshing];
+    
+    
 }
+
 
 - (void)refreshForNew {
     YALiveChannelRequest *request = [[YALiveChannelRequest alloc] initWithChannelType:self.channelType];

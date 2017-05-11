@@ -9,6 +9,8 @@
 #import "YALiveContentPageViewController.h"
 #import "YALiveCommentViewController.h"
 #import "YALiveMessageViewController.h"
+#import "YANews.h"
+#import "YALiveAboutViewController.h"
 
 @interface YALiveContentPageViewController ()
 
@@ -40,17 +42,31 @@
         // 设置菜单按钮
         NSMutableArray *controllerArray = [NSMutableArray array];
         
-        YALiveCommentViewController *commentViewController = [[YALiveCommentViewController alloc] initWithUserInfo:userInfo];
-        
-        commentViewController.title = userInfo[@"aTitle"];
-        
-        YALiveMessageViewController *messageViewController = [[YALiveMessageViewController alloc] initWithUserInfo:userInfo];
-        messageViewController.title = userInfo[@"bTitle"];
-        
-        [controllerArray addObjectsFromArray:@[
-                                               commentViewController,
-                                               messageViewController,
-                                               ]];
+        NewsArticleType type = [userInfo[@"type"] integerValue];
+        if (type == NewsArticleTypeAboutLive) {
+            YALiveAboutViewController *aboutViewController = [[YALiveAboutViewController alloc] init];
+            aboutViewController.title = userInfo[@"aboutTitle"];
+            
+            YALiveMessageViewController *messageViewController = [[YALiveMessageViewController alloc] initWithUserInfo:userInfo];
+            messageViewController.title = userInfo[@"peopleCount"];
+            
+            [controllerArray addObjectsFromArray:@[
+                                                   aboutViewController,
+                                                   messageViewController,
+                                                   ]];
+        } else {
+            YALiveCommentViewController *commentViewController = [[YALiveCommentViewController alloc] initWithUserInfo:userInfo];
+            commentViewController.title = userInfo[@"liveTitle"];
+            
+            YALiveMessageViewController *messageViewController = [[YALiveMessageViewController alloc] initWithUserInfo:userInfo];
+            messageViewController.title = userInfo[@"peopleCount"];
+            
+            [controllerArray addObjectsFromArray:@[
+                                                   commentViewController,
+                                                   messageViewController,
+                                                   ]];
+        }
+
         
         
         // 相关参数,注意通过参数设置,而不是通过属性设置

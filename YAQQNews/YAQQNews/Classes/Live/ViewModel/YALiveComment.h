@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+// 图片展示类型
+typedef NS_ENUM(NSUInteger, LiveCommentRole) {
+    LiveCommentRoleNormal,
+    LiveCommentRoleCompere, // 主持人
+    LiveCommentRoleLive, // 直播员
+};
 
 @interface YALiveComment : NSObject;
 /** 评论者昵称 */
@@ -34,7 +40,10 @@
 @property (nonatomic, copy) NSString *playURL;
 /** 是否置顶 */
 @property (nonatomic, assign) BOOL isStick;
-
+/** 是否加星 */
+@property (nonatomic, assign) BOOL uinType;
+/** 用户类型 */
+@property (nonatomic, assign) LiveCommentRole role;
 + (NSArray <YALiveComment *> *)liveCommentWithObject:(id)object;
 @end
 

@@ -72,6 +72,7 @@ static NSString * const kYACommentTableViewCellIdentifier = @"YALiveCommentTable
     YALiveCommentRequest *request = [[YALiveCommentRequest alloc] initWithArticleID:self.articleID lastID:lastID];
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         
+
         NSArray *array = [YALiveComment liveCommentWithObject:request.responseObject];
         
         // 数据加载完毕

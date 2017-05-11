@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class YALiveComment;
+@class YALiveComment, YANewsModel;
 
 @interface YALiveContent : NSObject
 /** 播放地址 */
@@ -22,7 +22,10 @@
 @property (nonatomic, assign) BOOL screenType;
 /** 评论数组 */
 @property (nonatomic, copy) NSArray <YALiveComment *> *comments;
-
+/** 相关新闻数组 */
+@property (nonatomic, strong) NSArray <YANewsModel *> *relateNews;
+/** 栏目简介 */
+@property (nonatomic, copy) NSString *desc;
 // 获取内容模型
 + (YALiveContent *)liveContentWithKeyValue:(id)responseObject;
 

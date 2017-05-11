@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3C1A006AD5AFBBE352A7024A /* libPods-YAQQNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C13B0C0E82B6FDCA5690F121 /* libPods-YAQQNews.a */; };
+		9A33BE931EC49E6000516CF1 /* YALiveAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A33BE921EC49E6000516CF1 /* YALiveAboutViewController.m */; };
+		9A33BE961EC49EE400516CF1 /* YALiveAboutTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A33BE951EC49EE400516CF1 /* YALiveAboutTableHeaderView.m */; };
 		9A5C90311EBE970F00209995 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90301EBE970F00209995 /* VideoToolbox.framework */; };
 		9A5C90331EBE971C00209995 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90321EBE971C00209995 /* UIKit.framework */; };
 		9A5C90351EBE972500209995 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90341EBE972500209995 /* QuartzCore.framework */; };
@@ -85,6 +87,10 @@
 
 /* Begin PBXFileReference section */
 		3219EE8D764C1AB8EDA0A9D7 /* Pods-YAQQNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YAQQNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YAQQNews/Pods-YAQQNews.debug.xcconfig"; sourceTree = "<group>"; };
+		9A33BE911EC49E6000516CF1 /* YALiveAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALiveAboutViewController.h; sourceTree = "<group>"; };
+		9A33BE921EC49E6000516CF1 /* YALiveAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALiveAboutViewController.m; sourceTree = "<group>"; };
+		9A33BE941EC49EE400516CF1 /* YALiveAboutTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALiveAboutTableHeaderView.h; sourceTree = "<group>"; };
+		9A33BE951EC49EE400516CF1 /* YALiveAboutTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALiveAboutTableHeaderView.m; sourceTree = "<group>"; };
 		9A5C90301EBE970F00209995 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		9A5C90321EBE971C00209995 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9A5C90341EBE972500209995 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -371,6 +377,8 @@
 				9ABD1CDA1EC19A160074FBFC /* YALiveContentViewController.m */,
 				9A746ACC1EC2BE53007FAAE8 /* YALiveCommentViewController.h */,
 				9A746ACD1EC2BE53007FAAE8 /* YALiveCommentViewController.m */,
+				9A33BE911EC49E6000516CF1 /* YALiveAboutViewController.h */,
+				9A33BE921EC49E6000516CF1 /* YALiveAboutViewController.m */,
 				9A746AD81EC35CA4007FAAE8 /* YALiveMessageViewController.h */,
 				9A746AD91EC35CA4007FAAE8 /* YALiveMessageViewController.m */,
 			);
@@ -399,6 +407,8 @@
 				9A746ADD1EC35CD0007FAAE8 /* YALiveMessageTableViewCell.xib */,
 				9AA159B31EC460DE0019D947 /* YALiveRefreshFooter.h */,
 				9AA159B41EC460DE0019D947 /* YALiveRefreshFooter.m */,
+				9A33BE941EC49EE400516CF1 /* YALiveAboutTableHeaderView.h */,
+				9A33BE951EC49EE400516CF1 /* YALiveAboutTableHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -844,6 +854,7 @@
 				9ABD1CE31EC1ABA00074FBFC /* YALiveContent.m in Sources */,
 				9A85F58B1EBCC71A009243B3 /* YATabBarController.m in Sources */,
 				9A85F5471EBCBF9E009243B3 /* AppDelegate.m in Sources */,
+				9A33BE931EC49E6000516CF1 /* YALiveAboutViewController.m in Sources */,
 				9A8111601EC07DC10086635B /* YALiveNewsListRequest.m in Sources */,
 				9A746ADE1EC35CD0007FAAE8 /* YALiveMessageTableViewCell.m in Sources */,
 				9A85F5911EBCC7D3009243B3 /* YARecommendViewController.m in Sources */,
@@ -860,6 +871,7 @@
 				9AE436511EBD60D200921FD0 /* CAPSPageMenu.m in Sources */,
 				9A85F5441EBCBF9E009243B3 /* main.m in Sources */,
 				9A5C906F1EBED2E900209995 /* YALiveModel.m in Sources */,
+				9A33BE961EC49EE400516CF1 /* YALiveAboutTableHeaderView.m in Sources */,
 				9A746AD11EC2BFDD007FAAE8 /* YALiveContentPageViewController.m in Sources */,
 				9A85F59A1EBCC8F9009243B3 /* YATabBarItem.m in Sources */,
 				9A85F5971EBCC7ED009243B3 /* YAProfileViewController.m in Sources */,

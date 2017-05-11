@@ -34,6 +34,7 @@ static const CGFloat kTitleTopConstraint = 10;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *sourceLabelLeadingConstraint;
 
 @property (weak, nonatomic) IBOutlet UIImageView *videoImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *liveImageView;
 
 
 @end
@@ -46,6 +47,12 @@ static const CGFloat kTitleTopConstraint = 10;
     self.titleLabel.text = news.title;
     
 
+    // 是否直播
+    if (news.isLive) {
+        self.liveImageView.hidden = NO;
+    } else {
+        self.liveImageView.hidden = YES;
+    }
     // 图标
     if (news.iconTitle) {
         UIFont *font = [UIFont systemFontOfSize:10];

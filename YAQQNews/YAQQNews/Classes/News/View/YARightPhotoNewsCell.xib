@@ -70,6 +70,13 @@
                             <constraint firstAttribute="height" constant="35" id="F52-Wq-gkO"/>
                         </constraints>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="live_video_cell_icon_vcr" translatesAutoresizingMaskIntoConstraints="NO" id="7ww-bi-xAO">
+                        <rect key="frame" x="258" y="50" width="45" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="4HU-lj-Pz4"/>
+                            <constraint firstAttribute="width" constant="45" id="Asu-mx-ecI"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Xq9-Rg-que" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="1Ml-oT-CG5"/>
@@ -77,6 +84,8 @@
                     <constraint firstItem="aBP-pA-BDr" firstAttribute="top" secondItem="229-zZ-oys" secondAttribute="top" id="GlH-o9-IYc"/>
                     <constraint firstItem="ZRR-Yr-uls" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Gr9-Qv-H1t"/>
                     <constraint firstItem="fxd-BK-SUc" firstAttribute="bottom" secondItem="8Gj-OZ-6Is" secondAttribute="bottom" id="KcE-zn-ELT"/>
+                    <constraint firstItem="7ww-bi-xAO" firstAttribute="bottom" secondItem="Xq9-Rg-que" secondAttribute="bottom" constant="-5" id="KoD-HE-wHN"/>
+                    <constraint firstItem="7ww-bi-xAO" firstAttribute="trailing" secondItem="Xq9-Rg-que" secondAttribute="trailing" constant="-5" id="LWj-KJ-trd"/>
                     <constraint firstItem="ZRR-Yr-uls" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Ql6-nd-60M"/>
                     <constraint firstAttribute="bottom" secondItem="ZRR-Yr-uls" secondAttribute="bottom" constant="34.5" id="ViZ-01-gBB"/>
                     <constraint firstItem="0Hx-1J-7Pf" firstAttribute="centerX" secondItem="Xq9-Rg-que" secondAttribute="centerX" id="W51-xD-V9t"/>
@@ -96,6 +105,7 @@
             <connections>
                 <outlet property="commentLabel" destination="229-zZ-oys" id="Cx2-Bs-uLa"/>
                 <outlet property="iconLabel" destination="8Gj-OZ-6Is" id="mAJ-3d-f6s"/>
+                <outlet property="liveImageView" destination="7ww-bi-xAO" id="EWg-wk-lCJ"/>
                 <outlet property="rightImageView" destination="Xq9-Rg-que" id="KTX-EN-PBo"/>
                 <outlet property="sourceLabel" destination="fxd-BK-SUc" id="jzS-eo-33Z"/>
                 <outlet property="sourceLabelLeadingConstraint" destination="wxt-aH-Oe5" id="wcZ-tL-LAp"/>
@@ -109,6 +119,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="live_video_cell_icon_vcr" width="88" height="32"/>
         <image name="timeline_video_icon" width="100" height="100"/>
     </resources>
 </document>

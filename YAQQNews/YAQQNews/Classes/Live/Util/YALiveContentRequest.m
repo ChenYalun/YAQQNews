@@ -30,7 +30,6 @@
     
     if (self.articleType == NewsArticleTypeAboutLive) {
         return [NSString stringWithFormat:@"http://r.inews.qq.com/getLiveNewsContent?article_id=%@", self.articleID];
-
     } else {
         return [NSString stringWithFormat:@"http://r.inews.qq.com/getQQNewsRoseContent?article_id=%@&chlid&rose_id", self.articleID];
     }

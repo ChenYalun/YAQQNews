@@ -66,6 +66,13 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="live_icon_pinned" translatesAutoresizingMaskIntoConstraints="NO" id="lbQ-E2-2Yu">
+                        <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="6fL-O4-GDn"/>
+                            <constraint firstAttribute="height" constant="15" id="gqb-tg-Yx6"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.020869006849315069" colorSpace="calibratedWhite"/>
                 <constraints>
@@ -82,6 +89,8 @@
                     <constraint firstAttribute="trailing" secondItem="vbw-ra-I6S" secondAttribute="trailing" constant="15" id="Oj7-dv-TgD"/>
                     <constraint firstItem="UrP-kK-WxC" firstAttribute="centerY" secondItem="0qG-JA-bHu" secondAttribute="centerY" id="Pa6-fy-JEA"/>
                     <constraint firstItem="57m-Pf-3gl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="50" id="VLW-mh-BcN"/>
+                    <constraint firstItem="lbQ-E2-2Yu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="YSf-Ev-vCD"/>
+                    <constraint firstItem="lbQ-E2-2Yu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="bnZ-aR-nxV"/>
                     <constraint firstItem="MWH-p1-5AC" firstAttribute="bottom" secondItem="fy4-UM-0CG" secondAttribute="bottom" constant="3" id="ebc-8U-T1g"/>
                     <constraint firstItem="57m-Pf-3gl" firstAttribute="top" secondItem="sCa-Wh-rd9" secondAttribute="bottom" constant="6" id="hCh-gu-p2n"/>
                     <constraint firstItem="vbw-ra-I6S" firstAttribute="top" secondItem="UrP-kK-WxC" secondAttribute="bottom" constant="3" id="keY-Uf-eA1"/>
@@ -99,13 +108,17 @@
                 <outlet property="picImageHeightConstraint" destination="xHI-G9-KzK" id="ub3-Qf-Naa"/>
                 <outlet property="picImageView" destination="sCa-Wh-rd9" id="mUB-k5-Bd8"/>
                 <outlet property="picImageWidthConstraint" destination="0Ks-he-E0I" id="W73-Fw-Y0p"/>
+                <outlet property="pinImageView" destination="lbQ-E2-2Yu" id="rNT-22-Clo"/>
                 <outlet property="replyContentLabel" destination="fy4-UM-0CG" id="YwZ-Gv-aSw"/>
                 <outlet property="replyNickLabel" destination="57m-Pf-3gl" id="iea-WV-3Wr"/>
                 <outlet property="replyNickTopConstraint" destination="hCh-gu-p2n" id="bGo-M2-OU5"/>
                 <outlet property="replyView" destination="MWH-p1-5AC" id="nRx-sv-wHb"/>
                 <outlet property="timeLabel" destination="VfB-8d-tYE" id="XBS-0o-Cqb"/>
             </connections>
-            <point key="canvasLocation" x="-7.5" y="41.5"/>
+            <point key="canvasLocation" x="-7.5" y="41"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="live_icon_pinned" width="36" height="36"/>
+    </resources>
 </document>

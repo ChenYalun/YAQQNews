@@ -16,6 +16,8 @@ target 'YAQQNews' do
   pod 'FDFullscreenPopGesture'
   pod 'YYWebImage'
   pod 'YYCategories' 
+  pod 'TTTAttributedLabel'
+  pod 'MLeaksFinder'
 
 
 end
