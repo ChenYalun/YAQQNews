@@ -1,5 +1,5 @@
 //
-//  YAHeaderLabel.h
+//  YALiveHeaderLabel.h
 //  YAQQNews
 //
 //  Created by 陈亚伦 on 2017/5/7.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YAHeaderLabel : UILabel
+@interface YALiveHeaderLabel : UILabel
 /** 直播预告的场数 */
 @property (nonatomic, assign) NSUInteger num;
 @end

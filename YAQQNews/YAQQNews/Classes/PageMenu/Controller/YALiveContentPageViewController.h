@@ -9,4 +9,5 @@
 #import "CAPSPageMenu.h"
 
 @interface YALiveContentPageViewController : CAPSPageMenu
+- (instancetype)initWithUserInfo:(NSDictionary *)userInfo;
 @end

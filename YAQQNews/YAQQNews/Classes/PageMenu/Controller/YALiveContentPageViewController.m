@@ -8,6 +8,7 @@
 
 #import "YALiveContentPageViewController.h"
 #import "YALiveCommentViewController.h"
+#import "YALiveMessageViewController.h"
 
 @interface YALiveContentPageViewController ()
 
@@ -33,22 +34,22 @@
 //    self.selectionIndicatorView.frame = CGRectMake(center.x - width * 0.5, view.height - 2 , width , 2);
 //}
 
-- (instancetype)init {
+- (instancetype)initWithUserInfo:(NSDictionary *)userInfo {
     if (self = [super init]) {
         
         // 设置菜单按钮
         NSMutableArray *controllerArray = [NSMutableArray array];
         
-        YALiveCommentViewController *commentViewController = [[YALiveCommentViewController alloc] init];
+        YALiveCommentViewController *commentViewController = [[YALiveCommentViewController alloc] initWithUserInfo:userInfo];
         
-        commentViewController.title = @"主播厅";
+        commentViewController.title = userInfo[@"aTitle"];
         
-        UITableViewController *infoChannelViewController = [[UITableViewController alloc] init];
-        infoChannelViewController.title = @"资讯";
+        YALiveMessageViewController *messageViewController = [[YALiveMessageViewController alloc] initWithUserInfo:userInfo];
+        messageViewController.title = userInfo[@"bTitle"];
         
         [controllerArray addObjectsFromArray:@[
                                                commentViewController,
-                                               infoChannelViewController,
+                                               messageViewController,
                                                ]];
         
         

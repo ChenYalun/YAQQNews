@@ -10,7 +10,7 @@
 #import "YARefreshHeader.h"
 #import "YARefreshFooter.h"
 #import "YALiveChannelRequest.h"
-#import "YAHeaderLabel.h"
+#import "YALiveHeaderLabel.h"
 #import "YALiveNewsListRequest.h"
 #import "YALiveChannelDataSource.h"
 
@@ -21,7 +21,7 @@ static NSString * const kYALiveGroupTableViewCellIdentifier = @"YALiveGroupTable
 @interface YALiveChannelViewController ()
 
 /** tableView头部 */
-@property (nonatomic, strong) YAHeaderLabel *headerLabel;
+@property (nonatomic, strong) YALiveHeaderLabel *headerLabel;
 /** tableView数据源 */
 @property (nonatomic, strong) YALiveChannelDataSource *dataSource;
 @end
@@ -167,9 +167,9 @@ static NSString * const kYALiveGroupTableViewCellIdentifier = @"YALiveGroupTable
 
  #pragma mark – Getters and Setters
 
-- (YAHeaderLabel *)headerLabel {
+- (YALiveHeaderLabel *)headerLabel {
     if (!_headerLabel) {
-        _headerLabel = [[YAHeaderLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 45)];
+        _headerLabel = [[YALiveHeaderLabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 45)];
     }
     return _headerLabel;
 }

@@ -7,7 +7,7 @@
 //
 
 #import "YALiveCommentViewController.h"
-#import "YACommentTableViewCell.h"
+#import "YALiveCommentTableViewCell.h"
 #import "YALiveContentViewController.h"
 #import "YARefreshHeader.h"
 #import "YARefreshFooter.h"
@@ -16,16 +16,24 @@
 #import <UITableView+FDTemplateLayoutCell.h>
 #import "YATableViewDataSource.h"
 
-static NSString * const kYACommentTableViewCellIdentifier = @"YACommentTableViewCell";
+static NSString * const kYACommentTableViewCellIdentifier = @"YALiveCommentTableViewCell";
 
 @interface YALiveCommentViewController ()
 /** 评论数组 */
 @property (nonatomic, strong) NSMutableArray <YALiveComment *> *comments;
-/** 文章ID */
+/** articleID */
 @property (nonatomic, copy) NSString *articleID;
 @end
 
 @implementation YALiveCommentViewController
+
+- (instancetype)initWithUserInfo:(NSDictionary *)userInfo {
+    if (self = [super init]) {
+        _articleID = userInfo[@"articleID"];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -33,7 +41,7 @@ static NSString * const kYACommentTableViewCellIdentifier = @"YACommentTableView
     // tableView 配置
     self.tableView.separatorColor = kRGBAColor(217, 217, 217, 0.3);
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 49, 0);
-    [self.tableView registerNib:[UINib nibWithNibName:[YACommentTableViewCell className] bundle:nil] forCellReuseIdentifier:kYACommentTableViewCellIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:[YALiveCommentTableViewCell className] bundle:nil] forCellReuseIdentifier:kYACommentTableViewCellIdentifier];
 
     
     // 发送数据更新通知
@@ -107,7 +115,7 @@ static NSString * const kYACommentTableViewCellIdentifier = @"YACommentTableView
     
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [tableView fd_heightForCellWithIdentifier:kYACommentTableViewCellIdentifier cacheByIndexPath:indexPath configuration:^(YACommentTableViewCell *cell) {
+    return [tableView fd_heightForCellWithIdentifier:kYACommentTableViewCellIdentifier cacheByIndexPath:indexPath configuration:^(YALiveCommentTableViewCell *cell) {
         cell.comment = self.comments[indexPath.row];
     }];
 }
@@ -120,7 +128,7 @@ static NSString * const kYACommentTableViewCellIdentifier = @"YACommentTableView
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    YACommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kYACommentTableViewCellIdentifier forIndexPath:indexPath];
+    YALiveCommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kYACommentTableViewCellIdentifier forIndexPath:indexPath];
     cell.comment = self.comments[indexPath.row];
     return cell;
 }
@@ -128,8 +136,6 @@ static NSString * const kYACommentTableViewCellIdentifier = @"YACommentTableView
 
 - (void)receiveComments:(NSNotification *)notification {
     [self setComments:notification.userInfo[@"comments"]];
-    // 传入articleID
-    self.articleID =notification.userInfo[@"articleID"];
 }
 
 - (void)setComments:(NSMutableArray *)comments {

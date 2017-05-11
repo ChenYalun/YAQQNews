@@ -12,7 +12,5 @@
 @interface YALiveContentViewController : UIViewController
 /** 新闻模型 */
 @property (nonatomic, strong) YANewsModel *news;
-
-
 - (instancetype)initWithNews:(YANewsModel *)news;
 @end

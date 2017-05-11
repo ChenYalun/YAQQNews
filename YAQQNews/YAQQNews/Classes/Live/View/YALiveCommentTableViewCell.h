@@ -1,5 +1,5 @@
 //
-//  YACommentTableViewCell.h
+//  YALiveCommentTableViewCell.h
 //  YAQQNews
 //
 //  Created by 陈亚伦 on 2017/5/10.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class YALiveComment;
 
-@interface YACommentTableViewCell : UITableViewCell
+@interface YALiveCommentTableViewCell : UITableViewCell
 /** 评论模型 */
 @property (nonatomic, strong) YALiveComment *comment;
 @end

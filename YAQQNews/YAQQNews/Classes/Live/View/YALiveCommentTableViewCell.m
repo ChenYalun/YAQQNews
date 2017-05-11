@@ -1,17 +1,17 @@
 //
-//  YACommentTableViewCell.m
+//  YALiveCommentTableViewCell.m
 //  YAQQNews
 //
 //  Created by 陈亚伦 on 2017/5/10.
 //  Copyright © 2017年 陈亚伦. All rights reserved.
 //
 
-#import "YACommentTableViewCell.h"
+#import "YALiveCommentTableViewCell.h"
 #import "YALiveComment.h"
 #import <UIImageView+YYWebImage.h>
 #import "UIImage+YARenderingMode.h"
 
-@interface YACommentTableViewCell ()
+@interface YALiveCommentTableViewCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nickLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
@@ -25,7 +25,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end
-@implementation YACommentTableViewCell
+@implementation YALiveCommentTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

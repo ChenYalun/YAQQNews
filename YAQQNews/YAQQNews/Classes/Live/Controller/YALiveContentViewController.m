@@ -32,12 +32,15 @@
     [super viewDidLoad];
 
    
+    // 隐藏tabbar
+    self.tabBarController.tabBar.hidden = YES;
     
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.liveContentHeaderView.frame = CGRectMake(0, 20, self.view.width, 180);
     
-    YALiveContentPageViewController *pageMenuViewController = [[YALiveContentPageViewController alloc] init];
+    YALiveContentPageViewController *pageMenuViewController = [[YALiveContentPageViewController alloc] initWithUserInfo:@{@"articleID": self.news.ID, @"aTitle": @"主播厅", @"bTitle": @"100万人"}];
+
     
     [self addChildViewController:pageMenuViewController];
     
@@ -68,7 +71,7 @@
         
         // 发送通知更新comments
         if (content.comments) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationComments" object:nil userInfo:@{@"comments": content.comments, @"articleID": self.news.ID}];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationComments" object:nil userInfo:@{@"comments": content.comments}];
         }
         
         
