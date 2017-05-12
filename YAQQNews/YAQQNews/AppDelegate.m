@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "YATabBarController.h"
+#import "YANewsContentRequest.h"
 
 @interface AppDelegate ()
 
@@ -22,6 +23,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = [[YATabBarController alloc] init];
     [self.window makeKeyAndVisible];
+
+    
     
     return YES;
 }

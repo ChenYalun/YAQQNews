@@ -45,5 +45,6 @@ typedef NS_ENUM(NSUInteger, LiveCommentRole) {
 /** 用户类型 */
 @property (nonatomic, assign) LiveCommentRole role;
 + (NSArray <YALiveComment *> *)liveCommentWithObject:(id)object;
++ (NSArray *)commentsFromKeyValus:(NSArray *)array;
 @end
 

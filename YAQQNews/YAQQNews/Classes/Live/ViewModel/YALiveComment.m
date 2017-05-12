@@ -14,4 +14,8 @@
     NSArray *array = [YALiveContent getCommentsFromObject:object[@"content"][@"live_room"][@"new"]];
     return array;
 }
+
++ (NSArray *)commentsFromKeyValus:(NSArray *)array {
+    return [YALiveContent getCommentsFromObject:array];
+}
 @end

@@ -14,6 +14,7 @@
 #import "YACenterPhotoNewsCell.h"
 #import "YARightPhotoNewsCell.h"
 #import <UITableView+FDTemplateLayoutCell.h>
+#import "YANewsContentViewController.h"
 
 typedef NS_ENUM(NSUInteger, RefreshType) {
     RefreshTypeForNew,
@@ -34,6 +35,8 @@ static NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell
 @end
 
 @implementation YAChannelViewController
+
+ #pragma mark – Life Cycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -61,9 +64,11 @@ static NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshForNew)];
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(refreshForMore)];
     
-    //[self.tableView.mj_header beginRefreshing];
+    [self.tableView.mj_header beginRefreshing];
     
 }
+
+ #pragma mark – Events
 
 // 下拉刷新
 - (void)refreshForNew {
@@ -179,6 +184,7 @@ static NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell
 }
 
 
+ #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     YANewsModel *news = self.newsList[indexPath.row];
@@ -192,6 +198,8 @@ static NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell
             cell.news = self.newsList[indexPath.row];
         }];
 }
+    
+
     
     
     /*
@@ -217,7 +225,16 @@ static NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell
     
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    YANewsModel *news = self.newsList[indexPath.row];
+    if (news.articletype == NewsArticleTypeNormal) {
+        YANewsContentViewController *contentViewController = [[YANewsContentViewController alloc] initWithNews:news];
+        [self.navigationController pushViewController:contentViewController animated:YES];
+    } else {
+        
+        
+    }
+}
 
 
  #pragma mark – Getters and Setters

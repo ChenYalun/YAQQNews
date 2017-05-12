@@ -11,6 +11,7 @@
 #import "YALiveCommentRequest.h"
 #import "YARightPhotoNewsCell.h"
 #import "YANewsModel.h"
+#import "YANotification.h"
 
 static NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell";
 
@@ -28,7 +29,7 @@ static NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell
     [super viewDidLoad];
     
     // 发送数据更新通知
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNews:) name:@"NotificationComments" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNews:) name:kYALiveContentNotification object:nil];
     
     [self.tableView registerNib:[UINib nibWithNibName:[YARightPhotoNewsCell className] bundle:nil] forCellReuseIdentifier:kYARightPhotoNewsCellIdentifier];
     self.tableView.tableHeaderView = [[YALiveAboutTableHeaderView alloc] initWithDesc:self.desc];

@@ -26,6 +26,13 @@
 #define kClearColor [UIColor clearColor]
 #endif 
 
+// 自定义高效率的 NSLog
+#ifdef DEBUG
+#define kLog(...) NSLog(@"%s 第%d行 \n %@\n\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
+#else
+#define kLog(...)
+
+#endif
 
 
 /* YAHeader_h */

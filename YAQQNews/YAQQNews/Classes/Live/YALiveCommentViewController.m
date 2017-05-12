@@ -15,6 +15,7 @@
 #import "YALiveComment.h"
 #import <UITableView+FDTemplateLayoutCell.h>
 #import "YATableViewDataSource.h"
+#import "YANotification.h"
 
 static NSString * const kYACommentTableViewCellIdentifier = @"YALiveCommentTableViewCell";
 
@@ -45,7 +46,7 @@ static NSString * const kYACommentTableViewCellIdentifier = @"YALiveCommentTable
 
     
     // 发送数据更新通知
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveComments:) name:@"NotificationComments" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveComments:) name:kYALiveContentNotification object:nil];
     
     self.tableView.mj_footer = [YARefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(refreshForMore)];
     self.tableView.mj_header = [YARefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshForNew)];

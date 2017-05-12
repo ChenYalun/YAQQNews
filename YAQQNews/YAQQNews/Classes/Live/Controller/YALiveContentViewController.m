@@ -11,6 +11,7 @@
 #import "YALiveContent.h"
 #import "YALiveContentHeaderView.h"
 #import "YALiveContentPageViewController.h"
+#import "YANotification.h"
 
 @interface YALiveContentViewController ()
 @property (nonatomic, strong) YALiveContentHeaderView *liveContentHeaderView;
@@ -70,12 +71,12 @@
         
         // 发送通知更新comments
         if (content.comments) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationComments" object:nil userInfo:@{@"comments": content.comments}];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kYALiveContentNotification object:nil userInfo:@{@"comments": content.comments}];
         }
         
         // 发送通知更新相关新闻
         if (content.relateNews) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationComments" object:nil userInfo:@{@"relateNews": content.relateNews, @"desc": content.desc}];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kYALiveContentNotification object:nil userInfo:@{@"relateNews": content.relateNews, @"desc": content.desc}];
         }
         
         
