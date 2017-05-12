@@ -60,8 +60,8 @@
     // 根据内容长度确定气泡和文本内容宽度
     CGSize contentSize = [message.content sizeWithAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:15]}];
     if (contentSize.width < 130) {
-        self.backViewWidthConstraint.constant = 130;
-        self.contentLabelWidthConstraint.constant = contentSize.width - 5;
+        self.backViewWidthConstraint.constant = 140;
+        self.contentLabelWidthConstraint.constant = 130;
     } else if (contentSize.width < kScreenWidth - 100){
         self.backViewWidthConstraint.constant = contentSize.width;
         self.contentLabelWidthConstraint.constant = contentSize.width - 10;

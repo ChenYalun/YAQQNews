@@ -11,6 +11,6 @@
 @interface NSDate (YADateFormater)
 + (NSDate *)ya_dateFromISO8601StringDateFormatter:(NSString *)string locale:(NSLocale *)locale;
 
-- (NSString *)ya_ISO8601String:(NSDate*)date;
++ (NSString *)ya_ISO8601String:(NSDate *)date;
 
 @end

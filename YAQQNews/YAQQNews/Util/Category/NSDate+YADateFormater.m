@@ -21,7 +21,7 @@
     return [NSDate dateWithTimeIntervalSince1970:t + [[NSTimeZone localTimeZone] secondsFromGMT]];
 }
 
-- (NSString *)ya_ISO8601String:(NSDate*)date {
++ (NSString *)ya_ISO8601String:(NSDate *)date {
     struct tm *timeinfo;
     char buffer[80];
     time_t rawtime = [date timeIntervalSince1970] - [[NSTimeZone localTimeZone] secondsFromGMT];

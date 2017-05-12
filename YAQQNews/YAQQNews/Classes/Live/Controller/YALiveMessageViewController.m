@@ -12,6 +12,7 @@
 #import "YALiveMessageRequest.h"
 #import <UITableView+FDTemplateLayoutCell.h>
 #import "YALiveRefreshFooter.h"
+#import "YANews.h"
 
 static NSString * const kYALiveMessageTableViewCellIdentifier = @"YALiveMessageTableViewCell";
 
@@ -21,6 +22,10 @@ static NSString * const kYALiveMessageTableViewCellIdentifier = @"YALiveMessageT
 @property (nonatomic, copy) NSString *articleID;
 /** 最后一个messageID */
 @property (nonatomic, copy) NSString *lastReplyID;
+/** 评论ID */
+@property (nonatomic, copy) NSString *commentID;
+/** 页面类型 */
+@property (nonatomic, assign) NewsArticleType articleTye;
 @end
 
 @implementation YALiveMessageViewController
@@ -28,6 +33,8 @@ static NSString * const kYALiveMessageTableViewCellIdentifier = @"YALiveMessageT
 - (instancetype)initWithUserInfo:(NSDictionary *)userInfo {
     if (self = [super init]) {
         _articleID = userInfo[@"articleID"];
+        _commentID = userInfo[@"commentID"];
+        _articleTye = [userInfo[@"type"] integerValue];
     }
     return self;
 }
@@ -63,27 +70,26 @@ static NSString * const kYALiveMessageTableViewCellIdentifier = @"YALiveMessageT
     
 
     
-    YALiveMessageRequest *request = [[YALiveMessageRequest alloc] initWithArticleID:self.articleID replyID:self.lastReplyID];
+    YALiveMessageRequest *request = [[YALiveMessageRequest alloc] initWithArticleID:self.articleID aboutPageCommentID:self.commentID replyID:self.lastReplyID articleType:self.articleTye];
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         
-
+        if (self.articleTye == NewsArticleTypeAboutLive) { // 关于页面的请求
+            NSArray <YALiveMessage *> *array = [YALiveMessage liveMessageWithKeyValues:request.responseObject];
+            self.lastReplyID = array.firstObject.replyID;
+            [self.messageArray addObjectsFromArray:array];
+        } else { // 主播页面的请求
+            NSArray <YALiveMessage *> *array = [YALiveMessage liveMessageWithObject:request.responseObject];
+            self.lastReplyID = array.firstObject.replyID;
+            [self.messageArray addObjectsFromArray:array];
+        }
         
-        NSArray <YALiveMessage *> *array = [YALiveMessage liveMessageWithObject:request.responseObject];
-        // 设置lastReplyID
-        self.lastReplyID = array.firstObject.replyID;
-        
-        [self.messageArray addObjectsFromArray:array];
-
-    
         [self.tableView reloadData];
-//        if (self.messageArray.count >= 40) {
-//            [self.tableView scrollToRow:19 inSection:0 atScrollPosition:UITableViewScrollPositionNone animated:NO];
-//
-//        }
 
         if ([self.tableView.mj_footer isRefreshing]) {
             [self.tableView.mj_footer endRefreshing];
         }
+        
+        
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         if ([self.tableView.mj_footer isRefreshing]) {
             [self.tableView.mj_footer endRefreshing];

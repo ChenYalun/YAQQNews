@@ -37,7 +37,7 @@
     
     self.liveContentHeaderView.frame = CGRectMake(0, 20, self.view.width, 180);
     
-    YALiveContentPageViewController *pageMenuViewController = [[YALiveContentPageViewController alloc] initWithUserInfo:@{@"articleID": self.news.ID,@"type":[NSNumber numberWithInteger:self.news.articletype], @"liveTitle": @"主播厅", @"peopleCount": @"100万人", @"aboutTitle": @"关于"}];
+    YALiveContentPageViewController *pageMenuViewController = [[YALiveContentPageViewController alloc] initWithUserInfo:@{@"articleID": self.news.ID,@"type":[NSNumber numberWithInteger:self.news.articletype], @"liveTitle": @"主播厅", @"peopleCount": @"100万人", @"aboutTitle": @"关于",@"commentID": self.news.commentid}];
 
     
     [self addChildViewController:pageMenuViewController];

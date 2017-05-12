@@ -7,7 +7,8 @@
 //
 
 #import <YTKNetwork/YTKNetwork.h>
+#import "YANews.h"
 
 @interface YALiveMessageRequest : YTKRequest
-- (instancetype)initWithArticleID:(NSString *)articleId replyID:(NSString *)replyID;
+- (instancetype)initWithArticleID:(NSString *)articleId aboutPageCommentID:(NSString *)commentID replyID:(NSString *)replyID articleType:(NewsArticleType)articleType;
 @end

@@ -29,4 +29,6 @@
 @property (nonatomic, copy) NSString *replyID;
 
 + (NSMutableArray <YALiveMessage *> *)liveMessageWithObject:(id)object;
+
++ (NSArray <YALiveMessage *> *)liveMessageWithKeyValues:(id)object;
 @end

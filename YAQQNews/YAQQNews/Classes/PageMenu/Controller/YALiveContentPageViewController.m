@@ -47,6 +47,7 @@
             YALiveAboutViewController *aboutViewController = [[YALiveAboutViewController alloc] init];
             aboutViewController.title = userInfo[@"aboutTitle"];
             
+
             YALiveMessageViewController *messageViewController = [[YALiveMessageViewController alloc] initWithUserInfo:userInfo];
             messageViewController.title = userInfo[@"peopleCount"];
             
