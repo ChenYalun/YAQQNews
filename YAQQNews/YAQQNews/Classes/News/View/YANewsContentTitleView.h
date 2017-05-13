@@ -10,5 +10,5 @@
 @class YANewsModel;
 
 @interface YANewsContentTitleView : UIView
-- (instancetype)initWithNews:(YANewsModel *)news;
++ (instancetype)contentTitleViewWithNews:(YANewsModel *)news;
 @end

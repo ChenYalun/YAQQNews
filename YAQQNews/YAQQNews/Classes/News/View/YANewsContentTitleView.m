@@ -21,10 +21,7 @@
 @implementation YANewsContentTitleView
 
 
-
-- (instancetype)initWithNews:(YANewsModel *)news {
-    _news = news;
-    
++ (instancetype)contentTitleViewWithNews:(YANewsModel *)news {
     YANewsContentTitleView *titleView = [[NSBundle mainBundle] loadNibNamed:[self className] owner:nil options:nil].firstObject;
     titleView.news = news;
     return titleView;
@@ -33,10 +30,27 @@
 - (void)setNews:(YANewsModel *)news {
     _news = news;
     
-    self.titleLabel.text = self.news.title;
-    self.sourceLabel.text = self.news.source;
-    self.dateLabel.text = @"05-12";
-    self.timeLabel.text = @"16:20";
+
+    // 标题
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self.news.title];
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    style.lineSpacing = 5;//行距
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:style range:NSMakeRange(0, news.title.length)];
+    self.titleLabel.attributedText = attributedString;
+    
+    
+    self.sourceLabel.text = news.source;
+    self.dateLabel.text = news.monthDay;
+    self.timeLabel.text = news.timeSecend;
+    
+    
+    // 根据标题计算高度
+    CGFloat height = [news.title boundingRectWithSize:CGSizeMake(kScreenWidth - 20, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:20]} context:nil].size.height;
+    
+    CGSize size = self.size;
+    size.height = 42 + height;
+    self.size = size;
 }
+
 
 @end

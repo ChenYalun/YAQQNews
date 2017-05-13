@@ -32,6 +32,10 @@
 @property (nonatomic, copy) NSString *ID;
 /** 时间 */
 @property (nonatomic, copy) NSString *time;
+/** 月日 */
+@property (nonatomic, copy) NSString *monthDay;
+/** 时分 */
+@property (nonatomic, copy) NSString *timeSecend;
 /** 图片数组 */
 @property (nonatomic, strong) NSArray *thumbnails;
 /** 时间戳 */

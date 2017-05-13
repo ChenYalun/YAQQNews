@@ -59,6 +59,13 @@
         // 时间戳
         model.timestamp = news.timestamp;
         
+        // 月份/分钟
+        NSString *timeString = [NSDate ya_ISO8601String:[NSDate dateWithTimeIntervalSince1970:[news.timestamp floatValue]]];
+        
+        model.monthDay = [timeString substringWithRange:NSMakeRange(5, 5)];
+        
+        model.timeSecend = [timeString substringWithRange:NSMakeRange(11, 5)];
+
         // 视频时长
         model.videoTotalTime = [news.videoTotalTime substringFromIndex:3];
         
@@ -135,6 +142,13 @@
         
         // 时间戳
         model.timestamp = news.timestamp;
+        
+        // 月份/分钟
+        NSString *timeString = [NSDate ya_ISO8601String:[NSDate dateWithTimeIntervalSince1970:[news.timestamp floatValue]]];
+        
+        model.monthDay = [timeString substringWithRange:NSMakeRange(5, 5)];
+        
+        model.timeSecend = [timeString substringWithRange:NSMakeRange(11, 5)];
         
         // 视频时长
         model.videoTotalTime = [news.videoTotalTime substringFromIndex:3];

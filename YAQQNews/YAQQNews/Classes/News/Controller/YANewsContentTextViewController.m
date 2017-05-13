@@ -51,8 +51,9 @@
 
 -(YANewsContentTitleView *)titleView {
     if (!_titleView) {
-        _titleView = [[YANewsContentTitleView alloc] initWithNews:self.news];
-        _titleView.frame = CGRectMake(0, 64, self.view.width, 50);
+        _titleView = [YANewsContentTitleView contentTitleViewWithNews:self.news];
+        CGFloat height = _titleView.height;
+        _titleView.frame = CGRectMake(0, 44, self.view.width, height);
     }
     return _titleView;
 }
