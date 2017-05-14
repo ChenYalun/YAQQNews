@@ -9,6 +9,8 @@
 #import "YANewsContent.h"
 #import "YANewsModel.h"
 #import "YANewsComment.h"
+#import "YANewsContentAttribute.h"
+
 @implementation YANewsContent
 + (YANewsContent *)newsContentWithObject:(id)object news:(YANewsModel *)news{
     YANewsContent *content = [[YANewsContent alloc] init];
@@ -33,14 +35,40 @@
     content.commentTitle = object[@"commentTitle"];
     
     // 图片视频
-//    NSMutableDictionary *attributeDict = [NSMutableDictionary dictionary];
-//    NSDictionary *dict = object[@"attribute"];
-//    NSArray *keyArray = dict.allKeys;
-//    for (NSString *key in keyArray) {
-//        NSString *playURL = key[@"playurl"];
-//        NSString *desc = key
-//    }
-    content.attribute = object[@"attribute"];
+    NSMutableArray *attributeArray = [NSMutableArray array];
+    
+    NSDictionary *dict = object[@"attribute"];
+    if (dict && [dict isKindOfClass:[NSDictionary class]]) {
+        NSArray *keyArray = dict.allKeys;
+        
+        for (NSString *key in keyArray) {
+            YANewsContentAttribute *attribute = [[YANewsContentAttribute alloc] init];
+            // 播放地址
+            attribute.playURL = dict[key][@"playurl"];
+            // 视频的vid
+            attribute.vid = dict[key][@"vid"];
+            // 视频时长
+            attribute.duration = dict[key][@"duration"];
+            // 播放数量
+            attribute.playCount = [NSString stringWithFormat:@"%@", dict[key][@"playcount"]];
+            // 图片地址
+            attribute.origUrl = dict[key][@"origUrl"];
+            // 拇指图
+            attribute.thumb = dict[key][@"thumb"];
+            // 描述信息
+            attribute.desc = dict[key][@"desc"];
+            
+            // 名称
+            attribute.name = key;
+            
+            
+            
+            [attributeArray addObject:attribute];
+        }
+
+    }
+    
+    content.attribute = attributeArray;
     
     NSArray *newsArray = [YANewsModel newsModelWithOriginKeyValues:object[@"relate_news"]];
     content.relateNews = [NSArray array];

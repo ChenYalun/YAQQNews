@@ -24,7 +24,7 @@ PODS:
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
   - TTTAttributedLabel (2.0.0)
-  - UITableView+FDTemplateLayoutCell (1.4)
+  - UITableView+FDTemplateLayoutCell (1.6)
   - YTKNetwork (2.0.3):
     - AFNetworking (~> 3.0)
   - YYCache (1.0.4)
@@ -59,7 +59,7 @@ SPEC CHECKSUMS:
   MLeaksFinder: 0850e2f2abc7227adc4d4e2d1992b431264eb4d5
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
-  UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
+  UITableView+FDTemplateLayoutCell: 5c949b4a5059c404b442926c0e80f81d10a2d66f
   YTKNetwork: c4b0c29c9d639dc050d475de69ee626d53eac598
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd

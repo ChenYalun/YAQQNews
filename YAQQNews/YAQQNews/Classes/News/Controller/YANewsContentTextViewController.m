@@ -15,6 +15,8 @@
 #import "YANewsShortCommentTableViewCell.h"
 #import <UITableView+FDTemplateLayoutCell.h>
 #import "YARightPhotoNewsCell.h"
+#import "YANewsContentAttribute.h"
+#import <YYWebImageManager.h>
 
 @class YANewsComment;
 
@@ -35,9 +37,13 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
 /** titleView的y */
 @property (nonatomic, assign) CGFloat titleViewMaxY;
 /** 评论数组 */
-@property (nonatomic, strong) NSMutableArray <YANewsComment *> *comments;
+@property (nonatomic, strong) NSMutableArray <YANewsComment * > *comments;
 /** 相关新闻数组 */
-@property (nonatomic, strong) NSMutableArray <YANewsModel *> *newsList;
+@property (nonatomic, strong) NSMutableArray <YANewsModel * > *newsList;
+/** 属性数组 */
+@property (nonatomic, strong) NSMutableArray <YANewsContentAttribute * > *attributeArray;
+/** 标志位:webView高度已经确定 */
+@property (nonatomic, assign) BOOL flag;
 @end
 
 @implementation YANewsContentTextViewController
@@ -66,7 +72,18 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         YANewsContent *content = [YANewsContent newsContentWithObject:request.responseObject news:self.news];
         
-        [self.webView loadHTMLString:content.content baseURL:nil];
+        // 保存内容属性
+        [self.attributeArray addObjectsFromArray:content.attribute];
+        
+        for (YANewsContentAttribute *attri in content.attribute) {
+            NSString *targetString = [NSString stringWithFormat:@"<!--%@-->", attri.name];
+            NSData *data = UIImageJPEGRepresentation(kGetImage(@"contentPlaceholder.jpg"), 1.0f);
+            NSString *resultString = [NSString stringWithFormat:@"<img id='%@' src='data:image/png;base64,%@' width='%f' height = '%f'/>", attri.name, [data base64Encoding], (kScreenWidth - 20),300.0];
+            
+            content.content = [content.content stringByReplacingOccurrencesOfString:targetString withString:resultString];
+        }
+
+        [self.webView loadHTMLString:content.content  baseURL:nil];
         
         [self.comments addObjectsFromArray:content.topComments];
         [self.newsList addObjectsFromArray:content.relateNews];
@@ -106,12 +123,41 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
  #pragma mark - WKWebViewDelegate
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
+    // 调整webView高度
     [webView evaluateJavaScript:@"document.body.offsetHeight" completionHandler:^(id _Nullable result,NSError * _Nullable error) {
         //获取页面高度，并重置webview的frame
         CGFloat height = [result doubleValue];
         webView.height = height + 5;
         self.tableView.tableHeaderView = self.webView;
     }];
+
+    // 获取所有元素位置
+    [self.attributeArray enumerateObjectsUsingBlock:^(YANewsContentAttribute * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        NSString *rectString = [NSString stringWithFormat:@"document.getElementById('%@').getBoundingClientRect().top+document.body.scrollTop", obj.name];
+        
+        [self.webView evaluateJavaScript:rectString completionHandler:^(id _Nullable value, NSError * _Nullable error) {
+            // 保存元素对应的位置
+            obj.offsetY = [value floatValue];
+            
+            if (obj.offsetY - 135 - kScreenHeight < 0  && !obj.hasReplaced) {
+                obj.hasReplaced = YES;
+                
+                [[YYWebImageManager sharedManager] requestImageWithURL:[NSURL URLWithString:obj.origUrl] options:YYWebImageOptionSetImageWithFadeAnimation progress:nil transform:nil completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
+                    NSData *data = UIImageJPEGRepresentation(image, 1.0f);
+                    NSString *replaceImageString = [NSString stringWithFormat:@"document.getElementById('%@').src = 'data:image/png;base64,%@'",obj.name, [data base64Encoding]];
+                    [self.webView evaluateJavaScript:replaceImageString completionHandler:nil];
+                }];
+                
+            }
+        }];
+        
+    }];
+
+    self.flag = YES;
+    
+
+
 
 }
 
@@ -209,6 +255,30 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
         point.y = kNavigationViewHeight - (1 - self.titleView.alpha) * 5;
         self.titleView.origin = point;
     }
+    
+    
+    
+    // 图片的替换
+    for (YANewsContentAttribute *attri in self.attributeArray) {
+        
+        if (attri.offsetY - 100 - kScreenHeight < scrollView.contentOffset.y + 135 && !attri.hasReplaced && self.flag) {
+            attri.hasReplaced = YES;
+            
+            
+            [[YYWebImageManager sharedManager] requestImageWithURL:[NSURL URLWithString:attri.origUrl] options:YYWebImageOptionSetImageWithFadeAnimation progress:nil transform:nil completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
+                NSData *data = UIImageJPEGRepresentation(image, 1.0f);
+                NSString *replaceImageString = [NSString stringWithFormat:@"document.getElementById('%@').src = 'data:image/png;base64,%@'",attri.name, [data base64Encoding]];
+                
+                [self.webView evaluateJavaScript:replaceImageString completionHandler:nil];
+                
+            }];
+            
+        }
+
+    }
+
+    
+    
 }
 
  #pragma mark – Getters and Setters
@@ -278,6 +348,13 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
         _newsList = [NSMutableArray array];
     }
     return _newsList;
+}
+
+- (NSMutableArray<YANewsContentAttribute *> *)attributeArray {
+    if (!_attributeArray) {
+        _attributeArray = [NSMutableArray array];
+    }
+    return _attributeArray;
 }
 
 @end
