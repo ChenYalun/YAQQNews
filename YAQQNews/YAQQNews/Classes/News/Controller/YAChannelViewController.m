@@ -22,7 +22,7 @@ typedef NS_ENUM(NSUInteger, RefreshType) {
 };
 
 static NSString * const kYACenterPhotoNewsCellIdentifier = @"YACenterPhotoNewsCell";
-static NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell";
+NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell";
 
 @interface YAChannelViewController ()<UITableViewDelegate, UITableViewDataSource>
 /** tableView */

@@ -12,6 +12,8 @@
 #import "YANewsContentTextViewController.h"
 #import "YANewsContentCommentViewController.h"
 
+CGFloat const kNavigationViewHeight = 44;
+
 @interface YANewsContentViewController ()
 /** 新闻模型 */
 @property (nonatomic, strong) YANewsModel *news;
@@ -52,7 +54,7 @@
     YANewsContentCommentViewController *commentViewController = [[YANewsContentCommentViewController alloc] initWithNews:self.news];
     [self addChildViewController:commentViewController];
     [self.scrollView addSubview:commentViewController.view];
-    commentViewController.view.frame = CGRectMake(self.view.width, 44, self.view.width, self.view.height);
+    commentViewController.view.frame = CGRectMake(self.view.width, kNavigationViewHeight, self.view.width, self.view.height);
     
     
     // 添加导航视图
@@ -78,7 +80,7 @@
 - (YANavigationView *)navigationView {
     if (!_navigationView) {
         _navigationView = [YANavigationView navigationViewWithTitle:self.news.title];
-        _navigationView.frame = CGRectMake(0, 20, self.view.width, 44);
+        _navigationView.frame = CGRectMake(0, 20, self.view.width - 7, kNavigationViewHeight);
     }
     return _navigationView;
 }

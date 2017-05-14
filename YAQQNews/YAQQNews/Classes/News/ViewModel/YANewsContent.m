@@ -8,8 +8,7 @@
 
 #import "YANewsContent.h"
 #import "YANewsModel.h"
-#import "YALiveComment.h"
-
+#import "YANewsComment.h"
 @implementation YANewsContent
 + (YANewsContent *)newsContentWithObject:(id)object news:(YANewsModel *)news{
     YANewsContent *content = [[YANewsContent alloc] init];
@@ -44,11 +43,31 @@
     content.attribute = object[@"attribute"];
     
     NSArray *newsArray = [YANewsModel newsModelWithOriginKeyValues:object[@"relate_news"]];
-    [content.relateNews addObjectsFromArray:newsArray];
+    content.relateNews = [NSArray array];
+    content.relateNews = newsArray;
     
-    NSArray *commentArray = [YALiveComment commentsFromKeyValus:object[@"topComments"]];
-    [content.topComments addObjectsFromArray:commentArray];
+    NSArray *commentArray = [YANewsContent newsShortCommentsWithKeyValues:object[@"topComments"]];
+    content.topComments = [NSArray array];
+    content.topComments = commentArray;
     
     return content;
+}
+
+
++ (NSArray <YANewsComment *> *)newsShortCommentsWithKeyValues:(NSArray *)newArray {
+    // 最新评论
+    NSMutableArray *comments = [NSMutableArray array];
+    for (NSArray *array in newArray) {
+        NSDictionary *dict = array.firstObject;
+        YANewsComment *comment = [[YANewsComment alloc] init];
+        comment.head_url = dict[@"head_url"];
+        comment.nick = dict[@"nick"];
+        comment.content = dict[@"reply_content"];
+        comment.attributeText = @"18回复 · 22赞  18分钟前";
+        
+        [comments addObject:comment];
+    }
+    
+    return comments;
 }
 @end

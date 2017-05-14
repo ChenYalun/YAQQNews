@@ -44,6 +44,12 @@ typedef NS_ENUM(NSUInteger, LiveCommentRole) {
 @property (nonatomic, assign) BOOL uinType;
 /** 用户类型 */
 @property (nonatomic, assign) LiveCommentRole role;
+
+
+/** 点赞数量 */
+@property (nonatomic, assign) NSUInteger agreeCount;
+/** 用户地点 */
+@property (nonatomic, copy) NSString *provinceCity;
 + (NSArray <YALiveComment *> *)liveCommentWithObject:(id)object;
 + (NSArray *)commentsFromKeyValus:(NSArray *)array;
 @end

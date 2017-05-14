@@ -29,7 +29,6 @@
 
 - (void)setNews:(YANewsModel *)news {
     _news = news;
-    
 
     // 标题
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self.news.title];
@@ -45,10 +44,10 @@
     
     
     // 根据标题计算高度
-    CGFloat height = [news.title boundingRectWithSize:CGSizeMake(kScreenWidth - 20, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:20]} context:nil].size.height;
+    CGFloat height = [news.title boundingRectWithSize:CGSizeMake(kScreenWidth - 30, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:20]} context:nil].size.height;
     
     CGSize size = self.size;
-    size.height = 42 + height;
+    size.height = 44 + height;
     self.size = size;
 }
 

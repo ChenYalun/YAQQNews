@@ -67,7 +67,9 @@
         model.timeSecend = [timeString substringWithRange:NSMakeRange(11, 5)];
 
         // 视频时长
-        model.videoTotalTime = [news.videoTotalTime substringFromIndex:3];
+        if (news.videoTotalTime.length > 3) {
+            model.videoTotalTime = [news.videoTotalTime substringFromIndex:3];
+        }
         
         
         // 评论
@@ -151,7 +153,10 @@
         model.timeSecend = [timeString substringWithRange:NSMakeRange(11, 5)];
         
         // 视频时长
-        model.videoTotalTime = [news.videoTotalTime substringFromIndex:3];
+        if (news.videoTotalTime.length > 3) {
+            model.videoTotalTime = [news.videoTotalTime substringFromIndex:3];
+        }
+        
         
         // 直播
         model.isLive = news.is_live;

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class YANewsModel, YALiveComment;
+@class YANewsModel, YANewsComment;
 
 @interface YANewsContent : NSObject
 /** 文章ID */
@@ -33,11 +33,12 @@
 /** 图片视频 */
 @property (nonatomic, copy) NSDictionary *attribute;
 /** 相关新闻 */
-@property (nonatomic, copy) NSMutableArray <YANewsModel *> *relateNews;
+@property (nonatomic, copy) NSArray <YANewsModel *> *relateNews;
 /** 置顶评论 */
-@property (nonatomic, copy) NSMutableArray <YALiveComment *> *topComments;
+@property (nonatomic, copy) NSArray <YANewsComment *> *topComments;
 
 // 提供快速字典转模型
 + (YANewsContent *)newsContentWithObject:(id)object news:(YANewsModel *)news;
+
 @end
 
