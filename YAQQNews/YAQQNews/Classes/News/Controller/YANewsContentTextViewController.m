@@ -161,9 +161,6 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
 
 }
 
-- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
-    return nil;
-}
 
  #pragma mark - UITableViewDataSource
 
@@ -245,6 +242,7 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
     return 0;
 }
 
+#pragma mark – ScrollView Delegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     // titleView透明度的变化与位置的变化
@@ -256,8 +254,9 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
         self.titleView.origin = point;
     }
     
-    
-    
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     // 图片的替换
     for (YANewsContentAttribute *attri in self.attributeArray) {
         
@@ -274,13 +273,10 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
             }];
             
         }
-
+        
     }
 
-    
-    
 }
-
  #pragma mark – Getters and Setters
 
 -(YANewsContentTitleView *)titleView {
