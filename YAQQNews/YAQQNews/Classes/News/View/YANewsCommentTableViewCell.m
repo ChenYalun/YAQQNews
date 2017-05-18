@@ -21,12 +21,12 @@
 @property (weak, nonatomic) IBOutlet UIImageView *placeIconImageView;
 @property (weak, nonatomic) IBOutlet UIButton *zanButton;
 @property (weak, nonatomic) IBOutlet UIImageView *picImageView;
-@property (weak, nonatomic) IBOutlet UILabel *firstNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *firstContentLabel;
-@property (weak, nonatomic) IBOutlet UILabel *secondNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *secondContentLabel;
-@property (weak, nonatomic) IBOutlet UILabel *moreInfoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *replyContentLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *picImageViewHeightConstraint;
+
+@property (weak, nonatomic) IBOutlet UIView *backView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *replyTopConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *replyBottomConstraint;
 
 @end
 @implementation YANewsCommentTableViewCell
@@ -36,6 +36,7 @@
 -(void)setComment:(YANewsComment *)comment {
     _comment = comment;
     
+    
     // 标题
     self.nickLabel.text = comment.nick;
     // 头像
@@ -44,7 +45,15 @@
         
     }];
     // 点赞
-    self.zanNumLabel.text = comment.zan;
+    if (comment.zan) {
+        self.zanNumLabel.text = comment.zan;
+        self.zanButton.hidden = NO;
+        self.zanNumLabel.hidden = NO;
+    } else {
+        self.zanButton.hidden = YES;
+        self.zanNumLabel.hidden = YES;
+    }
+    
     // 内容
     self.contentLabel.text = comment.content;
     
@@ -59,10 +68,16 @@
     }
     
     // 来源
-    self.sourceLabel.text = comment.provinceCity;
+    if (comment.provinceCity.length > 2 && comment.time) {
+        self.sourceLabel.text = [NSString stringWithFormat:@"%@ · %@",comment.provinceCity, comment.time];
+        self.sourceLabel.hidden = NO;
+    } else {
+        self.sourceLabel.hidden = YES;
+    }
+    
     
     // 地点
-    if (comment.place) {
+    if (comment.place.length > 5) {
         self.placeLabel.text = comment.place;
         self.placeIconImageView.hidden = NO;
     } else {
@@ -71,32 +86,31 @@
     }
     
     // 附加评论回复
-    if (comment.firstName) {
-        self.firstNameLabel.hidden = NO;
-        self.firstContentLabel.hidden = NO;
-        self.firstNameLabel.text = comment.firstName;
-        self.firstContentLabel.text = comment.firstContent;
+    if (comment.firstContent || comment.replyNum > 0) {
+        self.replyTopConstraint.constant = 13;
+        self.replyBottomConstraint.constant = 11;
+        self.backView.hidden = NO;
+        self.replyContentLabel.hidden = NO;
+        self.replyContentLabel.text = comment.firstContent ? comment.firstContent : comment.replyString;
+
+//        
+//        if (comment.secondContent) {
+//            self.secondContentLabel.hidden = NO;
+//            self.secondContentLabel.text = comment.secondContent;
+//            self.secondContentTopConstraint.constant = 5;
+//        } else {
+//            self.secondContentLabel.text = nil;
+//            self.secondContentLabel.hidden = YES;
+//            self.secondContentTopConstraint.constant = 0;
+//        }
     } else {
-        self.firstContentLabel.text = nil;
-        self.firstNameLabel.text = nil;
-        self.firstNameLabel.hidden = YES;
-        self.firstContentLabel.hidden = YES;
+        self.replyContentLabel.text = nil;
+        self.replyContentLabel.hidden = YES;
+        self.backView.hidden = YES;
+        self.replyTopConstraint.constant = 0;
+        self.replyBottomConstraint.constant = 8;
     }
-    
-    if (comment.secondName) {
-        self.secondNameLabel.hidden = NO;
-        self.secondContentLabel.hidden = NO;
-        self.secondNameLabel.text = comment.secondName;
-        self.secondContentLabel.text = comment.secondContent;
-    } else {
-        self.secondContentLabel.text = nil;
-        self.secondNameLabel.text = nil;
-        self.secondNameLabel.hidden = YES;
-        self.secondContentLabel.hidden = YES;
-    }
-    
-    // 查看更多内容
-    self.moreInfoLabel.text = comment.replyString;
+
     
 }
 - (IBAction)like:(UIButton *)sender {

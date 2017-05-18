@@ -256,7 +256,8 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
     
 }
 
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     // 图片的替换
     for (YANewsContentAttribute *attri in self.attributeArray) {
         
@@ -275,8 +276,9 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
         }
         
     }
-
 }
+
+
  #pragma mark – Getters and Setters
 
 -(YANewsContentTitleView *)titleView {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -39,6 +39,13 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bk1-uh-TTC">
+                    <rect key="frame" x="0.0" y="89" width="375" height="1"/>
+                    <color key="backgroundColor" red="0.92883486675126903" green="0.92883486675126903" blue="0.92883486675126903" alpha="0.7440871147260274" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="JFA-Sd-DiS"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -49,8 +56,11 @@
                 <constraint firstItem="P1m-cP-lM0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="ZCX-z9-3nV"/>
                 <constraint firstItem="iS2-gF-TOI" firstAttribute="centerY" secondItem="spq-41-lOR" secondAttribute="centerY" id="egt-26-xrU"/>
                 <constraint firstAttribute="trailing" secondItem="P1m-cP-lM0" secondAttribute="trailing" constant="10" id="iOU-I9-FhM"/>
+                <constraint firstItem="bk1-uh-TTC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="iwI-tE-NGC"/>
+                <constraint firstAttribute="trailing" secondItem="bk1-uh-TTC" secondAttribute="trailing" id="iwK-TI-vRJ"/>
                 <constraint firstItem="m3q-cJ-CAX" firstAttribute="centerY" secondItem="spq-41-lOR" secondAttribute="centerY" id="mEx-m0-Utf"/>
                 <constraint firstItem="m3q-cJ-CAX" firstAttribute="leading" secondItem="iS2-gF-TOI" secondAttribute="trailing" constant="4" id="ozH-tb-xwb"/>
+                <constraint firstAttribute="bottom" secondItem="bk1-uh-TTC" secondAttribute="bottom" id="voz-Gf-pxT"/>
                 <constraint firstItem="spq-41-lOR" firstAttribute="top" secondItem="P1m-cP-lM0" secondAttribute="bottom" constant="10" id="wPn-xv-joC"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

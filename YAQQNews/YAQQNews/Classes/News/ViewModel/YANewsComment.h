@@ -43,4 +43,7 @@
 
 // 获取观点展示数据
 + (NSDictionary *)exprInfoInComments:(id)object;
+
+// 评论总数
++ (NSUInteger)commentsCount:(id)object;
 @end

@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 @class YANewsModel;
 
-@interface YANewsContentCommentViewController : UITableViewController
+@interface YANewsContentCommentViewController : UIViewController
 - (instancetype)initWithNews:(YANewsModel *)news;
 @end

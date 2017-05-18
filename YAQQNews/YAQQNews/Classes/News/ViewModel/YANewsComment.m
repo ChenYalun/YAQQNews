@@ -20,14 +20,20 @@
     return [YANewsComment newsCommentsWithKayValues:object[@"comments"][@"new"]];
 }
 
+// 获取评论总数
++ (NSUInteger)commentsCount:(id)object {
+    return [object[@"comments"][@"count"] integerValue];
+}
+
 // 获取观点展示数据
 + (NSDictionary *)exprInfoInComments:(id)object {
     NSArray *array = object[@"exprInfo"][@"list"];
     NSMutableDictionary *infoDict = [NSMutableDictionary dictionary];
     for (NSDictionary *dict in array) {
-        [infoDict setValue:[NSString stringWithFormat:@"%@", dict[@"count"]] forKey:dict[@"title"]];
+        [infoDict setValue:[NSString stringWithFormat:@"%@\n%@", dict[@"title"],dict[@"count"]] forKey:dict[@"title"]];
     }
     return infoDict;
+    //return @{@"喜欢": @"喜欢\n25", @"一般": @"一般\n25", @"不开心": @"不开心\n25", @"开心": @"开心\n25"};
 }
 
 // 评论数组转模型数组
@@ -55,7 +61,13 @@
         comment.vipType = [dict[@"vip_type"] integerValue];
         comment.replyNum = [dict[@"reply_num"] integerValue];
         comment.replyString = [NSString stringWithFormat:@"查看全部%lu条回复", (unsigned long)comment.replyNum];
-        comment.zan = [NSString stringWithFormat:@"%@", dict[@"agree_count"]];
+        if ([dict[@"agree_count"] integerValue] > 0) {
+            comment.zan = [NSString stringWithFormat:@"%@", dict[@"agree_count"]];
+        } else {
+            comment.zan = nil;
+        }
+        
+        comment.time = [YANewsComment setUpTime:[dict[@"tipstime"] floatValue]];
         // 配图
         NSArray *picArray = dict[@"pic"];
         comment.url = picArray.firstObject[@"url"];
@@ -64,7 +76,7 @@
         
         // 附加的地理位置
         NSArray *placeArray = dict[@"xy"];
-        comment.place = [NSString stringWithFormat:@"%@", placeArray.firstObject[@"address"]];
+        comment.place = [NSString stringWithFormat:@"发表于%@", placeArray.firstObject[@"address"]];
         
         // 回复
         NSArray *replyArray = dict[@"reply_list"];
