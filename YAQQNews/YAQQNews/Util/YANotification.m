@@ -8,5 +8,6 @@
 
 #import "YANotification.h"
 
-NSString * const kYALiveContentNotification = @"com.chenyalun.notification.liveContent";
+NSString * const kYALiveContentNotification = @"kYALiveContentNotification";
 
+NSString * const kYANewsContentTurnPageNotification = @"kYANewsContentTurnPageNotification";

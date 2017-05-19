@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *picImageView;
 @property (weak, nonatomic) IBOutlet UILabel *replyContentLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *picImageViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *picImageViewWidthConstraint;
 
 @property (weak, nonatomic) IBOutlet UIView *backView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *replyTopConstraint;
@@ -60,19 +61,20 @@
     // 图片
     if (comment.url) {
         self.picImageView.hidden = NO;
-         self.picImageViewHeightConstraint.constant = 58;
+         self.picImageViewHeightConstraint.constant = [UIImage normalImageSizeWithOriginImageSize:CGSizeMake(comment.picWidth, comment.picHeight)].height;
+        self.picImageViewWidthConstraint.constant = [UIImage normalImageSizeWithOriginImageSize:CGSizeMake(comment.picWidth, comment.picHeight)].width - 30;
         [self.picImageView yy_setImageWithURL:[NSURL URLWithString:comment.url] options:YYWebImageOptionSetImageWithFadeAnimation];
     } else {
         self.picImageView.hidden = YES;
         self.picImageViewHeightConstraint.constant = 0;
+        self.picImageViewWidthConstraint.constant = 0;
     }
     
     // 来源
     if (comment.provinceCity.length > 2 && comment.time) {
         self.sourceLabel.text = [NSString stringWithFormat:@"%@ · %@",comment.provinceCity, comment.time];
-        self.sourceLabel.hidden = NO;
     } else {
-        self.sourceLabel.hidden = YES;
+        self.sourceLabel.text = nil;
     }
     
     
@@ -86,23 +88,12 @@
     }
     
     // 附加评论回复
-    if (comment.firstContent || comment.replyNum > 0) {
+    if (comment.replyNum > 0) {
         self.replyTopConstraint.constant = 13;
         self.replyBottomConstraint.constant = 11;
         self.backView.hidden = NO;
         self.replyContentLabel.hidden = NO;
         self.replyContentLabel.text = comment.firstContent ? comment.firstContent : comment.replyString;
-
-//        
-//        if (comment.secondContent) {
-//            self.secondContentLabel.hidden = NO;
-//            self.secondContentLabel.text = comment.secondContent;
-//            self.secondContentTopConstraint.constant = 5;
-//        } else {
-//            self.secondContentLabel.text = nil;
-//            self.secondContentLabel.hidden = YES;
-//            self.secondContentTopConstraint.constant = 0;
-//        }
     } else {
         self.replyContentLabel.text = nil;
         self.replyContentLabel.hidden = YES;

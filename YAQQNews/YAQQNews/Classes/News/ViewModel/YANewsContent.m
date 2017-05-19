@@ -10,6 +10,7 @@
 #import "YANewsModel.h"
 #import "YANewsComment.h"
 #import "YANewsContentAttribute.h"
+#import "UIImage+YARenderingMode.h"
 
 @implementation YANewsContent
 + (YANewsContent *)newsContentWithObject:(id)object news:(YANewsModel *)news{
@@ -57,7 +58,10 @@
             attribute.thumb = dict[key][@"thumb"];
             // 描述信息
             attribute.desc = dict[key][@"desc"];
-            
+            // 宽度
+            attribute.picWidth = [UIImage normalImageSizeWithOriginImageSize:CGSizeMake([dict[key][@"width"] floatValue], [dict[key][@"height"] floatValue])].width;
+            // 高度
+            attribute.picHeight = [UIImage normalImageSizeWithOriginImageSize:CGSizeMake([dict[key][@"width"] floatValue], [dict[key][@"height"] floatValue])].height;;
             // 名称
             attribute.name = key;
             
@@ -91,11 +95,33 @@
         comment.head_url = dict[@"head_url"];
         comment.nick = dict[@"nick"];
         comment.content = dict[@"reply_content"];
-        comment.attributeText = @"18回复 · 22赞  18分钟前";
+        comment.agreeCount = [dict[@"agree_count"] integerValue];
+        comment.time = [YANewsContent setUpTime:[dict[@"pub_time"] floatValue]];
+        comment.replyNum = [dict[@"reply_num"] integerValue];
+        comment.attributeText = [NSString stringWithFormat:@"%lu回复 · %lu赞 · %@",(unsigned long)comment.replyNum, (unsigned long)comment.agreeCount, comment.time];
         
         [comments addObject:comment];
     }
     
     return comments;
+}
+
+
+// 时间处理
++ (NSString *)setUpTime:(CGFloat)time {
+    NSString *timeString = [NSString string];
+    
+    CGFloat referenceTime = [[NSDate dateWithTimeIntervalSinceNow:0] timeIntervalSince1970];
+    
+    if ((referenceTime - time) / 60 == 0) {
+        timeString = @"刚刚";
+    } else if ((referenceTime - time) / 60 < 60) {
+        timeString = [NSString stringWithFormat:@"%ld分钟前", (long)((referenceTime - time) / 60)];
+    } else if((referenceTime - time) / 60 < 3600) {
+        timeString = [NSString stringWithFormat:@"%ld小时前", (long)((referenceTime - time) / 3600)];
+    } else {
+        timeString = nil;
+    }
+    return timeString;
 }
 @end

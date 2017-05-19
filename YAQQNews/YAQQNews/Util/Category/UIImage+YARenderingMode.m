@@ -56,4 +56,23 @@
     // 返回新的改变大小后的图片
     return scaledImage;
 }
+
+// 根据图片的宽高返回合适的宽高的图片
++ (CGSize)normalImageSizeWithOriginImageSize:(CGSize)size {
+    CGFloat width = size.width;
+    CGFloat height = size.height;
+    
+    if (width <= kScreenWidth - 20 && height <= 250) {
+        return size;
+    }
+    
+    CGFloat h = height * (kScreenWidth - 20) / width;
+    if (h <= 300) {
+        return CGSizeMake(kScreenWidth - 20, h);
+    } else {
+        return CGSizeMake(kScreenWidth - 20, 300);
+    }
+    
+    
+}
 @end

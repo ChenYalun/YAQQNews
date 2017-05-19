@@ -17,6 +17,7 @@
 #import "YARightPhotoNewsCell.h"
 #import "YANewsContentAttribute.h"
 #import <YYWebImageManager.h>
+#import "YANotification.h"
 
 @class YANewsComment;
 
@@ -78,8 +79,7 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
         for (YANewsContentAttribute *attri in content.attribute) {
             NSString *targetString = [NSString stringWithFormat:@"<!--%@-->", attri.name];
             NSData *data = UIImageJPEGRepresentation(kGetImage(@"contentPlaceholder.jpg"), 1.0f);
-            NSString *resultString = [NSString stringWithFormat:@"<img id='%@' src='data:image/png;base64,%@' width='%f' height = '%f'/>", attri.name, [data base64Encoding], (kScreenWidth - 20),300.0];
-            
+            NSString *resultString = [NSString stringWithFormat:@"<img id='%@' src='data:image/png;base64,%@' width='%f' height = '%f'/>", attri.name, [data base64Encoding], attri.picWidth,attri.picHeight];
             content.content = [content.content stringByReplacingOccurrencesOfString:targetString withString:resultString];
         }
 
@@ -119,6 +119,14 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
 }
  
  */
+
+
+ #pragma mark – Events
+
+// 转到评论页面
+- (void)turnToCommentPage {
+    [[NSNotificationCenter defaultCenter] postNotificationName:kYANewsContentTurnPageNotification object:self];
+}
 
  #pragma mark - WKWebViewDelegate
 
@@ -184,7 +192,10 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
         return cell;
     } else if(indexPath.section == 2){
         YARightPhotoNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:kYARightPhotoNewsCellIdentifier forIndexPath:indexPath];
-        cell.news = self.newsList[indexPath.row];
+        YANewsModel *news = self.newsList[indexPath.row];
+        // 去除来源
+        news.iconTitle = nil;
+        cell.news = news;
         return cell;
     }
     return nil;
@@ -196,11 +207,14 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
     
     if (section == 1 && self.comments.count > 0) {
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 40)];
-        label.text = @"-全部评论-";
-        label.font = [UIFont boldSystemFontOfSize:14];
-        label.textAlignment = NSTextAlignmentCenter;
-        return label;
+        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 80)];
+        [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+        [button setAttributedTitle:[[NSAttributedString alloc] initWithString:@"全部评论" attributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:14], NSForegroundColorAttributeName: [UIColor darkGrayColor]}] forState:UIControlStateNormal];
+        [button setImage:kGetImage(@"icon_view_right") forState:UIControlStateNormal];
+        [button setImageEdgeInsets:UIEdgeInsetsMake(0, 110, 0, 0)];
+        [button setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 30)];
+        [button addTarget:self action:@selector(turnToCommentPage) forControlEvents:UIControlEventTouchUpInside];
+        return button;
     }
     
     return nil;
@@ -211,13 +225,13 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
     
     if (section == 1 && self.comments.count > 0) {
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 40)];
-        label.text = @"-用户热评-";
+        label.text = @"－用户热评－";
         label.font = [UIFont boldSystemFontOfSize:14];
         label.textAlignment = NSTextAlignmentCenter;
         return label;
     } else if(section == 2 && self.newsList.count > 0){
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 40)];
-        label.text = @"-相关推荐-";
+        label.text = @"－相关推荐－";
         label.font = [UIFont boldSystemFontOfSize:14];
         label.textAlignment = NSTextAlignmentCenter;
         return label;

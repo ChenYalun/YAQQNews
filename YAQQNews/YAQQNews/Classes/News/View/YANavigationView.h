@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface YANavigationView : UIView
-+ (instancetype)navigationViewWithTitle:(NSString *)title;
+/** 标题 */
+@property (nonatomic, copy) NSString *title;
++ (instancetype)navigationView;
 @end

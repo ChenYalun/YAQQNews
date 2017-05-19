@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -28,7 +28,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWN-lo-wmx">
                         <rect key="frame" x="40" y="15" width="22.5" height="13.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <color key="textColor" red="0.55066521917992806" green="0.64496180048734064" blue="0.7927308058375635" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="textColor" red="0.46153896616994272" green="0.53942608141373405" blue="0.66681868654822329" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJY-RP-9tt">
@@ -78,10 +78,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W2T-LH-xJ9">
-                        <rect key="frame" x="40" y="58" width="163" height="58"/>
+                        <rect key="frame" x="40" y="58" width="200" height="58"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="58" id="Igi-PX-B9u"/>
-                            <constraint firstAttribute="width" constant="163" id="S15-1a-wEa"/>
+                            <constraint firstAttribute="width" constant="200" id="S15-1a-wEa"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5Q-Ex-N9L">
@@ -132,6 +132,7 @@
                 <outlet property="nickLabel" destination="lWN-lo-wmx" id="P4d-ae-dr4"/>
                 <outlet property="picImageView" destination="W2T-LH-xJ9" id="OkX-pv-zC4"/>
                 <outlet property="picImageViewHeightConstraint" destination="Igi-PX-B9u" id="T1S-Zz-ff9"/>
+                <outlet property="picImageViewWidthConstraint" destination="S15-1a-wEa" id="JNJ-kl-ngg"/>
                 <outlet property="placeIconImageView" destination="qbC-Yu-ADc" id="zqF-u2-Aq2"/>
                 <outlet property="placeLabel" destination="czP-ud-JhT" id="FTr-hI-dnU"/>
                 <outlet property="replyBottomConstraint" destination="IGJ-Lc-oNJ" id="X1n-0S-Fte"/>

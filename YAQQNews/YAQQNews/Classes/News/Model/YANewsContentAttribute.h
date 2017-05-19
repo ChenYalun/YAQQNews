@@ -25,6 +25,12 @@
 @property (nonatomic, copy) NSString *thumb;
 /** 描述信息 */
 @property (nonatomic, copy) NSString *desc;
+/** 图片宽度 */
+@property (nonatomic, assign) CGFloat picWidth;
+/** 图片高度 */
+@property (nonatomic, assign) CGFloat picHeight;
+
+
 /** 元素对应的y值 */
 @property (nonatomic, assign) CGFloat offsetY;
 /** 是否已经替换过图片 */

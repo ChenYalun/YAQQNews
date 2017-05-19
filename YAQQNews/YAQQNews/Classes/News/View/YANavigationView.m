@@ -16,10 +16,14 @@
 
  #pragma mark – Life Cycle
 // 快速创建
-+ (instancetype)navigationViewWithTitle:(NSString *)title {
++ (instancetype)navigationView {
     YANavigationView *view = [[NSBundle mainBundle] loadNibNamed:[self className] owner:nil options:nil].firstObject;
-    view.titleLabel.text = title;
     return view;
+}
+
+- (void)setTitle:(NSString *)title {
+    _title = title;
+    self.titleLabel.text = title;
 }
 
  #pragma mark – Events

@@ -11,10 +11,11 @@
 #import "YANavigationView.h"
 #import "YANewsContentTextViewController.h"
 #import "YANewsContentCommentViewController.h"
+#import "YANotification.h"
 
 CGFloat const kNavigationViewHeight = 44;
 
-@interface YANewsContentViewController ()
+@interface YANewsContentViewController () <UIScrollViewDelegate>
 /** 新闻模型 */
 @property (nonatomic, strong) YANewsModel *news;
 /** scrollView */
@@ -33,7 +34,9 @@ CGFloat const kNavigationViewHeight = 44;
     return self;
 }
 
-
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -61,6 +64,28 @@ CGFloat const kNavigationViewHeight = 44;
     [self.view addSubview:self.navigationView];
     
     
+    // 注册通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(turnPage) name:kYANewsContentTurnPageNotification object:nil];
+}
+
+ #pragma mark – Events 
+
+- (void)turnPage {
+
+    // -20是由于tableView的contentOffset,为了保持平滑
+    [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentSize.width * 0.5, -20) animated:YES];
+    self.navigationView.title = @"评论";
+
+}
+
+ #pragma mark - ScrollViewDelegate
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    if (scrollView.contentOffset.x <= 2) { // 避免误差
+        self.navigationView.title = nil;
+    } else {
+        self.navigationView.title = @"评论";
+    }
 }
 
  #pragma mark – Getters and Setters
@@ -73,13 +98,14 @@ CGFloat const kNavigationViewHeight = 44;
         _scrollView.showsVerticalScrollIndicator = NO;
         _scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.bounces = NO;
+        _scrollView.delegate = self;
     }
     return _scrollView;
 }
 
 - (YANavigationView *)navigationView {
     if (!_navigationView) {
-        _navigationView = [YANavigationView navigationViewWithTitle:self.news.title];
+        _navigationView = [YANavigationView navigationView];
         _navigationView.frame = CGRectMake(0, 20, self.view.width - 7, kNavigationViewHeight);
     }
     return _navigationView;
