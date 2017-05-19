@@ -77,9 +77,13 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "IDMPhotoBrowser/Classes/IDMPhotoBrowser.bundle"
+  install_resource "IDMPhotoBrowser/Classes/IDMPBLocalizations.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "IDMPhotoBrowser/Classes/IDMPhotoBrowser.bundle"
+  install_resource "IDMPhotoBrowser/Classes/IDMPBLocalizations.bundle"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
 fi
 

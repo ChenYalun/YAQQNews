@@ -105,6 +105,7 @@
 		9ABD1CE31EC1ABA00074FBFC /* YALiveContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABD1CE21EC1ABA00074FBFC /* YALiveContent.m */; };
 		9ABD1CE61EC1AF660074FBFC /* YALiveContentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABD1CE51EC1AF660074FBFC /* YALiveContentHeaderView.m */; };
 		9ABD1CE81EC1AF850074FBFC /* YALiveContentHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ABD1CE71EC1AF850074FBFC /* YALiveContentHeaderView.xib */; };
+		9ACFAC731ECEFD9B00625032 /* YANewsContentPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ACFAC721ECEFD9B00625032 /* YANewsContentPhotoBrowser.m */; };
 		9AE436511EBD60D200921FD0 /* CAPSPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE436501EBD60D200921FD0 /* CAPSPageMenu.m */; };
 		9AE4365D1EBD616600921FD0 /* YANewsPageMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE4365C1EBD616600921FD0 /* YANewsPageMenuViewController.m */; };
 		9AE436601EBD62AC00921FD0 /* YAChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AE4365F1EBD62AC00921FD0 /* YAChannelViewController.m */; };
@@ -272,6 +273,8 @@
 		9ABD1CE41EC1AF660074FBFC /* YALiveContentHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALiveContentHeaderView.h; sourceTree = "<group>"; };
 		9ABD1CE51EC1AF660074FBFC /* YALiveContentHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALiveContentHeaderView.m; sourceTree = "<group>"; };
 		9ABD1CE71EC1AF850074FBFC /* YALiveContentHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YALiveContentHeaderView.xib; sourceTree = "<group>"; };
+		9ACFAC711ECEFD9B00625032 /* YANewsContentPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANewsContentPhotoBrowser.h; sourceTree = "<group>"; };
+		9ACFAC721ECEFD9B00625032 /* YANewsContentPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANewsContentPhotoBrowser.m; sourceTree = "<group>"; };
 		9AE4364F1EBD60D200921FD0 /* CAPSPageMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAPSPageMenu.h; sourceTree = "<group>"; };
 		9AE436501EBD60D200921FD0 /* CAPSPageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAPSPageMenu.m; sourceTree = "<group>"; };
 		9AE4365B1EBD616600921FD0 /* YANewsPageMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANewsPageMenuViewController.h; sourceTree = "<group>"; };
@@ -557,6 +560,8 @@
 				9A98E2D31EC5EAB000B9467A /* YANewsContentTextViewController.m */,
 				9A98E2D51EC5EB3900B9467A /* YANewsContentCommentViewController.h */,
 				9A98E2D61EC5EB3900B9467A /* YANewsContentCommentViewController.m */,
+				9ACFAC711ECEFD9B00625032 /* YANewsContentPhotoBrowser.h */,
+				9ACFAC721ECEFD9B00625032 /* YANewsContentPhotoBrowser.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1044,6 +1049,7 @@
 				9A5C906F1EBED2E900209995 /* YALiveModel.m in Sources */,
 				9A33BE961EC49EE400516CF1 /* YALiveAboutTableHeaderView.m in Sources */,
 				9A98E2D71EC5EB3900B9467A /* YANewsContentCommentViewController.m in Sources */,
+				9ACFAC731ECEFD9B00625032 /* YANewsContentPhotoBrowser.m in Sources */,
 				9A746AD11EC2BFDD007FAAE8 /* YALiveContentPageViewController.m in Sources */,
 				9A85F59A1EBCC8F9009243B3 /* YATabBarItem.m in Sources */,
 				9A85F5971EBCC7ED009243B3 /* YAProfileViewController.m in Sources */,

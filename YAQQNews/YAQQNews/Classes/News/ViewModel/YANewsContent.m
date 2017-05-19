@@ -35,14 +35,17 @@
     // 评论标题
     content.commentTitle = object[@"commentTitle"];
     
+    // 所有图片地址
+    content.picURLs = [NSMutableArray array];
+    
     // 图片视频
     NSMutableArray *attributeArray = [NSMutableArray array];
     
     NSDictionary *dict = object[@"attribute"];
     if (dict && [dict isKindOfClass:[NSDictionary class]]) {
-        NSArray *keyArray = dict.allKeys;
+        NSArray *keyArray = [dict.allKeys sortedArrayUsingSelector:@selector(compare:)];
         
-        for (NSString *key in keyArray) {
+        [keyArray enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, BOOL * _Nonnull stop) {
             YANewsContentAttribute *attribute = [[YANewsContentAttribute alloc] init];
             // 播放地址
             attribute.playURL = dict[key][@"playurl"];
@@ -53,7 +56,12 @@
             // 播放数量
             attribute.playCount = [NSString stringWithFormat:@"%@", dict[key][@"playcount"]];
             // 图片地址
-            attribute.origUrl = dict[key][@"origUrl"];
+            if (dict[key][@"origUrl"]) { // 正常图片
+                attribute.origUrl = dict[key][@"origUrl"];
+            } else { // 视频
+                attribute.origUrl = dict[key][@"img"];
+            }
+            
             // 拇指图
             attribute.thumb = dict[key][@"thumb"];
             // 描述信息
@@ -66,13 +74,21 @@
             attribute.name = key;
             
             
+            // 添加图片url地址
+            if (attribute.origUrl) {
+                [content.picURLs addObject:[NSURL URLWithString:attribute.origUrl]];
+            }
             
+            // 添加图片对象
             [attributeArray addObject:attribute];
-        }
+
+        }];
 
     }
     
     content.attribute = attributeArray;
+    
+    
     
     NSArray *newsArray = [YANewsModel newsModelWithOriginKeyValues:object[@"relate_news"]];
     content.relateNews = [NSArray array];

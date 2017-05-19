@@ -18,6 +18,7 @@
 #import "YANewsContentAttribute.h"
 #import <YYWebImageManager.h>
 #import "YANotification.h"
+#import "YANewsContentPhotoBrowser.h"
 
 @class YANewsComment;
 
@@ -43,6 +44,8 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
 @property (nonatomic, strong) NSMutableArray <YANewsModel * > *newsList;
 /** 属性数组 */
 @property (nonatomic, strong) NSMutableArray <YANewsContentAttribute * > *attributeArray;
+/** 图片url地址集合 */
+@property (nonatomic, strong) NSMutableArray *picURLs;
 /** 标志位:webView高度已经确定 */
 @property (nonatomic, assign) BOOL flag;
 @end
@@ -76,12 +79,18 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
         // 保存内容属性
         [self.attributeArray addObjectsFromArray:content.attribute];
         
-        for (YANewsContentAttribute *attri in content.attribute) {
+        [content.attribute enumerateObjectsUsingBlock:^(YANewsContentAttribute *attri, NSUInteger idx, BOOL * _Nonnull stop) {
+            
             NSString *targetString = [NSString stringWithFormat:@"<!--%@-->", attri.name];
             NSData *data = UIImageJPEGRepresentation(kGetImage(@"contentPlaceholder.jpg"), 1.0f);
-            NSString *resultString = [NSString stringWithFormat:@"<img id='%@' src='data:image/png;base64,%@' width='%f' height = '%f'/>", attri.name, [data base64Encoding], attri.picWidth,attri.picHeight];
+            NSString *resultString = [NSString stringWithFormat:@"<img id='%@' src='data:image/png;base64,%@' width='%f' height = '%f' alt = '%lu'/>", attri.name, [data base64Encoding], attri.picWidth,attri.picHeight,(unsigned long)idx];
+            if (attri.origUrl) {
+                [self.picURLs addObject:[NSURL URLWithString:attri.origUrl]];
+            }
+            
             content.content = [content.content stringByReplacingOccurrencesOfString:targetString withString:resultString];
-        }
+        }];
+   
 
         [self.webView loadHTMLString:content.content  baseURL:nil];
         
@@ -130,6 +139,38 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
 
  #pragma mark - WKWebViewDelegate
 
+// 在请求开始加载之前调用，决定是否跳转
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+
+    if ([navigationAction.request.URL.absoluteString containsString:@"preview:"]) {
+        // 截取字符串
+        
+        NSArray *array = [navigationAction.request.URL.absoluteString componentsSeparatedByString:@"preview:"];
+        NSString *idx = array.firstObject;
+        NSString *src = array.lastObject;
+        
+        NSUInteger i = idx.integerValue - 1;
+        
+        if (src.length > 0) {
+            //这里实现点击跳转到图片浏览器
+            YANewsContentPhotoBrowser *browser = [[YANewsContentPhotoBrowser alloc] initWithPhotoURLs:self.picURLs];
+            [browser setInitialPageIndex:[idx integerValue]];
+            [self presentViewController:browser animated:YES completion:^{
+                return;
+            }];
+            
+            
+            
+        }
+    }
+    
+    
+
+    decisionHandler(WKNavigationActionPolicyAllow);
+    
+}
+
+
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     // 调整webView高度
     [webView evaluateJavaScript:@"document.body.offsetHeight" completionHandler:^(id _Nullable result,NSError * _Nullable error) {
@@ -165,6 +206,24 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
     self.flag = YES;
     
 
+    // 点击图片浏览
+    NSString *js = @"function addImgClickEvent() {\
+    var imgs = document.images;\
+    for (var i = 0; i < imgs.length; i++) {\
+    var img = imgs[i];\
+    img.onclick = function () {\
+    window.location.href = this.alt + 'preview:' + this.src;\
+    }; \
+    } \
+    }";
+    
+    //注入js代码
+    [webView evaluateJavaScript:js completionHandler:nil];
+    
+    //执行js
+    [webView evaluateJavaScript:@"addImgClickEvent();"  completionHandler:^(id _Nullable resp, NSError * _Nullable error) {
+        
+    }];
 
 
 }
@@ -240,6 +299,13 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
 }
 
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    if (section == 1) {
+        return 60;
+    }
+    
+    return 0;
+}
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -369,4 +435,10 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
     return _attributeArray;
 }
 
+- (NSMutableArray *)picURLs {
+    if (!_picURLs) {
+        _picURLs = [NSMutableArray array];
+    }
+    return _picURLs;
+}
 @end

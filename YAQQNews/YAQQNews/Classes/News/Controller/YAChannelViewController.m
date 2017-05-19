@@ -150,7 +150,7 @@ NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     YANewsModel *news = self.newsList[indexPath.row];
     
-    if (news.thumbnails.count > 3) {
+    if (news.articletype == NewsArticleTypePicture) {
         YACenterPhotoNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:kYACenterPhotoNewsCellIdentifier forIndexPath:indexPath];
         cell.news = news;
         return cell;

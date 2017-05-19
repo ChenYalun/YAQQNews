@@ -20,7 +20,8 @@
 /** 时间 */
 @property (nonatomic, copy) NSString *time;
 
-
+/** 所有图片的url地址集合 */
+@property (nonatomic, strong) NSMutableArray *picURLs;
 /** 正文 */
 @property (nonatomic, copy) NSString *content;
 /** FadCid */
@@ -32,7 +33,7 @@
 /** 评论标题 */
 @property (nonatomic, copy) NSString *commentTitle;
 /** 图片视频 */
-@property (nonatomic, copy) NSMutableArray <YANewsContentAttribute *> * attribute;
+@property (nonatomic, strong) NSMutableArray <YANewsContentAttribute *> * attribute;
 /** 相关新闻 */
 @property (nonatomic, copy) NSArray <YANewsModel *> *relateNews;
 /** 置顶评论 */
