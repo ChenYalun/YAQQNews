@@ -7,19 +7,12 @@
 //
 
 #import "YAChannelViewController.h"
-#import "YAChannelRequest.h"
-#import "YANetWork.h"
 #import "YANewsModel.h"
-#import <MJRefresh.h>
 #import "YACenterPhotoNewsCell.h"
 #import "YARightPhotoNewsCell.h"
 #import <UITableView+FDTemplateLayoutCell.h>
 #import "YANewsContentViewController.h"
-
-typedef NS_ENUM(NSUInteger, RefreshType) {
-    RefreshTypeForNew,
-    RefreshTypeForMore
-};
+#import <MJRefresh.h>
 
 static NSString * const kYACenterPhotoNewsCellIdentifier = @"YACenterPhotoNewsCell";
 NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell";
@@ -31,7 +24,7 @@ NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell";
 /** 新闻ID*/
 @property (nonatomic, copy) NSMutableArray *newsIDs;
 /** 页码 */
-@property (nonatomic, strong) NSNumber *page;
+@property (nonatomic, assign) NSUInteger page;
 @end
 
 @implementation YAChannelViewController
@@ -40,32 +33,7 @@ NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-
-    
-    self.tableView.separatorColor = [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1];
-    
-    //
-    //    self.tableView.estimatedRowHeight = 213;
-    //    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    //
-    
-//    self.automaticallyAdjustsScrollViewInsets = NO;
-    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 64, 0);
-    self.tableView.showsVerticalScrollIndicator = YES;
-    
-
-    [self.tableView registerNib:[UINib nibWithNibName:[YACenterPhotoNewsCell className] bundle:nil] forCellReuseIdentifier:kYACenterPhotoNewsCellIdentifier];
-    [self.tableView registerNib:[UINib nibWithNibName:[YARightPhotoNewsCell className] bundle:nil] forCellReuseIdentifier:kYARightPhotoNewsCellIdentifier];
-    
-    
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshForNew)];
-    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(refreshForMore)];
-    
     [self.tableView.mj_header beginRefreshing];
-    
 }
 
  #pragma mark – Events
@@ -80,66 +48,22 @@ NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell";
     [self refreshForNewsWithPage:self.page refreshType:RefreshTypeForMore];
 }
 
-- (void)refreshForNewsWithPage:(NSNumber *)page refreshType:(RefreshType)type {
-    
-    YAChannelRequest *request = [[YAChannelRequest alloc] initWithChannel:RequestChannelOptionsSports | RequestChannelOptionsFinance | RequestChannelOptionsVideo page:self.page];
-    
-    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+- (void)refreshForNewsWithPage:(NSUInteger)page refreshType:(RefreshType)type {
+    [YANewsModel loadNewsListWithPage:self.page refreshType:type newsIDs:self.newsIDs newsList:self.newsList completionBlockWithSuccess:^(NSMutableArray<YANewsModel *> *newsList) {
         
-        NSArray *array = [YANewsModel newsModelWithKeyValuesArray:request.responseObject];
-        
-        for (YANewsModel *model in self.newsList) {
-            [self.newsIDs addObject:model.ID];
-        }
-        
-        // 剔除重复的新闻
-        NSMutableArray *tempArray = [NSMutableArray array];
-        for (YANewsModel *model in array) {
-            if (![self.newsIDs containsObject:model.ID]) {
-                [tempArray addObject:model];
-            }
-        }
-        
-        
-        if (type == RefreshTypeForNew) {
-            if (self.newsList.firstObject.stick) {
-                [self.newsList insertObjects:tempArray atIndex:1];
-            } else {
-                [self.newsList insertObjects:tempArray atIndex:0];
-            }
-            
-        } else {
-                [self.newsList addObjectsFromArray:tempArray];
-        }
-        
-        
-        if ([self.tableView.mj_header isRefreshing]) {
-            [self.tableView.mj_header endRefreshing];
-        }
-        if ([self.tableView.mj_footer isRefreshing]) {
-            [self.tableView.mj_footer endRefreshing];
-        }
-        
-        //NSLog(@"%@",request.responseString);
-        
-        self.page = [NSNumber numberWithInteger:self.page.integerValue + 1];
-        
+        self.newsList = newsList;
+        self.page += 1;
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
         [self.tableView reloadData];
+    } failure:^(NSError *error) {
         
-    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-        if ([self.tableView.mj_header isRefreshing]) {
-            [self.tableView.mj_header endRefreshing];
-        }
-        if ([self.tableView.mj_footer isRefreshing]) {
-            [self.tableView.mj_footer endRefreshing];
-        }
-        
-        NSLog(@"%@",request.error);
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
+        kLog(@"%@",error);
     }];
     
 }
-
-
 
  #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -246,10 +170,18 @@ NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell";
     return _newsList;
 }
 
-
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+        _tableView.dataSource = self;
+        _tableView.delegate = self;
+        _tableView.separatorColor = [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1];
+        _tableView.contentInset = UIEdgeInsetsMake(0, 0, 64, 0);
+        _tableView.showsVerticalScrollIndicator = YES;
+        [_tableView registerNib:[UINib nibWithNibName:[YACenterPhotoNewsCell className] bundle:nil] forCellReuseIdentifier:kYACenterPhotoNewsCellIdentifier];
+        [_tableView registerNib:[UINib nibWithNibName:[YARightPhotoNewsCell className] bundle:nil] forCellReuseIdentifier:kYARightPhotoNewsCellIdentifier];
+        _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshForNew)];
+        _tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(refreshForMore)];
         [self.view addSubview:_tableView];
         
     }
@@ -263,10 +195,4 @@ NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell";
     return _newsIDs;
 }
 
-- (NSNumber *)page {
-    if (!_page) {
-        _page = @0;
-    }
-    return _page;
-}
 @end

@@ -9,8 +9,56 @@
 #import "YANewsModel.h"
 #import "NSDate+YADateFormater.h"
 #import <MJExtension.h>
-
+#import "YAChannelRequest.h"
+#import "YANetWork.h"
 @implementation YANewsModel
+
+// 获取新闻列表
++ (void)loadNewsListWithPage:(NSUInteger)page refreshType:(RefreshType)type newsIDs:(NSMutableArray *)newsIDs newsList:(NSMutableArray <YANewsModel *> *)newsList completionBlockWithSuccess:(YALoadNewsListSuccessBlock)success failure:(YALoadNewsListFailureBlock)failure {
+    
+    
+    YAChannelRequest *request = [[YAChannelRequest alloc] initWithChannel:RequestChannelOptionsSports | RequestChannelOptionsFinance | RequestChannelOptionsVideo page:[NSNumber numberWithUnsignedInteger:page]];
+    
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        NSArray *array = [YANewsModel newsModelWithKeyValuesArray:request.responseObject];
+        
+        for (YANewsModel *model in newsList) {
+            [newsIDs addObject:model.ID];
+        }
+        
+        // 剔除重复的新闻
+        NSMutableArray *tempArray = [NSMutableArray array];
+        for (YANewsModel *model in array) {
+            if (![newsIDs containsObject:model.ID]) {
+                [tempArray addObject:model];
+            }
+        }
+
+        // 新的新闻数据
+        if (type == RefreshTypeForNew) {
+            if (newsList.firstObject.stick) {
+                [newsList insertObjects:tempArray atIndex:1];
+            } else {
+                [newsList insertObjects:tempArray atIndex:0];
+            }
+            
+        } else {
+            [newsList addObjectsFromArray:tempArray];
+        }
+
+        
+        // 成功回调
+        success(newsList);
+        
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        // 失败回调
+        failure(request.error);
+    }];
+    
+}
+    
+
+
 
 // 根据传进来的请求结果进行字典转模型
 + (NSArray<YANewsModel *> *)newsModelWithKeyValuesArray:(id)responseObject {
@@ -191,6 +239,9 @@
     return models;
 
 }
+
+ #pragma mark – Private Methods
+
 // 处理时间
 + (NSString *)setupCreatedTime:(NSString *)timeString {
     

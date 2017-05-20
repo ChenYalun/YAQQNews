@@ -55,13 +55,8 @@
             attribute.duration = dict[key][@"duration"];
             // 播放数量
             attribute.playCount = [NSString stringWithFormat:@"%@", dict[key][@"playcount"]];
-            // 图片地址
-            if (dict[key][@"origUrl"]) { // 正常图片
-                attribute.origUrl = dict[key][@"origUrl"];
-            } else { // 视频
-                attribute.origUrl = dict[key][@"img"];
-            }
-            
+            // 名称
+            attribute.name = key;
             // 拇指图
             attribute.thumb = dict[key][@"thumb"];
             // 描述信息
@@ -70,13 +65,16 @@
             attribute.picWidth = [UIImage normalImageSizeWithOriginImageSize:CGSizeMake([dict[key][@"width"] floatValue], [dict[key][@"height"] floatValue])].width;
             // 高度
             attribute.picHeight = [UIImage normalImageSizeWithOriginImageSize:CGSizeMake([dict[key][@"width"] floatValue], [dict[key][@"height"] floatValue])].height;;
-            // 名称
-            attribute.name = key;
-            
-            
-            // 添加图片url地址
-            if (attribute.origUrl) {
+            // 图片地址
+            if (dict[key][@"origUrl"]) { // 正常图片
+                attribute.origUrl = dict[key][@"origUrl"];
+                // 添加图片url地址
                 [content.picURLs addObject:[NSURL URLWithString:attribute.origUrl]];
+            } else if(dict[key][@"img"]){ // 视频
+                attribute.origUrl = dict[key][@"img"];
+            } else {
+                attribute.picWidth = 0;
+                attribute.picHeight = 0;
             }
             
             // 添加图片对象

@@ -9,7 +9,6 @@ target 'YAQQNews' do
 
 
   pod 'YTKNetwork'
-  # pod 'SDWebImage'
   pod 'MJRefresh'
   pod ‘MJExtension’
   pod ‘UITableView+FDTemplateLayoutCell’
@@ -18,7 +17,12 @@ target 'YAQQNews' do
   pod 'YYCategories' 
   pod 'TTTAttributedLabel'
   pod 'MLeaksFinder'
+  pod ‘FMDB’
   pod 'IDMPhotoBrowser'
+  pod ‘MBProgressHUD’
+  # pod ‘DACircularProgress’
+  pod 'SDWebImage'
+
 
 
 end

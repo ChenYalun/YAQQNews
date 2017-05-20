@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "YANews.h"
+@class YANewsModel;
+
+/** 刷新类型 */
+typedef NS_ENUM(NSUInteger, RefreshType) {
+    RefreshTypeForNew,
+    RefreshTypeForMore
+};
+/** 数据获取成功block */
+typedef void(^YALoadNewsListSuccessBlock)(NSMutableArray <YANewsModel *> *newsList);
+/** 数据获取失败block */
+typedef void(^YALoadNewsListFailureBlock)(NSError *error);
 
 @interface YANewsModel : NSObject
 /** 标题 */
@@ -83,4 +94,10 @@
 + (NSArray<YANewsModel *> *)newsModelWithKeyValuesArray:(id)responseObject;
 
 + (NSArray <YANewsModel *> *)newsModelWithOriginKeyValues:(NSArray *)keyValues;
+
++ (void)loadNewsListWithPage:(NSUInteger)page refreshType:(RefreshType)type newsIDs:(NSMutableArray *)newsIDs
+                    newsList:(NSMutableArray <YANewsModel *> *)newsList
+  completionBlockWithSuccess:(YALoadNewsListSuccessBlock)success
+                     failure:(YALoadNewsListFailureBlock)failure;
+
 @end

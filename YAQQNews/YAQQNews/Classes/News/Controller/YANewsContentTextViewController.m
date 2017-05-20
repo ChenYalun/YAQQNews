@@ -106,29 +106,6 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
 }
 
 
-/*
-// 实时改变webView的控件高度，使其高度跟内容高度一致
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
-    
-    if ([keyPath isEqualToString:@"contentSize"]) {
-        CGRect frame = self.webView.frame;
-        frame.size.height = self.webView.scrollView.contentSize.height;
-        self.webView.frame = frame;
-        
-        // 很关键
-        self.tableView.tableHeaderView = self.webView;
-
-    }
-}
-
-- (void)dealloc{
-    
-    //销毁的时候别忘移除监听
-    [self.webView.scrollView removeObserver:self forKeyPath:@"contentSize"];
-}
- 
- */
-
 
  #pragma mark – Events
 
@@ -147,21 +124,11 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
         
         NSArray *array = [navigationAction.request.URL.absoluteString componentsSeparatedByString:@"preview:"];
         NSString *idx = array.firstObject;
-        NSString *src = array.lastObject;
-        
-        NSUInteger i = idx.integerValue - 1;
-        
-        if (src.length > 0) {
-            //这里实现点击跳转到图片浏览器
-            YANewsContentPhotoBrowser *browser = [[YANewsContentPhotoBrowser alloc] initWithPhotoURLs:self.picURLs];
-            [browser setInitialPageIndex:[idx integerValue]];
-            [self presentViewController:browser animated:YES completion:^{
-                return;
-            }];
-            
-            
-            
-        }
+        //这里实现点击跳转到图片浏览器
+        YANewsContentPhotoBrowser *browser = [[YANewsContentPhotoBrowser alloc] initWithPhotoURLs:self.picURLs];
+        [browser setInitialPageIndex:[idx integerValue]];
+        [self presentViewController:browser animated:YES completion:nil];
+
     }
     
     
