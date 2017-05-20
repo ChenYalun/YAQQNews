@@ -1,5 +1,5 @@
 //
-//  YAProfileViewController.h
+//  YAProfileTableHeaderView.h
 //  YAQQNews
 //
 //  Created by 陈亚伦 on 2017/5/20.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YAProfileViewController : UIViewController
-
+@interface YAProfileTableHeaderView : UIView
++ (instancetype)profileTableHeaderView;
 @end

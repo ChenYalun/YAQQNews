@@ -29,5 +29,9 @@
 	</dict>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>访问您的相册以便于上传照片</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
 </dict>
 </plist>

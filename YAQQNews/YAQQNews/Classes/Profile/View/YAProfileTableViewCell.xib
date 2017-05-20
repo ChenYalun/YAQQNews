@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="YAProfileTableViewCell" id="KGk-i7-Jjw" customClass="YAProfileTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="红包" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2k-53-hJt">
+                        <rect key="frame" x="15" y="12" width="33" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_arrow_constellation" translatesAutoresizingMaskIntoConstraints="NO" id="TVl-bU-CRC">
+                        <rect key="frame" x="298" y="16.5" width="7" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="7" id="4z9-Mv-Kzw"/>
+                            <constraint firstAttribute="height" constant="10" id="735-Eo-req"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="邀请好友" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPe-AW-xVN">
+                        <rect key="frame" x="238.5" y="15" width="49.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="uPe-AW-xVN" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="6jQ-40-r8s"/>
+                    <constraint firstAttribute="trailing" secondItem="TVl-bU-CRC" secondAttribute="trailing" constant="15" id="IEj-EK-WAi"/>
+                    <constraint firstItem="TVl-bU-CRC" firstAttribute="leading" secondItem="uPe-AW-xVN" secondAttribute="trailing" constant="10" id="Waz-6D-22r"/>
+                    <constraint firstItem="TVl-bU-CRC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="oF2-wH-xkf"/>
+                    <constraint firstItem="P2k-53-hJt" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="sa8-EV-jsK"/>
+                    <constraint firstItem="P2k-53-hJt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="t0z-uC-hkb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="descLabel" destination="uPe-AW-xVN" id="UxV-50-qPu"/>
+                <outlet property="titleLabel" destination="P2k-53-hJt" id="e2k-7l-3ew"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="profile_arrow_constellation" width="10" height="16"/>
+    </resources>
+</document>
