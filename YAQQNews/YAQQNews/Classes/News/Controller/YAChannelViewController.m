@@ -18,8 +18,7 @@ static NSString * const kYACenterPhotoNewsCellIdentifier = @"YACenterPhotoNewsCe
 NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell";
 
 @interface YAChannelViewController ()<UITableViewDelegate, UITableViewDataSource>
-/** tableView */
-@property (nonatomic, strong) UITableView *tableView;
+
 @property (nonatomic, strong) NSMutableArray <YANewsModel *> *newsList;
 /** 新闻ID*/
 @property (nonatomic, copy) NSMutableArray *newsIDs;

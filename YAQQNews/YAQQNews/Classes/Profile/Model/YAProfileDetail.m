@@ -35,6 +35,5 @@
     game.title = @"游戏";
 
     return @[message, sub, collection, comment, packet, advice, game];
-    
 }
 @end

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface YAChannelViewController : UIViewController
-
+/** tableView */
+@property (nonatomic, strong) UITableView *tableView;
 @end
