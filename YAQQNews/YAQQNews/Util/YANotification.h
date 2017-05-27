@@ -12,3 +12,7 @@ extern NSString * const kYALiveContentNotification;
 
 // 新闻内容页面滑动的通知
 extern NSString * const kYANewsContentTurnPageNotification;
+
+// 新闻列表页面scrollview滚动通知
+extern NSString * const kYANewsListScrollViewOffsetNotification;
+

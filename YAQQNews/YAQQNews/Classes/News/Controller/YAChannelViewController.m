@@ -13,6 +13,7 @@
 #import <UITableView+FDTemplateLayoutCell.h>
 #import "YANewsContentViewController.h"
 #import <MJRefresh.h>
+#import "YANotification.h"
 
 static NSString * const kYACenterPhotoNewsCellIdentifier = @"YACenterPhotoNewsCell";
 NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell";
@@ -159,6 +160,11 @@ NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell";
     }
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:kYANewsListScrollViewOffsetNotification object:nil userInfo:@{@"offsetY": [NSNumber numberWithFloat:scrollView.contentOffset.y]}];
+    
+}
 
  #pragma mark – Getters and Setters
 

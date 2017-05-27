@@ -11,3 +11,5 @@
 NSString * const kYALiveContentNotification = @"kYALiveContentNotification";
 
 NSString * const kYANewsContentTurnPageNotification = @"kYANewsContentTurnPageNotification";
+
+NSString * const kYANewsListScrollViewOffsetNotification = @"kYANewsListScrollViewOffsetNotification";

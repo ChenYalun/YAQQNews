@@ -11,6 +11,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YARecommendViewController">
             <connections>
+                <outlet property="closeButton" destination="KQN-gH-ZM5" id="V7O-xN-Tkm"/>
+                <outlet property="discoverLabel" destination="mf2-x5-e2x" id="Hqw-gD-Kow"/>
+                <outlet property="searchButton" destination="hd1-BC-DaN" id="TNm-Fn-rko"/>
+                <outlet property="searchButtonLeadingConstraint" destination="PXc-MK-Fpe" id="dn7-cW-ph4"/>
+                <outlet property="titleLabel" destination="nk7-yn-F3m" id="yyK-zK-ptY"/>
+                <outlet property="titleLabelLeadingConstraint" destination="KhH-Rf-HB8" id="3He-gH-Jzz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

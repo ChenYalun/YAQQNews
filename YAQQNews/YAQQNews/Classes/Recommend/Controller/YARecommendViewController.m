@@ -10,7 +10,13 @@
 #import "YARecommendContentViewController.h"
 #import "YARecommendDiscoverViewController.h"
 
-@interface YARecommendViewController ()
+@interface YARecommendViewController () <UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *closeButton;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *discoverLabel;
+@property (weak, nonatomic) IBOutlet UIButton *searchButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchButtonLeadingConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleLabelLeadingConstraint;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @end
 
@@ -39,6 +45,37 @@
     
 }
 
+ #pragma mark - ScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    // 右边关闭按钮的颜色渐变与旋转/搜索按钮的移动
+    if (scrollView.contentOffset.x < kScreenWidth) {
+        self.closeButton.alpha = 1 - scrollView.contentOffset.x / kScreenWidth;
+        self.closeButton.transform = CGAffineTransformMakeRotation((1 - scrollView.contentOffset.x / kScreenWidth ) * M_PI_2);
+        self.searchButtonLeadingConstraint.constant =  15 + (1 - scrollView.contentOffset.x / kScreenWidth) * 5;
+    }
+    
+    // 标题/发现 的移动与颜色渐变
+    if (scrollView.contentOffset.x < kScreenWidth && scrollView.contentOffset.x > kScreenWidth / 3) {
+        self.titleLabelLeadingConstraint.constant = kScreenWidth - scrollView.contentOffset.x;
+        self.titleLabel.alpha = 1 - (kScreenWidth - scrollView.contentOffset.x) / (kScreenWidth / 4);
+        self.discoverLabel.alpha = 1 - (kScreenWidth - scrollView.contentOffset.x) / (kScreenWidth / 2);
+    }
+    
+    // 搜索按钮的旋转
+    if (scrollView.contentOffset.x < kScreenWidth && scrollView.contentOffset.x >= 0.5 * kScreenWidth) {
+        self.searchButton.transform = CGAffineTransformMakeRotation((kScreenWidth - scrollView.contentOffset.x) / (kScreenWidth / 2) * M_PI_4 * (-0.5));
+    } else if (scrollView.contentOffset.x < 0.5 * kScreenWidth) {
+        self.searchButton.transform = CGAffineTransformMakeRotation((1 - (kScreenWidth * 0.5  - scrollView.contentOffset.x) / (kScreenWidth * 0.5)) * M_PI_4 * (-0.5));
+    }
+    
+    // tabBar透明度
+    if (scrollView.contentOffset.x <= 100) {
+        self.tabBarController.tabBar.alpha = (scrollView.contentOffset.x - 40) / 60;
+    } else {
+        self.tabBarController.tabBar.alpha = 1.0;
+    }
+}
 #pragma mark – Getters and Setters
 
 - (UIScrollView *)scrollView {
@@ -48,6 +85,7 @@
         _scrollView.bounces = YES;
         _scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.pagingEnabled = YES;
+        _scrollView.delegate = self;
     }
     return _scrollView;
 }
