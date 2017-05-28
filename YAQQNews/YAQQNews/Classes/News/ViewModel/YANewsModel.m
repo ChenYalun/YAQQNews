@@ -11,14 +11,21 @@
 #import <MJExtension.h>
 #import "YAChannelRequest.h"
 #import "YANetWork.h"
+#import "YARecommendRequest.h"
+
 @implementation YANewsModel
 
 // 获取新闻列表
-+ (void)loadNewsListWithPage:(NSUInteger)page refreshType:(RefreshType)type newsIDs:(NSMutableArray *)newsIDs newsList:(NSMutableArray <YANewsModel *> *)newsList completionBlockWithSuccess:(YALoadNewsListSuccessBlock)success failure:(YALoadNewsListFailureBlock)failure {
++ (void)loadNewsListWithViewControllerType:(YAViewControllerType)viewControllerType page:(NSUInteger)page refreshType:(RefreshType)type newsIDs:(NSMutableArray *)newsIDs newsList:(NSMutableArray<YANewsModel *> *)newsList completionBlockWithSuccess:(YALoadNewsListSuccessBlock)success failure:(YALoadNewsListFailureBlock)failure {
     
-    
-    YAChannelRequest *request = [[YAChannelRequest alloc] initWithChannel:RequestChannelOptionsSports | RequestChannelOptionsFinance | RequestChannelOptionsVideo page:[NSNumber numberWithUnsignedInteger:page]];
-    
+    id request;
+    if (viewControllerType == YAViewControllerMainNewsType) { // 主页面控制器
+        request = [[YAChannelRequest alloc] initWithChannel:RequestChannelOptionsSports | RequestChannelOptionsFinance | RequestChannelOptionsVideo page:[NSNumber numberWithUnsignedInteger:page]];
+    } else if(viewControllerType == YAViewControllerRecommendNewsType){ // 推荐页面控制器
+        request = [[YARecommendRequest alloc] init];
+        
+    }     
+    // 发送请求
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         NSArray *array = [YANewsModel newsModelWithKeyValuesArray:request.responseObject];
         
@@ -33,7 +40,7 @@
                 [tempArray addObject:model];
             }
         }
-
+        
         // 新的新闻数据
         if (type == RefreshTypeForNew) {
             if (newsList.firstObject.stick) {
@@ -45,7 +52,7 @@
         } else {
             [newsList addObjectsFromArray:tempArray];
         }
-
+        
         
         // 成功回调
         success(newsList);
@@ -55,8 +62,9 @@
         failure(request.error);
     }];
     
+   
 }
-    
+
 
 
 

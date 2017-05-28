@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    YAChannelViewController *channelViewController = [[YAChannelViewController alloc] init];
+    YAChannelViewController *channelViewController = [[YAChannelViewController alloc] initWithViewControllerType:YAViewControllerRecommendNewsType];
     [self addChildViewController:channelViewController];
     [self.view addSubview:channelViewController.view];
     channelViewController.view.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);

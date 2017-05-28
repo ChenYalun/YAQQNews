@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YANewsModel.h"
 
 @interface YAChannelViewController : UIViewController
 /** tableView */
 @property (nonatomic, strong) UITableView *tableView;
+/** 复用的控制器 */
+- (instancetype)initWithViewControllerType:(YAViewControllerType)viewControllerType;
 @end

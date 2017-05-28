@@ -27,6 +27,10 @@ NSString * const kYAProfileTableViewCellIdentifier = @"YAProfileTableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationController.navigationBar.hidden = YES;
+    
+    
     self.tableView.backgroundColor = [UIColor clearColor];
     self.detailList = [YAProfileDetail profileDetail];
     [self.tableView reloadData];

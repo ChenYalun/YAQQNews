@@ -19,7 +19,8 @@ static NSString * const kYACenterPhotoNewsCellIdentifier = @"YACenterPhotoNewsCe
 NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell";
 
 @interface YAChannelViewController ()<UITableViewDelegate, UITableViewDataSource>
-
+/** 控制器类型 */
+@property (nonatomic, assign) YAViewControllerType viewControllerType;
 @property (nonatomic, strong) NSMutableArray <YANewsModel *> *newsList;
 /** 新闻ID*/
 @property (nonatomic, copy) NSMutableArray *newsIDs;
@@ -31,6 +32,12 @@ NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell";
 
  #pragma mark – Life Cycle
 
+- (instancetype)initWithViewControllerType:(YAViewControllerType)viewControllerType {
+    if (self = [super init]) {
+        self.viewControllerType = viewControllerType;
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableView.mj_header beginRefreshing];
@@ -49,7 +56,7 @@ NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell";
 }
 
 - (void)refreshForNewsWithPage:(NSUInteger)page refreshType:(RefreshType)type {
-    [YANewsModel loadNewsListWithPage:self.page refreshType:type newsIDs:self.newsIDs newsList:self.newsList completionBlockWithSuccess:^(NSMutableArray<YANewsModel *> *newsList) {
+    [YANewsModel loadNewsListWithViewControllerType:self.viewControllerType page:self.page refreshType:type newsIDs:self.newsIDs newsList:self.newsList completionBlockWithSuccess:^(NSMutableArray<YANewsModel *> *newsList) {
         
         self.newsList = newsList;
         self.page += 1;

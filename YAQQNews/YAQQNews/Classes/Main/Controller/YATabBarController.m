@@ -28,13 +28,15 @@
     UINavigationController *newsNavigationController = [[UINavigationController alloc] initWithRootViewController:newsViewController];
     
     YARecommendViewController *recommendViewController = [[YARecommendViewController alloc] init];
+    UINavigationController *recommendNavigationController = [[UINavigationController alloc] initWithRootViewController:recommendViewController];
     
     YALiveViewController *liveViewController = [[YALiveViewController alloc] init];
     UINavigationController *liveNavigationController = [[UINavigationController alloc] initWithRootViewController:liveViewController];
     
     YAProfileViewController *profileViewController = [[YAProfileViewController alloc] init];
+    UINavigationController *profileNavigationController = [[UINavigationController alloc] initWithRootViewController:profileViewController];
     
-    self.viewControllers = @[newsNavigationController, recommendViewController, liveNavigationController, profileViewController];
+    self.viewControllers = @[newsNavigationController, recommendNavigationController, liveNavigationController, profileNavigationController];
     
     // 创建Item
     YATabBarItem *newsItem = [[YATabBarItem alloc] initWithTitle:@"新闻" image:[UIImage imageNamed:@"tabbar_news_normal"]  selectedImage:[UIImage imageNamed:@"tabbar_news_selected"]];

@@ -13,7 +13,7 @@
 @interface YARecommendViewController () <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *discoverLabel;
+@property (weak, nonatomic) IBOutlet UIButton *discoverButton;
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchButtonLeadingConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleLabelLeadingConstraint;
@@ -26,6 +26,8 @@
     [super viewDidLoad];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
+    self.navigationController.navigationBar.hidden = YES;
+    
     
     [self.view insertSubview:self.scrollView atIndex:0];
     
@@ -59,7 +61,7 @@
     if (scrollView.contentOffset.x < kScreenWidth && scrollView.contentOffset.x > kScreenWidth / 3) {
         self.titleLabelLeadingConstraint.constant = kScreenWidth - scrollView.contentOffset.x;
         self.titleLabel.alpha = 1 - (kScreenWidth - scrollView.contentOffset.x) / (kScreenWidth / 4);
-        self.discoverLabel.alpha = 1 - (kScreenWidth - scrollView.contentOffset.x) / (kScreenWidth / 2);
+        self.discoverButton.alpha = 1 - (kScreenWidth - scrollView.contentOffset.x) / (kScreenWidth / 2);
     }
     
     // 搜索按钮的旋转
@@ -81,10 +83,13 @@
 
 // scrollView滑到第二页
 - (IBAction)returnRecommendPage:(UIButton *)sender {
-    // 默认展示第二页
     [self.scrollView setContentOffset:CGPointMake(kScreenWidth, 0) animated:YES];
 }
 
+// scrollView滑到第一页
+- (IBAction)returnRecommendTopic:(UIButton *)sender {
+    [self.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+}
 
 #pragma mark – Getters and Setters
 

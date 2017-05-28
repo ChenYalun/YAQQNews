@@ -15,6 +15,14 @@ typedef NS_ENUM(NSUInteger, RefreshType) {
     RefreshTypeForNew,
     RefreshTypeForMore
 };
+
+/** 控制器类型 */
+typedef NS_ENUM(NSUInteger,YAViewControllerType) {
+    YAViewControllerMainNewsType, // 新闻主页面
+    YAViewControllerRecommendNewsType, // 推荐主页面
+
+};
+
 /** 数据获取成功block */
 typedef void(^YALoadNewsListSuccessBlock)(NSMutableArray <YANewsModel *> *newsList);
 /** 数据获取失败block */
@@ -95,7 +103,7 @@ typedef void(^YALoadNewsListFailureBlock)(NSError *error);
 
 + (NSArray <YANewsModel *> *)newsModelWithOriginKeyValues:(NSArray *)keyValues;
 
-+ (void)loadNewsListWithPage:(NSUInteger)page refreshType:(RefreshType)type newsIDs:(NSMutableArray *)newsIDs
++ (void)loadNewsListWithViewControllerType:(YAViewControllerType)viewControllerType page:(NSUInteger)page refreshType:(RefreshType)type newsIDs:(NSMutableArray *)newsIDs
                     newsList:(NSMutableArray <YANewsModel *> *)newsList
   completionBlockWithSuccess:(YALoadNewsListSuccessBlock)success
                      failure:(YALoadNewsListFailureBlock)failure;

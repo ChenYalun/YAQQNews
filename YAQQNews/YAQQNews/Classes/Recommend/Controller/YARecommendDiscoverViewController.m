@@ -9,8 +9,11 @@
 #import "YARecommendDiscoverViewController.h"
 #import "YARecommendTopicSection.h"
 #import "YARecommendTopicTableViewCell.h"
-#import "YANewsRecommendTopicRequest.h"
+#import "YARecommendTopicRequest.h"
 #import "YARecommendTopicSectionHeaderView.h"
+#import "YARecommendTopicContentViewController.h"
+#import "YARecommendTopicModel.h"
+
 
 static NSString * const kYARecommendTopicTableViewCellIdentifier = @"YARecommendTopicTableViewCell";
 
@@ -26,47 +29,8 @@ static NSString * const kYARecommendTopicTableViewCellIdentifier = @"YARecommend
     [super viewDidLoad];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-    // 搜索栏
-    
-    //创建UISearchController
-    UISearchController *searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
-    //设置代理
-    searchController.delegate= self;
-    searchController.searchResultsUpdater = self;
-    
-    // 样式
-    searchController.searchBar.searchBarStyle = UIBarStyleBlack;
-    
-    //包着搜索框外层的颜色
-    searchController.searchBar.barTintColor = [UIColor whiteColor];
-    // 搜索框内容颜色
-    searchController.searchBar.tintColor = [UIColor greenColor];
-    // 搜索框背景
-    //searchController.searchBar.backgroundImage = ;
-    //searchController.searchBar.backgroundColor = [UIColor darkGrayColor];
-    // 隐藏搜索按钮
-    //searchController.searchBar.showsCancelButton
-    
-    //提醒字眼
 
     
-    searchController.searchBar.placeholder= @"搜索感兴趣的内容";
-    // 文字偏移
-   // searchController.searchBar.searchFieldBackgroundPositionAdjustment = UIOffsetMake(0, 0);
-    //搜索时，背景变暗色
-    //searchController.dimsBackgroundDuringPresentation = NO;
-    //位置
-    searchController.searchBar.frame = CGRectMake(0, 30, kScreenWidth - 60, 30);
-    
-    // 按钮
-    [searchController.searchBar setImage:[[UIImage alloc] init]
-                  forSearchBarIcon:UISearchBarIconSearch
-                             state:UIControlStateNormal];
-    //背景图片
-    //[searchController.searchBar setSearchFieldBackgroundImage:[UIImage imageNamed:@"search_field"] forState:UIControlStateNormal];
-    
-    // 添加 searchbar 到 headerview
-    [self.view addSubview:searchController.searchBar];
     
 
     
@@ -74,7 +38,7 @@ static NSString * const kYARecommendTopicTableViewCellIdentifier = @"YARecommend
     // tableView
     [self.view addSubview:self.tableView];
     self.tableView.contentInset = UIEdgeInsetsMake(10, 0, -20, 0);
-    YANewsRecommendTopicRequest *request = [[YANewsRecommendTopicRequest alloc] init];
+    YARecommendTopicRequest *request = [[YARecommendTopicRequest alloc] init];
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         self.sections = [NSArray arrayWithArray:[YARecommendTopicSection topicSectionsWithObject:request.responseObject]];
         
@@ -122,6 +86,14 @@ static NSString * const kYARecommendTopicTableViewCellIdentifier = @"YARecommend
     return nil;
 }
 
+ #pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    YARecommendTopicModel *topic = self.sections[indexPath.section].topicList[indexPath.row];
+    YARecommendTopicContentViewController *viewController = [[YARecommendTopicContentViewController alloc] initWithTopicID:topic.topicPid];
+    [self.navigationController pushViewController:viewController animated:YES];
+    
+}
 
  #pragma mark – Getters and Setters
 

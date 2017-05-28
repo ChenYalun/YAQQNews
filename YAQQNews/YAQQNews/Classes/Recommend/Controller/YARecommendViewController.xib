@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YARecommendViewController">
             <connections>
                 <outlet property="closeButton" destination="KQN-gH-ZM5" id="V7O-xN-Tkm"/>
-                <outlet property="discoverLabel" destination="mf2-x5-e2x" id="Hqw-gD-Kow"/>
+                <outlet property="discoverButton" destination="0OA-if-Vem" id="Fr2-RR-vCs"/>
                 <outlet property="searchButton" destination="hd1-BC-DaN" id="TNm-Fn-rko"/>
                 <outlet property="searchButtonLeadingConstraint" destination="PXc-MK-Fpe" id="dn7-cW-ph4"/>
                 <outlet property="titleLabel" destination="nk7-yn-F3m" id="yyK-zK-ptY"/>
@@ -36,12 +36,6 @@
                             </constraints>
                             <state key="normal" image="search_icon_btn_black"/>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发现" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mf2-x5-e2x">
-                            <rect key="frame" x="35" y="13.5" width="31" height="18"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQN-gH-ZM5">
                             <rect key="frame" x="330" y="6.5" width="30" height="30"/>
                             <constraints>
@@ -60,17 +54,30 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0OA-if-Vem">
+                            <rect key="frame" x="35" y="6.5" width="40" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="O24-dX-fWf"/>
+                                <constraint firstAttribute="width" constant="40" id="hLW-Sw-YjS"/>
+                            </constraints>
+                            <state key="normal" title="发现">
+                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <connections>
+                                <action selector="returnRecommendTopic:" destination="-1" eventType="touchUpInside" id="hTl-Vj-DTJ"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="KQN-gH-ZM5" secondAttribute="trailing" constant="15" id="0s9-Ex-KE7"/>
-                        <constraint firstItem="mf2-x5-e2x" firstAttribute="leading" secondItem="hd1-BC-DaN" secondAttribute="trailing" constant="5" id="2rG-6P-3gn"/>
                         <constraint firstItem="KQN-gH-ZM5" firstAttribute="centerY" secondItem="UjE-Ae-b5m" secondAttribute="centerY" id="8Su-ng-V3I"/>
                         <constraint firstItem="nk7-yn-F3m" firstAttribute="centerY" secondItem="UjE-Ae-b5m" secondAttribute="centerY" id="Ftg-TP-6jm"/>
                         <constraint firstItem="hd1-BC-DaN" firstAttribute="centerY" secondItem="UjE-Ae-b5m" secondAttribute="centerY" id="KWB-1j-EUG"/>
                         <constraint firstItem="nk7-yn-F3m" firstAttribute="centerX" secondItem="UjE-Ae-b5m" secondAttribute="centerX" id="KhH-Rf-HB8"/>
-                        <constraint firstItem="mf2-x5-e2x" firstAttribute="centerY" secondItem="hd1-BC-DaN" secondAttribute="centerY" id="NP5-UB-lzN"/>
                         <constraint firstItem="hd1-BC-DaN" firstAttribute="leading" secondItem="UjE-Ae-b5m" secondAttribute="leading" constant="15" id="PXc-MK-Fpe"/>
+                        <constraint firstItem="0OA-if-Vem" firstAttribute="leading" secondItem="hd1-BC-DaN" secondAttribute="trailing" constant="5" id="QeZ-RZ-zB3"/>
                         <constraint firstAttribute="height" constant="44" id="dFG-7a-O8a"/>
+                        <constraint firstItem="0OA-if-Vem" firstAttribute="centerY" secondItem="hd1-BC-DaN" secondAttribute="centerY" id="sZw-Eg-EGt"/>
                     </constraints>
                 </view>
             </subviews>

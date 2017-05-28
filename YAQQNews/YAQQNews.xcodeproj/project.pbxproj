@@ -15,6 +15,12 @@
 		9A1223041EC7002500E81D3F /* YANewsShortCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A1223021EC7002500E81D3F /* YANewsShortCommentTableViewCell.xib */; };
 		9A33BE931EC49E6000516CF1 /* YALiveAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A33BE921EC49E6000516CF1 /* YALiveAboutViewController.m */; };
 		9A33BE961EC49EE400516CF1 /* YALiveAboutTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A33BE951EC49EE400516CF1 /* YALiveAboutTableHeaderView.m */; };
+		9A4453521EDAA28700D96957 /* YARecommendTopicContentHeaderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4453511EDAA28700D96957 /* YARecommendTopicContentHeaderRequest.m */; };
+		9A4453551EDAA29D00D96957 /* YARecommendTopicContentListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4453541EDAA29D00D96957 /* YARecommendTopicContentListRequest.m */; };
+		9A4453591EDAA74900D96957 /* YARecommendTopicContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4453571EDAA74900D96957 /* YARecommendTopicContentViewController.m */; };
+		9A44535A1EDAA74900D96957 /* YARecommendTopicContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4453581EDAA74900D96957 /* YARecommendTopicContentViewController.xib */; };
+		9A4453621EDAB05300D96957 /* YARecommendTopicContentHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4453611EDAB05300D96957 /* YARecommendTopicContentHeader.m */; };
+		9A4453651EDACD7E00D96957 /* YARecommendTopicContentListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4453641EDACD7E00D96957 /* YARecommendTopicContentListModel.m */; };
 		9A5894201ECBCFBF000BD147 /* YANewsCommentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A58941F1ECBCFBF000BD147 /* YANewsCommentRequest.m */; };
 		9A5C90311EBE970F00209995 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90301EBE970F00209995 /* VideoToolbox.framework */; };
 		9A5C90331EBE971C00209995 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90321EBE971C00209995 /* UIKit.framework */; };
@@ -42,14 +48,14 @@
 		9A5C906F1EBED2E900209995 /* YALiveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5C906E1EBED2E900209995 /* YALiveModel.m */; };
 		9A5C90721EBF13B800209995 /* YALiveHeaderLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5C90711EBF13B800209995 /* YALiveHeaderLabel.m */; };
 		9A5C90741EBF251700209995 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90731EBF251700209995 /* IJKMediaFramework.framework */; };
-		9A5E9D421ED99D86009B7FF0 /* YANewsRecommendTopicRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E9D411ED99D86009B7FF0 /* YANewsRecommendTopicRequest.m */; };
+		9A5E9D421ED99D86009B7FF0 /* YARecommendTopicRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E9D411ED99D86009B7FF0 /* YARecommendTopicRequest.m */; };
 		9A5E9D451ED99DD0009B7FF0 /* YARecommendTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E9D441ED99DD0009B7FF0 /* YARecommendTopic.m */; };
 		9A5E9D481ED99F22009B7FF0 /* YARecommendTopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E9D471ED99F22009B7FF0 /* YARecommendTopicModel.m */; };
 		9A5E9D4C1ED9A257009B7FF0 /* YARecommendTopicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E9D4A1ED9A257009B7FF0 /* YARecommendTopicTableViewCell.m */; };
 		9A5E9D4D1ED9A257009B7FF0 /* YARecommendTopicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A5E9D4B1ED9A257009B7FF0 /* YARecommendTopicTableViewCell.xib */; };
 		9A5E9D501ED9ABF6009B7FF0 /* YARecommendTopicSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E9D4F1ED9ABF6009B7FF0 /* YARecommendTopicSection.m */; };
 		9A5E9D531ED9CA0A009B7FF0 /* YARecommendTopicSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E9D521ED9CA0A009B7FF0 /* YARecommendTopicSectionHeaderView.m */; };
-		9A6190BA1ECFE6AF00270D39 /* YANewsRecommendRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6190B91ECFE6AF00270D39 /* YANewsRecommendRequest.m */; };
+		9A6190BA1ECFE6AF00270D39 /* YARecommendRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6190B91ECFE6AF00270D39 /* YARecommendRequest.m */; };
 		9A6190BD1ECFE92A00270D39 /* YASQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6190BC1ECFE92A00270D39 /* YASQLiteManager.m */; };
 		9A6190C61ED044AB00270D39 /* YAProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6190C41ED044AB00270D39 /* YAProfileTableViewCell.m */; };
 		9A6190C71ED044AB00270D39 /* YAProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A6190C51ED044AB00270D39 /* YAProfileTableViewCell.xib */; };
@@ -151,6 +157,17 @@
 		9A33BE921EC49E6000516CF1 /* YALiveAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALiveAboutViewController.m; sourceTree = "<group>"; };
 		9A33BE941EC49EE400516CF1 /* YALiveAboutTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALiveAboutTableHeaderView.h; sourceTree = "<group>"; };
 		9A33BE951EC49EE400516CF1 /* YALiveAboutTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALiveAboutTableHeaderView.m; sourceTree = "<group>"; };
+		9A4453501EDAA28700D96957 /* YARecommendTopicContentHeaderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicContentHeaderRequest.h; sourceTree = "<group>"; };
+		9A4453511EDAA28700D96957 /* YARecommendTopicContentHeaderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicContentHeaderRequest.m; sourceTree = "<group>"; };
+		9A4453531EDAA29D00D96957 /* YARecommendTopicContentListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicContentListRequest.h; sourceTree = "<group>"; };
+		9A4453541EDAA29D00D96957 /* YARecommendTopicContentListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicContentListRequest.m; sourceTree = "<group>"; };
+		9A4453561EDAA74900D96957 /* YARecommendTopicContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicContentViewController.h; sourceTree = "<group>"; };
+		9A4453571EDAA74900D96957 /* YARecommendTopicContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicContentViewController.m; sourceTree = "<group>"; };
+		9A4453581EDAA74900D96957 /* YARecommendTopicContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YARecommendTopicContentViewController.xib; sourceTree = "<group>"; };
+		9A4453601EDAB05300D96957 /* YARecommendTopicContentHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicContentHeader.h; sourceTree = "<group>"; };
+		9A4453611EDAB05300D96957 /* YARecommendTopicContentHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicContentHeader.m; sourceTree = "<group>"; };
+		9A4453631EDACD7E00D96957 /* YARecommendTopicContentListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicContentListModel.h; sourceTree = "<group>"; };
+		9A4453641EDACD7E00D96957 /* YARecommendTopicContentListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicContentListModel.m; sourceTree = "<group>"; };
 		9A58941E1ECBCFBF000BD147 /* YANewsCommentRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANewsCommentRequest.h; sourceTree = "<group>"; };
 		9A58941F1ECBCFBF000BD147 /* YANewsCommentRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANewsCommentRequest.m; sourceTree = "<group>"; };
 		9A5C90301EBE970F00209995 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
@@ -188,8 +205,8 @@
 		9A5C90701EBF13B800209995 /* YALiveHeaderLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALiveHeaderLabel.h; sourceTree = "<group>"; };
 		9A5C90711EBF13B800209995 /* YALiveHeaderLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALiveHeaderLabel.m; sourceTree = "<group>"; };
 		9A5C90731EBF251700209995 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
-		9A5E9D401ED99D86009B7FF0 /* YANewsRecommendTopicRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANewsRecommendTopicRequest.h; sourceTree = "<group>"; };
-		9A5E9D411ED99D86009B7FF0 /* YANewsRecommendTopicRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANewsRecommendTopicRequest.m; sourceTree = "<group>"; };
+		9A5E9D401ED99D86009B7FF0 /* YARecommendTopicRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicRequest.h; sourceTree = "<group>"; };
+		9A5E9D411ED99D86009B7FF0 /* YARecommendTopicRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicRequest.m; sourceTree = "<group>"; };
 		9A5E9D431ED99DD0009B7FF0 /* YARecommendTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopic.h; sourceTree = "<group>"; };
 		9A5E9D441ED99DD0009B7FF0 /* YARecommendTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopic.m; sourceTree = "<group>"; };
 		9A5E9D461ED99F22009B7FF0 /* YARecommendTopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicModel.h; sourceTree = "<group>"; };
@@ -201,8 +218,8 @@
 		9A5E9D4F1ED9ABF6009B7FF0 /* YARecommendTopicSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicSection.m; sourceTree = "<group>"; };
 		9A5E9D511ED9CA09009B7FF0 /* YARecommendTopicSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicSectionHeaderView.h; sourceTree = "<group>"; };
 		9A5E9D521ED9CA0A009B7FF0 /* YARecommendTopicSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicSectionHeaderView.m; sourceTree = "<group>"; };
-		9A6190B81ECFE6AF00270D39 /* YANewsRecommendRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANewsRecommendRequest.h; sourceTree = "<group>"; };
-		9A6190B91ECFE6AF00270D39 /* YANewsRecommendRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANewsRecommendRequest.m; sourceTree = "<group>"; };
+		9A6190B81ECFE6AF00270D39 /* YARecommendRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendRequest.h; sourceTree = "<group>"; };
+		9A6190B91ECFE6AF00270D39 /* YARecommendRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendRequest.m; sourceTree = "<group>"; };
 		9A6190BB1ECFE92A00270D39 /* YASQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YASQLiteManager.h; sourceTree = "<group>"; };
 		9A6190BC1ECFE92A00270D39 /* YASQLiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YASQLiteManager.m; sourceTree = "<group>"; };
 		9A6190C31ED044AB00270D39 /* YAProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAProfileTableViewCell.h; sourceTree = "<group>"; };
@@ -430,10 +447,14 @@
 		9A6190B71ECFE66E00270D39 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				9A6190B81ECFE6AF00270D39 /* YANewsRecommendRequest.h */,
-				9A6190B91ECFE6AF00270D39 /* YANewsRecommendRequest.m */,
-				9A5E9D401ED99D86009B7FF0 /* YANewsRecommendTopicRequest.h */,
-				9A5E9D411ED99D86009B7FF0 /* YANewsRecommendTopicRequest.m */,
+				9A6190B81ECFE6AF00270D39 /* YARecommendRequest.h */,
+				9A6190B91ECFE6AF00270D39 /* YARecommendRequest.m */,
+				9A5E9D401ED99D86009B7FF0 /* YARecommendTopicRequest.h */,
+				9A5E9D411ED99D86009B7FF0 /* YARecommendTopicRequest.m */,
+				9A4453501EDAA28700D96957 /* YARecommendTopicContentHeaderRequest.h */,
+				9A4453511EDAA28700D96957 /* YARecommendTopicContentHeaderRequest.m */,
+				9A4453531EDAA29D00D96957 /* YARecommendTopicContentListRequest.h */,
+				9A4453541EDAA29D00D96957 /* YARecommendTopicContentListRequest.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -745,6 +766,9 @@
 				9A6190D91ED0887700270D39 /* YARecommendContentViewController.m */,
 				9A6190D51ED0878400270D39 /* YARecommendDiscoverViewController.h */,
 				9A6190D61ED0878400270D39 /* YARecommendDiscoverViewController.m */,
+				9A4453561EDAA74900D96957 /* YARecommendTopicContentViewController.h */,
+				9A4453571EDAA74900D96957 /* YARecommendTopicContentViewController.m */,
+				9A4453581EDAA74900D96957 /* YARecommendTopicContentViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -756,6 +780,8 @@
 				9A5E9D441ED99DD0009B7FF0 /* YARecommendTopic.m */,
 				9A5E9D4E1ED9ABF6009B7FF0 /* YARecommendTopicSection.h */,
 				9A5E9D4F1ED9ABF6009B7FF0 /* YARecommendTopicSection.m */,
+				9A4453601EDAB05300D96957 /* YARecommendTopicContentHeader.h */,
+				9A4453611EDAB05300D96957 /* YARecommendTopicContentHeader.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -777,6 +803,8 @@
 			children = (
 				9A5E9D461ED99F22009B7FF0 /* YARecommendTopicModel.h */,
 				9A5E9D471ED99F22009B7FF0 /* YARecommendTopicModel.m */,
+				9A4453631EDACD7E00D96957 /* YARecommendTopicContentListModel.h */,
+				9A4453641EDACD7E00D96957 /* YARecommendTopicContentListModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -993,6 +1021,7 @@
 				9A6C650B1ECDBA6600802C66 /* night-care_gif@2x.gif in Resources */,
 				9AE4367D1EBDB28B00921FD0 /* YACenterPhotoNewsCell.xib in Resources */,
 				9A6C65101ECDBA6600802C66 /* request_gif@2x.gif in Resources */,
+				9A44535A1EDAA74900D96957 /* YARecommendTopicContentViewController.xib in Resources */,
 				9A5E9D4D1ED9A257009B7FF0 /* YARecommendTopicTableViewCell.xib in Resources */,
 				9ABD1CD21EC14AF70074FBFC /* amr_sound_loading@3x.gif in Resources */,
 				9A746AC51EC2B6A0007FAAE8 /* YALiveCommentTableViewCell.xib in Resources */,
@@ -1083,6 +1112,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A4453621EDAB05300D96957 /* YARecommendTopicContentHeader.m in Sources */,
 				9AE436681EBD785100921FD0 /* YANewsModel.m in Sources */,
 				9AE436751EBDB20F00921FD0 /* NSDate+YADateFormater.m in Sources */,
 				9ABD1CD51EC156570074FBFC /* YALiveChannelDataSource.m in Sources */,
@@ -1101,6 +1131,7 @@
 				9AE436651EBD784100921FD0 /* YANews.m in Sources */,
 				9A6C65161ECDBF7700802C66 /* AFJSONResponseSerializer+YATypeSupport.m in Sources */,
 				9A1222F81EC6E26400E81D3F /* YANewsCommentTableViewCell.m in Sources */,
+				9A4453651EDACD7E00D96957 /* YARecommendTopicContentListModel.m in Sources */,
 				9AE4366F1EBD798C00921FD0 /* YANetWork.m in Sources */,
 				9A6190C61ED044AB00270D39 /* YAProfileTableViewCell.m in Sources */,
 				9A5C90691EBED1D300209995 /* YARefreshHeader.m in Sources */,
@@ -1124,13 +1155,14 @@
 				9A6A6BD61EC836770089CF09 /* YANewsContentAttribute.m in Sources */,
 				9A33BE931EC49E6000516CF1 /* YALiveAboutViewController.m in Sources */,
 				9A8111601EC07DC10086635B /* YALiveNewsListRequest.m in Sources */,
+				9A4453551EDAA29D00D96957 /* YARecommendTopicContentListRequest.m in Sources */,
 				9A5E9D481ED99F22009B7FF0 /* YARecommendTopicModel.m in Sources */,
 				9A746ADE1EC35CD0007FAAE8 /* YALiveMessageTableViewCell.m in Sources */,
 				9AE4366C1EBD78B200921FD0 /* YAChannelRequest.m in Sources */,
 				9AE4367E1EBDB28B00921FD0 /* YARightPhotoNewsCell.m in Sources */,
 				9A98E2D41EC5EAB000B9467A /* YANewsContentTextViewController.m in Sources */,
 				9A5E9D531ED9CA0A009B7FF0 /* YARecommendTopicSectionHeaderView.m in Sources */,
-				9A5E9D421ED99D86009B7FF0 /* YANewsRecommendTopicRequest.m in Sources */,
+				9A5E9D421ED99D86009B7FF0 /* YARecommendTopicRequest.m in Sources */,
 				9A6190DE1ED0894200270D39 /* YARecommendViewController.m in Sources */,
 				9A746AD41EC343E5007FAAE8 /* YALiveCommentRequest.m in Sources */,
 				9A98E2C91EC5C45E00B9467A /* YANewsContent.m in Sources */,
@@ -1139,16 +1171,18 @@
 				9A5C90721EBF13B800209995 /* YALiveHeaderLabel.m in Sources */,
 				9A746AE51EC35D08007FAAE8 /* YALiveMessageRequest.m in Sources */,
 				9A5C90551EBEB48B00209995 /* YALiveChannelViewController.m in Sources */,
-				9A6190BA1ECFE6AF00270D39 /* YANewsRecommendRequest.m in Sources */,
+				9A6190BA1ECFE6AF00270D39 /* YARecommendRequest.m in Sources */,
 				9AE4367C1EBDB28B00921FD0 /* YACenterPhotoNewsCell.m in Sources */,
 				9A746AC01EC2B3CF007FAAE8 /* YALiveComment.m in Sources */,
 				9A85F59D1EBCC939009243B3 /* UIImage+YARenderingMode.m in Sources */,
+				9A4453591EDAA74900D96957 /* YARecommendTopicContentViewController.m in Sources */,
 				9AE436511EBD60D200921FD0 /* CAPSPageMenu.m in Sources */,
 				9A85F5441EBCBF9E009243B3 /* main.m in Sources */,
 				9A5C906F1EBED2E900209995 /* YALiveModel.m in Sources */,
 				9A33BE961EC49EE400516CF1 /* YALiveAboutTableHeaderView.m in Sources */,
 				9A98E2D71EC5EB3900B9467A /* YANewsContentCommentViewController.m in Sources */,
 				9ACFAC731ECEFD9B00625032 /* YANewsContentPhotoBrowser.m in Sources */,
+				9A4453521EDAA28700D96957 /* YARecommendTopicContentHeaderRequest.m in Sources */,
 				9A746AD11EC2BFDD007FAAE8 /* YALiveContentPageViewController.m in Sources */,
 				9A85F59A1EBCC8F9009243B3 /* YATabBarItem.m in Sources */,
 				9A5E9D451ED99DD0009B7FF0 /* YARecommendTopic.m in Sources */,
