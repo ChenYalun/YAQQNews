@@ -12,7 +12,7 @@
 
 @implementation YARecommendTopicContentHeader
 
-+ (void)setUpTopicContentHeaderWithTopicID:(NSString *)topicID titleLabel:(UILabel *)titleLabel descLabel:(UILabel *)descLabel subLabel:(UILabel *)subLabel pubLabel:(UILabel *)pubLabel backImageView:(UIImageView *)backImageView {
++ (void)setUpTopicContentHeaderWithTopicID:(NSString *)topicID titleLabel:(UILabel *)titleLabel headerTitleLabel:(UILabel *)headerTitleLabel  descLabel:(UILabel *)descLabel subLabel:(UILabel *)subLabel pubLabel:(UILabel *)pubLabel backImageView:(UIImageView *)backImageView {
  
     YARecommendTopicContentHeader *header = [[YARecommendTopicContentHeader alloc] init];
 
@@ -34,6 +34,7 @@
         descLabel.text = header.desc;
         subLabel.text = header.subString;
         pubLabel.text = header.pubString;
+        headerTitleLabel.text = header.tpname;
         [backImageView yy_setImageWithURL:[NSURL URLWithString:header.icon] options:YYWebImageOptionSetImageWithFadeAnimation];
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         

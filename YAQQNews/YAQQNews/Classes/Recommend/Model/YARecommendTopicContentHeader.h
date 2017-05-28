@@ -27,5 +27,5 @@
 @property (nonatomic, copy) NSString *tpname;
 
 // 字典转模型
-+ (void)setUpTopicContentHeaderWithTopicID:(NSString *)topicID titleLabel:(UILabel *)titleLabel descLabel:(UILabel *)descLabel subLabel:(UILabel *)subLabel pubLabel:(UILabel *)pubLabel backImageView:(UIImageView *)backImageView;
++ (void)setUpTopicContentHeaderWithTopicID:(NSString *)topicID titleLabel:(UILabel *)titleLabel headerTitleLabel:(UILabel *)headerTitleLabel descLabel:(UILabel *)descLabel subLabel:(UILabel *)subLabel pubLabel:(UILabel *)pubLabel backImageView:(UIImageView *)backImageView;
 @end

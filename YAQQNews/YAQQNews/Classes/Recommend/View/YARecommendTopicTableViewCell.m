@@ -21,6 +21,13 @@
 
 @implementation YARecommendTopicTableViewCell
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    // 设置选中颜色
+    self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.frame];
+    self.selectedBackgroundView.backgroundColor = kRGBAColor(236, 236, 236, 0.6);
+}
 - (void)setTopic:(YARecommendTopicModel *)topic {
     _topic = topic;
     

@@ -36,6 +36,13 @@ static NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell
 @property (weak, nonatomic) IBOutlet UILabel *subLabel;
 @property (weak, nonatomic) IBOutlet UILabel *pubLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *backImageView;
+@property (weak, nonatomic) IBOutlet UIView *headerView;
+@property (weak, nonatomic) IBOutlet UIView *maskView;
+@property (weak, nonatomic) IBOutlet UIButton *returnButton;
+@property (weak, nonatomic) IBOutlet UILabel *headerTitleLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *subButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *headerViewTopConstraint;
 @end
 
 @implementation YARecommendTopicContentViewController
@@ -50,12 +57,15 @@ static NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
-    
-    [YARecommendTopicContentHeader setUpTopicContentHeaderWithTopicID:self.topicID titleLabel:self.titleLabel descLabel:self.descLabel subLabel:self.subLabel pubLabel:self.pubLabel backImageView:self.backImageView];
+    [YARecommendTopicContentHeader setUpTopicContentHeaderWithTopicID:self.topicID titleLabel:self.titleLabel headerTitleLabel:self.headerTitleLabel descLabel:self.descLabel subLabel:self.subLabel pubLabel:self.pubLabel backImageView:self.backImageView];
+
     
     self.isFirst = YES;
     self.index = 1;
+    
     self.tableView.mj_footer = [YARefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(refreshForMore)];
     [self.tableView.mj_footer beginRefreshing];
 }
@@ -116,15 +126,50 @@ static NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell
     }];
 }
 
+ #pragma mark - ScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat y = scrollView.contentOffset.y + 136;
+    // 改变顶部header偏移
+    if (y <=210) {
+        self.headerViewTopConstraint.constant =  - y;
+        
+        // 头部视图的渐白效果
+        self.maskView.alpha = y / 130.0;
+        self.backImageView.alpha = 1 - y / 130.0;
+        
+        if (y <= 0) {
+            self.headerViewTopConstraint.constant = 0;
+        }
+        
+        // 头部标题/按钮的颜色
+        if (y >= 80) {
+            self.headerTitleLabel.hidden = NO;
+            [self.returnButton setImage:kGetImage(@"navbar_icon_back_normal") forState:UIControlStateNormal];
+            [self.subButton setImage:kGetImage(@"follow_bt_word_normal_black") forState:UIControlStateNormal];
+            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+
+        } else {
+            self.headerTitleLabel.hidden = YES;
+            [self.returnButton setImage:kGetImage(@"navbar_icon_white_back_normal") forState:UIControlStateNormal];
+            [self.subButton setImage:kGetImage(@"follow_bt_word_normal") forState:UIControlStateNormal];
+            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
+        }
+        
+    }
+    
+}
   #pragma mark – Getters and Setters
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 200, kScreenWidth, kScreenHeight - 200)];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight)];
+        _tableView.contentInset = UIEdgeInsetsMake(200 - 64, 0, 60, 0);
         [_tableView registerNib:[UINib nibWithNibName:[YARightPhotoNewsCell className] bundle:nil] forCellReuseIdentifier:kYARightPhotoNewsCellIdentifier];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        [self.view addSubview:_tableView];
+        [self.view insertSubview:_tableView atIndex:0];
     }
     return _tableView;
 }
