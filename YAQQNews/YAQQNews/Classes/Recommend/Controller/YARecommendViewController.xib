@@ -43,12 +43,16 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQN-gH-ZM5">
-                            <rect key="frame" x="340" y="11.5" width="20" height="20"/>
+                            <rect key="frame" x="330" y="6.5" width="30" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="20" id="SEJ-pO-Krg"/>
-                                <constraint firstAttribute="width" constant="20" id="qsj-US-4IK"/>
+                                <constraint firstAttribute="height" constant="30" id="SEJ-pO-Krg"/>
+                                <constraint firstAttribute="width" constant="30" id="qsj-US-4IK"/>
                             </constraints>
+                            <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                             <state key="normal" image="close"/>
+                            <connections>
+                                <action selector="returnRecommendPage:" destination="-1" eventType="touchUpInside" id="scI-XZ-vqS"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="推荐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nk7-yn-F3m">
                             <rect key="frame" x="170" y="11.5" width="35" height="21"/>

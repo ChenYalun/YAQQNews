@@ -76,6 +76,16 @@
         self.tabBarController.tabBar.alpha = 1.0;
     }
 }
+
+ #pragma mark – Events
+
+// scrollView滑到第二页
+- (IBAction)returnRecommendPage:(UIButton *)sender {
+    // 默认展示第二页
+    [self.scrollView setContentOffset:CGPointMake(kScreenWidth, 0) animated:YES];
+}
+
+
 #pragma mark – Getters and Setters
 
 - (UIScrollView *)scrollView {

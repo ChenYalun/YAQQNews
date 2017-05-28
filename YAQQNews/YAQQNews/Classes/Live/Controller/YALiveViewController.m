@@ -21,8 +21,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    // 设置tabbar隐藏
-    self.hidesBottomBarWhenPushed = YES;
     
     // 设置导航栏
     self.navigationController.navigationBar.hidden = YES;
@@ -39,10 +37,5 @@
 
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    self.tabBarController.tabBar.hidden = NO;
-}
 
 @end

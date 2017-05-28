@@ -25,7 +25,7 @@
 /** 标题 */
 @property (nonatomic, copy) NSString *title;
 /** 订阅数量 */
-@property (nonatomic, assign) NSString *subCountString;
+@property (nonatomic, copy) NSString *subCountString;
 /** 更新周 */
 @property (nonatomic, assign) NSUInteger updateWeek;
 /** 索引*/

@@ -30,21 +30,13 @@
         model.title = topic.title;
         
         // 关注人数处理
-
-//        if (topic.subCount) {
-//            NSString *sub = [NSString string];
-//            if (topic.subCount >= 10000) {
-//                sub = [NSString stringWithFormat:@"%.1f万关注", topic.subCount / 10000.0];
-//            } else {
-//                sub = [NSString stringWithFormat:@"%lu关注", (unsigned long)topic.subCount];
-//            }
-//            model.subCountString = sub;
-//        }
-//        
-        model.subCountString = @"11万关注";
+        if (topic.subCount >= 10000) {
+            CGFloat count = topic.subCount / 10000.0;
+            model.subCountString = [NSString stringWithFormat:@"%.2f万关注",count];
+        } else {
+            model.subCountString = [NSString stringWithFormat:@"%lu关注",(unsigned long)topic.subCount];
+        }
         
-
-     
         // 日期处理
         if (topic.lastArtUpdate) {
             model.dateString = [YARecommendTopicModel setUpTime:topic.lastArtUpdate.floatValue];
