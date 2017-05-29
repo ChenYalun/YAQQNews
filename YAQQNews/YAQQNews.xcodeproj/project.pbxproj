@@ -15,25 +15,37 @@
 		9A1223041EC7002500E81D3F /* YANewsShortCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A1223021EC7002500E81D3F /* YANewsShortCommentTableViewCell.xib */; };
 		9A33BE931EC49E6000516CF1 /* YALiveAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A33BE921EC49E6000516CF1 /* YALiveAboutViewController.m */; };
 		9A33BE961EC49EE400516CF1 /* YALiveAboutTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A33BE951EC49EE400516CF1 /* YALiveAboutTableHeaderView.m */; };
-		9A4453521EDAA28700D96957 /* YARecommendTopicContentHeaderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4453511EDAA28700D96957 /* YARecommendTopicContentHeaderRequest.m */; };
-		9A4453551EDAA29D00D96957 /* YARecommendTopicContentListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4453541EDAA29D00D96957 /* YARecommendTopicContentListRequest.m */; };
-		9A4453591EDAA74900D96957 /* YARecommendTopicContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4453571EDAA74900D96957 /* YARecommendTopicContentViewController.m */; };
-		9A44535A1EDAA74900D96957 /* YARecommendTopicContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4453581EDAA74900D96957 /* YARecommendTopicContentViewController.xib */; };
-		9A4453621EDAB05300D96957 /* YARecommendTopicContentHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4453611EDAB05300D96957 /* YARecommendTopicContentHeader.m */; };
-		9A4453651EDACD7E00D96957 /* YARecommendTopicContentListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4453641EDACD7E00D96957 /* YARecommendTopicContentListModel.m */; };
 		9A4836D01EDB9D4E00422534 /* YARecommendTopicPageMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4836CF1EDB9D4E00422534 /* YARecommendTopicPageMenuViewController.m */; };
-		9A4836D31EDBA07000422534 /* YARecommendInterestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4836D21EDBA06F00422534 /* YARecommendInterestTableViewController.m */; };
-		9A4836D91EDBA15800422534 /* YARecommendInterestCatRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4836D81EDBA15800422534 /* YARecommendInterestCatRequest.m */; };
-		9A4836DC1EDBA19F00422534 /* YARecommendInterestListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4836DB1EDBA19F00422534 /* YARecommendInterestListRequest.m */; };
-		9A4836E01EDBA2A300422534 /* YARecommendInterestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4836DE1EDBA2A300422534 /* YARecommendInterestTableViewCell.m */; };
-		9A4836E11EDBA2A300422534 /* YARecommendInterestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4836DF1EDBA2A300422534 /* YARecommendInterestTableViewCell.xib */; };
-		9A4836E41EDBA5BE00422534 /* YARecommendInterest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4836E31EDBA5BE00422534 /* YARecommendInterest.m */; };
-		9A4836E71EDBA88800422534 /* YARecommendInterestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4836E61EDBA88800422534 /* YARecommendInterestModel.m */; };
-		9A4836EB1EDBB5F600422534 /* YARecommendInterestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4836E91EDBB5F600422534 /* YARecommendInterestViewController.m */; };
-		9A4836EC1EDBB5F600422534 /* YARecommendInterestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4836EA1EDBB5F600422534 /* YARecommendInterestViewController.xib */; };
-		9A4836F01EDBE36900422534 /* YARecommendTopicSubscribeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4836EE1EDBE36900422534 /* YARecommendTopicSubscribeViewController.m */; };
-		9A4836F11EDBE36900422534 /* YARecommendTopicSubscribeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4836EF1EDBE36900422534 /* YARecommendTopicSubscribeViewController.xib */; };
-		9A4836F41EDBFAEB00422534 /* YARecommendSubNewsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4836F31EDBFAEB00422534 /* YARecommendSubNewsRequest.m */; };
+		9A48373D1EDC351E00422534 /* YARecommendInterestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4836F81EDC351E00422534 /* YARecommendInterestTableViewController.m */; };
+		9A48373E1EDC351E00422534 /* YARecommendInterestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4836FA1EDC351E00422534 /* YARecommendInterestViewController.m */; };
+		9A48373F1EDC351E00422534 /* YARecommendInterestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4836FB1EDC351E00422534 /* YARecommendInterestViewController.xib */; };
+		9A4837401EDC351E00422534 /* YARecommendInterest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4836FE1EDC351E00422534 /* YARecommendInterest.m */; };
+		9A4837411EDC351E00422534 /* YARecommendInterestCatRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4837011EDC351E00422534 /* YARecommendInterestCatRequest.m */; };
+		9A4837421EDC351E00422534 /* YARecommendInterestListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4837031EDC351E00422534 /* YARecommendInterestListRequest.m */; };
+		9A4837431EDC351E00422534 /* YARecommendInterestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4837061EDC351E00422534 /* YARecommendInterestTableViewCell.m */; };
+		9A4837441EDC351E00422534 /* YARecommendInterestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4837071EDC351E00422534 /* YARecommendInterestTableViewCell.xib */; };
+		9A4837451EDC351E00422534 /* YARecommendInterestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A48370A1EDC351E00422534 /* YARecommendInterestModel.m */; };
+		9A4837461EDC351E00422534 /* YARecommendDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A48370E1EDC351E00422534 /* YARecommendDiscoverViewController.m */; };
+		9A4837471EDC351E00422534 /* YARecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4837101EDC351E00422534 /* YARecommendViewController.m */; };
+		9A4837481EDC351E00422534 /* YARecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4837111EDC351E00422534 /* YARecommendViewController.xib */; };
+		9A4837491EDC351E00422534 /* YARecommendTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4837141EDC351E00422534 /* YARecommendTopic.m */; };
+		9A48374A1EDC351E00422534 /* YARecommendTopicSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4837161EDC351E00422534 /* YARecommendTopicSection.m */; };
+		9A48374B1EDC351E00422534 /* YARecommendRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4837191EDC351E00422534 /* YARecommendRequest.m */; };
+		9A48374C1EDC351E00422534 /* YARecommendTopicRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A48371B1EDC351E00422534 /* YARecommendTopicRequest.m */; };
+		9A48374D1EDC351E00422534 /* YARecommendTopicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A48371E1EDC351E00422534 /* YARecommendTopicTableViewCell.m */; };
+		9A48374E1EDC351E00422534 /* YARecommendTopicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A48371F1EDC351E00422534 /* YARecommendTopicTableViewCell.xib */; };
+		9A48374F1EDC351E00422534 /* YARecommendTopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4837221EDC351E00422534 /* YARecommendTopicModel.m */; };
+		9A4837501EDC351E00422534 /* YARecommendContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4837261EDC351E00422534 /* YARecommendContentViewController.m */; };
+		9A4837511EDC351E00422534 /* YARecommendTopicContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4837281EDC351E00422534 /* YARecommendTopicContentViewController.m */; };
+		9A4837521EDC351E00422534 /* YARecommendTopicContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4837291EDC351E00422534 /* YARecommendTopicContentViewController.xib */; };
+		9A4837531EDC351E00422534 /* YARecommendTopicSubscribeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A48372B1EDC351E00422534 /* YARecommendTopicSubscribeViewController.m */; };
+		9A4837541EDC351E00422534 /* YARecommendTopicSubscribeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A48372C1EDC351E00422534 /* YARecommendTopicSubscribeViewController.xib */; };
+		9A4837551EDC351E00422534 /* YARecommendTopicContentHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A48372F1EDC351E00422534 /* YARecommendTopicContentHeader.m */; };
+		9A4837561EDC351E00422534 /* YARecommendSubNewsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4837321EDC351E00422534 /* YARecommendSubNewsRequest.m */; };
+		9A4837571EDC351E00422534 /* YARecommendTopicContentHeaderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4837341EDC351E00422534 /* YARecommendTopicContentHeaderRequest.m */; };
+		9A4837581EDC351E00422534 /* YARecommendTopicContentListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4837361EDC351E00422534 /* YARecommendTopicContentListRequest.m */; };
+		9A4837591EDC351E00422534 /* YARecommendTopicSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4837391EDC351E00422534 /* YARecommendTopicSectionHeaderView.m */; };
+		9A48375A1EDC351E00422534 /* YARecommendTopicContentListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A48373C1EDC351E00422534 /* YARecommendTopicContentListModel.m */; };
 		9A5894201ECBCFBF000BD147 /* YANewsCommentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A58941F1ECBCFBF000BD147 /* YANewsCommentRequest.m */; };
 		9A5C90311EBE970F00209995 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90301EBE970F00209995 /* VideoToolbox.framework */; };
 		9A5C90331EBE971C00209995 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90321EBE971C00209995 /* UIKit.framework */; };
@@ -61,14 +73,6 @@
 		9A5C906F1EBED2E900209995 /* YALiveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5C906E1EBED2E900209995 /* YALiveModel.m */; };
 		9A5C90721EBF13B800209995 /* YALiveHeaderLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5C90711EBF13B800209995 /* YALiveHeaderLabel.m */; };
 		9A5C90741EBF251700209995 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90731EBF251700209995 /* IJKMediaFramework.framework */; };
-		9A5E9D421ED99D86009B7FF0 /* YARecommendTopicRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E9D411ED99D86009B7FF0 /* YARecommendTopicRequest.m */; };
-		9A5E9D451ED99DD0009B7FF0 /* YARecommendTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E9D441ED99DD0009B7FF0 /* YARecommendTopic.m */; };
-		9A5E9D481ED99F22009B7FF0 /* YARecommendTopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E9D471ED99F22009B7FF0 /* YARecommendTopicModel.m */; };
-		9A5E9D4C1ED9A257009B7FF0 /* YARecommendTopicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E9D4A1ED9A257009B7FF0 /* YARecommendTopicTableViewCell.m */; };
-		9A5E9D4D1ED9A257009B7FF0 /* YARecommendTopicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A5E9D4B1ED9A257009B7FF0 /* YARecommendTopicTableViewCell.xib */; };
-		9A5E9D501ED9ABF6009B7FF0 /* YARecommendTopicSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E9D4F1ED9ABF6009B7FF0 /* YARecommendTopicSection.m */; };
-		9A5E9D531ED9CA0A009B7FF0 /* YARecommendTopicSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E9D521ED9CA0A009B7FF0 /* YARecommendTopicSectionHeaderView.m */; };
-		9A6190BA1ECFE6AF00270D39 /* YARecommendRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6190B91ECFE6AF00270D39 /* YARecommendRequest.m */; };
 		9A6190BD1ECFE92A00270D39 /* YASQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6190BC1ECFE92A00270D39 /* YASQLiteManager.m */; };
 		9A6190C61ED044AB00270D39 /* YAProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6190C41ED044AB00270D39 /* YAProfileTableViewCell.m */; };
 		9A6190C71ED044AB00270D39 /* YAProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A6190C51ED044AB00270D39 /* YAProfileTableViewCell.xib */; };
@@ -77,10 +81,6 @@
 		9A6190CF1ED04D5B00270D39 /* YAProfileTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A6190CE1ED04D5B00270D39 /* YAProfileTableHeaderView.xib */; };
 		9A6190D31ED052AB00270D39 /* YAProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6190D11ED052AB00270D39 /* YAProfileViewController.m */; };
 		9A6190D41ED052AB00270D39 /* YAProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A6190D21ED052AB00270D39 /* YAProfileViewController.xib */; };
-		9A6190D71ED0878400270D39 /* YARecommendDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6190D61ED0878400270D39 /* YARecommendDiscoverViewController.m */; };
-		9A6190DA1ED0887700270D39 /* YARecommendContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6190D91ED0887700270D39 /* YARecommendContentViewController.m */; };
-		9A6190DE1ED0894200270D39 /* YARecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6190DC1ED0894200270D39 /* YARecommendViewController.m */; };
-		9A6190DF1ED0894200270D39 /* YARecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A6190DD1ED0894200270D39 /* YARecommendViewController.xib */; };
 		9A6A6BD61EC836770089CF09 /* YANewsContentAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6A6BD51EC836770089CF09 /* YANewsContentAttribute.m */; };
 		9A6C64F31ECD992000802C66 /* YANewsContentAttributeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A6C64F21ECD992000802C66 /* YANewsContentAttributeView.xib */; };
 		9A6C64F61ECD993400802C66 /* YANewsContentAttributeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C64F51ECD993400802C66 /* YANewsContentAttributeView.m */; };
@@ -170,40 +170,62 @@
 		9A33BE921EC49E6000516CF1 /* YALiveAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALiveAboutViewController.m; sourceTree = "<group>"; };
 		9A33BE941EC49EE400516CF1 /* YALiveAboutTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALiveAboutTableHeaderView.h; sourceTree = "<group>"; };
 		9A33BE951EC49EE400516CF1 /* YALiveAboutTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALiveAboutTableHeaderView.m; sourceTree = "<group>"; };
-		9A4453501EDAA28700D96957 /* YARecommendTopicContentHeaderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicContentHeaderRequest.h; sourceTree = "<group>"; };
-		9A4453511EDAA28700D96957 /* YARecommendTopicContentHeaderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicContentHeaderRequest.m; sourceTree = "<group>"; };
-		9A4453531EDAA29D00D96957 /* YARecommendTopicContentListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicContentListRequest.h; sourceTree = "<group>"; };
-		9A4453541EDAA29D00D96957 /* YARecommendTopicContentListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicContentListRequest.m; sourceTree = "<group>"; };
-		9A4453561EDAA74900D96957 /* YARecommendTopicContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicContentViewController.h; sourceTree = "<group>"; };
-		9A4453571EDAA74900D96957 /* YARecommendTopicContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicContentViewController.m; sourceTree = "<group>"; };
-		9A4453581EDAA74900D96957 /* YARecommendTopicContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YARecommendTopicContentViewController.xib; sourceTree = "<group>"; };
-		9A4453601EDAB05300D96957 /* YARecommendTopicContentHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicContentHeader.h; sourceTree = "<group>"; };
-		9A4453611EDAB05300D96957 /* YARecommendTopicContentHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicContentHeader.m; sourceTree = "<group>"; };
-		9A4453631EDACD7E00D96957 /* YARecommendTopicContentListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicContentListModel.h; sourceTree = "<group>"; };
-		9A4453641EDACD7E00D96957 /* YARecommendTopicContentListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicContentListModel.m; sourceTree = "<group>"; };
 		9A4836CE1EDB9D4E00422534 /* YARecommendTopicPageMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicPageMenuViewController.h; sourceTree = "<group>"; };
 		9A4836CF1EDB9D4E00422534 /* YARecommendTopicPageMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicPageMenuViewController.m; sourceTree = "<group>"; };
-		9A4836D11EDBA06F00422534 /* YARecommendInterestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendInterestTableViewController.h; sourceTree = "<group>"; };
-		9A4836D21EDBA06F00422534 /* YARecommendInterestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendInterestTableViewController.m; sourceTree = "<group>"; };
-		9A4836D71EDBA15800422534 /* YARecommendInterestCatRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendInterestCatRequest.h; sourceTree = "<group>"; };
-		9A4836D81EDBA15800422534 /* YARecommendInterestCatRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendInterestCatRequest.m; sourceTree = "<group>"; };
-		9A4836DA1EDBA19F00422534 /* YARecommendInterestListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendInterestListRequest.h; sourceTree = "<group>"; };
-		9A4836DB1EDBA19F00422534 /* YARecommendInterestListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendInterestListRequest.m; sourceTree = "<group>"; };
-		9A4836DD1EDBA2A300422534 /* YARecommendInterestTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendInterestTableViewCell.h; sourceTree = "<group>"; };
-		9A4836DE1EDBA2A300422534 /* YARecommendInterestTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendInterestTableViewCell.m; sourceTree = "<group>"; };
-		9A4836DF1EDBA2A300422534 /* YARecommendInterestTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YARecommendInterestTableViewCell.xib; sourceTree = "<group>"; };
-		9A4836E21EDBA5BE00422534 /* YARecommendInterest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendInterest.h; sourceTree = "<group>"; };
-		9A4836E31EDBA5BE00422534 /* YARecommendInterest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendInterest.m; sourceTree = "<group>"; };
-		9A4836E51EDBA88800422534 /* YARecommendInterestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendInterestModel.h; sourceTree = "<group>"; };
-		9A4836E61EDBA88800422534 /* YARecommendInterestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendInterestModel.m; sourceTree = "<group>"; };
-		9A4836E81EDBB5F600422534 /* YARecommendInterestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendInterestViewController.h; sourceTree = "<group>"; };
-		9A4836E91EDBB5F600422534 /* YARecommendInterestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendInterestViewController.m; sourceTree = "<group>"; };
-		9A4836EA1EDBB5F600422534 /* YARecommendInterestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YARecommendInterestViewController.xib; sourceTree = "<group>"; };
-		9A4836ED1EDBE36900422534 /* YARecommendTopicSubscribeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicSubscribeViewController.h; sourceTree = "<group>"; };
-		9A4836EE1EDBE36900422534 /* YARecommendTopicSubscribeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicSubscribeViewController.m; sourceTree = "<group>"; };
-		9A4836EF1EDBE36900422534 /* YARecommendTopicSubscribeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YARecommendTopicSubscribeViewController.xib; sourceTree = "<group>"; };
-		9A4836F21EDBFAEB00422534 /* YARecommendSubNewsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendSubNewsRequest.h; sourceTree = "<group>"; };
-		9A4836F31EDBFAEB00422534 /* YARecommendSubNewsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendSubNewsRequest.m; sourceTree = "<group>"; };
+		9A4836F71EDC351E00422534 /* YARecommendInterestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendInterestTableViewController.h; sourceTree = "<group>"; };
+		9A4836F81EDC351E00422534 /* YARecommendInterestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendInterestTableViewController.m; sourceTree = "<group>"; };
+		9A4836F91EDC351E00422534 /* YARecommendInterestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendInterestViewController.h; sourceTree = "<group>"; };
+		9A4836FA1EDC351E00422534 /* YARecommendInterestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendInterestViewController.m; sourceTree = "<group>"; };
+		9A4836FB1EDC351E00422534 /* YARecommendInterestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YARecommendInterestViewController.xib; sourceTree = "<group>"; };
+		9A4836FD1EDC351E00422534 /* YARecommendInterest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendInterest.h; sourceTree = "<group>"; };
+		9A4836FE1EDC351E00422534 /* YARecommendInterest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendInterest.m; sourceTree = "<group>"; };
+		9A4837001EDC351E00422534 /* YARecommendInterestCatRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendInterestCatRequest.h; sourceTree = "<group>"; };
+		9A4837011EDC351E00422534 /* YARecommendInterestCatRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendInterestCatRequest.m; sourceTree = "<group>"; };
+		9A4837021EDC351E00422534 /* YARecommendInterestListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendInterestListRequest.h; sourceTree = "<group>"; };
+		9A4837031EDC351E00422534 /* YARecommendInterestListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendInterestListRequest.m; sourceTree = "<group>"; };
+		9A4837051EDC351E00422534 /* YARecommendInterestTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendInterestTableViewCell.h; sourceTree = "<group>"; };
+		9A4837061EDC351E00422534 /* YARecommendInterestTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendInterestTableViewCell.m; sourceTree = "<group>"; };
+		9A4837071EDC351E00422534 /* YARecommendInterestTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YARecommendInterestTableViewCell.xib; sourceTree = "<group>"; };
+		9A4837091EDC351E00422534 /* YARecommendInterestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendInterestModel.h; sourceTree = "<group>"; };
+		9A48370A1EDC351E00422534 /* YARecommendInterestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendInterestModel.m; sourceTree = "<group>"; };
+		9A48370D1EDC351E00422534 /* YARecommendDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendDiscoverViewController.h; sourceTree = "<group>"; };
+		9A48370E1EDC351E00422534 /* YARecommendDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendDiscoverViewController.m; sourceTree = "<group>"; };
+		9A48370F1EDC351E00422534 /* YARecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendViewController.h; sourceTree = "<group>"; };
+		9A4837101EDC351E00422534 /* YARecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendViewController.m; sourceTree = "<group>"; };
+		9A4837111EDC351E00422534 /* YARecommendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YARecommendViewController.xib; sourceTree = "<group>"; };
+		9A4837131EDC351E00422534 /* YARecommendTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopic.h; sourceTree = "<group>"; };
+		9A4837141EDC351E00422534 /* YARecommendTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopic.m; sourceTree = "<group>"; };
+		9A4837151EDC351E00422534 /* YARecommendTopicSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicSection.h; sourceTree = "<group>"; };
+		9A4837161EDC351E00422534 /* YARecommendTopicSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicSection.m; sourceTree = "<group>"; };
+		9A4837181EDC351E00422534 /* YARecommendRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendRequest.h; sourceTree = "<group>"; };
+		9A4837191EDC351E00422534 /* YARecommendRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendRequest.m; sourceTree = "<group>"; };
+		9A48371A1EDC351E00422534 /* YARecommendTopicRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicRequest.h; sourceTree = "<group>"; };
+		9A48371B1EDC351E00422534 /* YARecommendTopicRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicRequest.m; sourceTree = "<group>"; };
+		9A48371D1EDC351E00422534 /* YARecommendTopicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicTableViewCell.h; sourceTree = "<group>"; };
+		9A48371E1EDC351E00422534 /* YARecommendTopicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicTableViewCell.m; sourceTree = "<group>"; };
+		9A48371F1EDC351E00422534 /* YARecommendTopicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YARecommendTopicTableViewCell.xib; sourceTree = "<group>"; };
+		9A4837211EDC351E00422534 /* YARecommendTopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicModel.h; sourceTree = "<group>"; };
+		9A4837221EDC351E00422534 /* YARecommendTopicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicModel.m; sourceTree = "<group>"; };
+		9A4837251EDC351E00422534 /* YARecommendContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendContentViewController.h; sourceTree = "<group>"; };
+		9A4837261EDC351E00422534 /* YARecommendContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendContentViewController.m; sourceTree = "<group>"; };
+		9A4837271EDC351E00422534 /* YARecommendTopicContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicContentViewController.h; sourceTree = "<group>"; };
+		9A4837281EDC351E00422534 /* YARecommendTopicContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicContentViewController.m; sourceTree = "<group>"; };
+		9A4837291EDC351E00422534 /* YARecommendTopicContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YARecommendTopicContentViewController.xib; sourceTree = "<group>"; };
+		9A48372A1EDC351E00422534 /* YARecommendTopicSubscribeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicSubscribeViewController.h; sourceTree = "<group>"; };
+		9A48372B1EDC351E00422534 /* YARecommendTopicSubscribeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicSubscribeViewController.m; sourceTree = "<group>"; };
+		9A48372C1EDC351E00422534 /* YARecommendTopicSubscribeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YARecommendTopicSubscribeViewController.xib; sourceTree = "<group>"; };
+		9A48372E1EDC351E00422534 /* YARecommendTopicContentHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicContentHeader.h; sourceTree = "<group>"; };
+		9A48372F1EDC351E00422534 /* YARecommendTopicContentHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicContentHeader.m; sourceTree = "<group>"; };
+		9A4837311EDC351E00422534 /* YARecommendSubNewsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendSubNewsRequest.h; sourceTree = "<group>"; };
+		9A4837321EDC351E00422534 /* YARecommendSubNewsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendSubNewsRequest.m; sourceTree = "<group>"; };
+		9A4837331EDC351E00422534 /* YARecommendTopicContentHeaderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicContentHeaderRequest.h; sourceTree = "<group>"; };
+		9A4837341EDC351E00422534 /* YARecommendTopicContentHeaderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicContentHeaderRequest.m; sourceTree = "<group>"; };
+		9A4837351EDC351E00422534 /* YARecommendTopicContentListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicContentListRequest.h; sourceTree = "<group>"; };
+		9A4837361EDC351E00422534 /* YARecommendTopicContentListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicContentListRequest.m; sourceTree = "<group>"; };
+		9A4837381EDC351E00422534 /* YARecommendTopicSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicSectionHeaderView.h; sourceTree = "<group>"; };
+		9A4837391EDC351E00422534 /* YARecommendTopicSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicSectionHeaderView.m; sourceTree = "<group>"; };
+		9A48373B1EDC351E00422534 /* YARecommendTopicContentListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicContentListModel.h; sourceTree = "<group>"; };
+		9A48373C1EDC351E00422534 /* YARecommendTopicContentListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicContentListModel.m; sourceTree = "<group>"; };
 		9A58941E1ECBCFBF000BD147 /* YANewsCommentRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANewsCommentRequest.h; sourceTree = "<group>"; };
 		9A58941F1ECBCFBF000BD147 /* YANewsCommentRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANewsCommentRequest.m; sourceTree = "<group>"; };
 		9A5C90301EBE970F00209995 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
@@ -241,21 +263,6 @@
 		9A5C90701EBF13B800209995 /* YALiveHeaderLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YALiveHeaderLabel.h; sourceTree = "<group>"; };
 		9A5C90711EBF13B800209995 /* YALiveHeaderLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YALiveHeaderLabel.m; sourceTree = "<group>"; };
 		9A5C90731EBF251700209995 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
-		9A5E9D401ED99D86009B7FF0 /* YARecommendTopicRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicRequest.h; sourceTree = "<group>"; };
-		9A5E9D411ED99D86009B7FF0 /* YARecommendTopicRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicRequest.m; sourceTree = "<group>"; };
-		9A5E9D431ED99DD0009B7FF0 /* YARecommendTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopic.h; sourceTree = "<group>"; };
-		9A5E9D441ED99DD0009B7FF0 /* YARecommendTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopic.m; sourceTree = "<group>"; };
-		9A5E9D461ED99F22009B7FF0 /* YARecommendTopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicModel.h; sourceTree = "<group>"; };
-		9A5E9D471ED99F22009B7FF0 /* YARecommendTopicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicModel.m; sourceTree = "<group>"; };
-		9A5E9D491ED9A257009B7FF0 /* YARecommendTopicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicTableViewCell.h; sourceTree = "<group>"; };
-		9A5E9D4A1ED9A257009B7FF0 /* YARecommendTopicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicTableViewCell.m; sourceTree = "<group>"; };
-		9A5E9D4B1ED9A257009B7FF0 /* YARecommendTopicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YARecommendTopicTableViewCell.xib; sourceTree = "<group>"; };
-		9A5E9D4E1ED9ABF6009B7FF0 /* YARecommendTopicSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicSection.h; sourceTree = "<group>"; };
-		9A5E9D4F1ED9ABF6009B7FF0 /* YARecommendTopicSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicSection.m; sourceTree = "<group>"; };
-		9A5E9D511ED9CA09009B7FF0 /* YARecommendTopicSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicSectionHeaderView.h; sourceTree = "<group>"; };
-		9A5E9D521ED9CA0A009B7FF0 /* YARecommendTopicSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicSectionHeaderView.m; sourceTree = "<group>"; };
-		9A6190B81ECFE6AF00270D39 /* YARecommendRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendRequest.h; sourceTree = "<group>"; };
-		9A6190B91ECFE6AF00270D39 /* YARecommendRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendRequest.m; sourceTree = "<group>"; };
 		9A6190BB1ECFE92A00270D39 /* YASQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YASQLiteManager.h; sourceTree = "<group>"; };
 		9A6190BC1ECFE92A00270D39 /* YASQLiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YASQLiteManager.m; sourceTree = "<group>"; };
 		9A6190C31ED044AB00270D39 /* YAProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAProfileTableViewCell.h; sourceTree = "<group>"; };
@@ -269,13 +276,6 @@
 		9A6190D01ED052AB00270D39 /* YAProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAProfileViewController.h; sourceTree = "<group>"; };
 		9A6190D11ED052AB00270D39 /* YAProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAProfileViewController.m; sourceTree = "<group>"; };
 		9A6190D21ED052AB00270D39 /* YAProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YAProfileViewController.xib; sourceTree = "<group>"; };
-		9A6190D51ED0878400270D39 /* YARecommendDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendDiscoverViewController.h; sourceTree = "<group>"; };
-		9A6190D61ED0878400270D39 /* YARecommendDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendDiscoverViewController.m; sourceTree = "<group>"; };
-		9A6190D81ED0887700270D39 /* YARecommendContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendContentViewController.h; sourceTree = "<group>"; };
-		9A6190D91ED0887700270D39 /* YARecommendContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendContentViewController.m; sourceTree = "<group>"; };
-		9A6190DB1ED0894200270D39 /* YARecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendViewController.h; sourceTree = "<group>"; };
-		9A6190DC1ED0894200270D39 /* YARecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendViewController.m; sourceTree = "<group>"; };
-		9A6190DD1ED0894200270D39 /* YARecommendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YARecommendViewController.xib; sourceTree = "<group>"; };
 		9A6A6BD41EC836770089CF09 /* YANewsContentAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANewsContentAttribute.h; sourceTree = "<group>"; };
 		9A6A6BD51EC836770089CF09 /* YANewsContentAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANewsContentAttribute.m; sourceTree = "<group>"; };
 		9A6C64F21ECD992000802C66 /* YANewsContentAttributeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YANewsContentAttributeView.xib; sourceTree = "<group>"; };
@@ -461,6 +461,201 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9A4836F51EDC351E00422534 /* InterestCategory */ = {
+			isa = PBXGroup;
+			children = (
+				9A4836F61EDC351E00422534 /* Controller */,
+				9A4836FC1EDC351E00422534 /* Model */,
+				9A4836FF1EDC351E00422534 /* Util */,
+				9A4837041EDC351E00422534 /* View */,
+				9A4837081EDC351E00422534 /* ViewModel */,
+			);
+			path = InterestCategory;
+			sourceTree = "<group>";
+		};
+		9A4836F61EDC351E00422534 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9A4836F71EDC351E00422534 /* YARecommendInterestTableViewController.h */,
+				9A4836F81EDC351E00422534 /* YARecommendInterestTableViewController.m */,
+				9A4836F91EDC351E00422534 /* YARecommendInterestViewController.h */,
+				9A4836FA1EDC351E00422534 /* YARecommendInterestViewController.m */,
+				9A4836FB1EDC351E00422534 /* YARecommendInterestViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9A4836FC1EDC351E00422534 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9A4836FD1EDC351E00422534 /* YARecommendInterest.h */,
+				9A4836FE1EDC351E00422534 /* YARecommendInterest.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9A4836FF1EDC351E00422534 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				9A4837001EDC351E00422534 /* YARecommendInterestCatRequest.h */,
+				9A4837011EDC351E00422534 /* YARecommendInterestCatRequest.m */,
+				9A4837021EDC351E00422534 /* YARecommendInterestListRequest.h */,
+				9A4837031EDC351E00422534 /* YARecommendInterestListRequest.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		9A4837041EDC351E00422534 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A4837051EDC351E00422534 /* YARecommendInterestTableViewCell.h */,
+				9A4837061EDC351E00422534 /* YARecommendInterestTableViewCell.m */,
+				9A4837071EDC351E00422534 /* YARecommendInterestTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9A4837081EDC351E00422534 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9A4837091EDC351E00422534 /* YARecommendInterestModel.h */,
+				9A48370A1EDC351E00422534 /* YARecommendInterestModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9A48370B1EDC351E00422534 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				9A48370C1EDC351E00422534 /* Controller */,
+				9A4837121EDC351E00422534 /* Model */,
+				9A4837171EDC351E00422534 /* Util */,
+				9A48371C1EDC351E00422534 /* View */,
+				9A4837201EDC351E00422534 /* ViewModel */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		9A48370C1EDC351E00422534 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9A48370D1EDC351E00422534 /* YARecommendDiscoverViewController.h */,
+				9A48370E1EDC351E00422534 /* YARecommendDiscoverViewController.m */,
+				9A48370F1EDC351E00422534 /* YARecommendViewController.h */,
+				9A4837101EDC351E00422534 /* YARecommendViewController.m */,
+				9A4837111EDC351E00422534 /* YARecommendViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9A4837121EDC351E00422534 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9A4837131EDC351E00422534 /* YARecommendTopic.h */,
+				9A4837141EDC351E00422534 /* YARecommendTopic.m */,
+				9A4837151EDC351E00422534 /* YARecommendTopicSection.h */,
+				9A4837161EDC351E00422534 /* YARecommendTopicSection.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9A4837171EDC351E00422534 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				9A4837181EDC351E00422534 /* YARecommendRequest.h */,
+				9A4837191EDC351E00422534 /* YARecommendRequest.m */,
+				9A48371A1EDC351E00422534 /* YARecommendTopicRequest.h */,
+				9A48371B1EDC351E00422534 /* YARecommendTopicRequest.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		9A48371C1EDC351E00422534 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A48371D1EDC351E00422534 /* YARecommendTopicTableViewCell.h */,
+				9A48371E1EDC351E00422534 /* YARecommendTopicTableViewCell.m */,
+				9A48371F1EDC351E00422534 /* YARecommendTopicTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9A4837201EDC351E00422534 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9A4837211EDC351E00422534 /* YARecommendTopicModel.h */,
+				9A4837221EDC351E00422534 /* YARecommendTopicModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9A4837231EDC351E00422534 /* TopicContent */ = {
+			isa = PBXGroup;
+			children = (
+				9A4837241EDC351E00422534 /* Controller */,
+				9A48372D1EDC351E00422534 /* Model */,
+				9A4837301EDC351E00422534 /* Util */,
+				9A4837371EDC351E00422534 /* View */,
+				9A48373A1EDC351E00422534 /* ViewModel */,
+			);
+			path = TopicContent;
+			sourceTree = "<group>";
+		};
+		9A4837241EDC351E00422534 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9A4837251EDC351E00422534 /* YARecommendContentViewController.h */,
+				9A4837261EDC351E00422534 /* YARecommendContentViewController.m */,
+				9A4837271EDC351E00422534 /* YARecommendTopicContentViewController.h */,
+				9A4837281EDC351E00422534 /* YARecommendTopicContentViewController.m */,
+				9A4837291EDC351E00422534 /* YARecommendTopicContentViewController.xib */,
+				9A48372A1EDC351E00422534 /* YARecommendTopicSubscribeViewController.h */,
+				9A48372B1EDC351E00422534 /* YARecommendTopicSubscribeViewController.m */,
+				9A48372C1EDC351E00422534 /* YARecommendTopicSubscribeViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9A48372D1EDC351E00422534 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9A48372E1EDC351E00422534 /* YARecommendTopicContentHeader.h */,
+				9A48372F1EDC351E00422534 /* YARecommendTopicContentHeader.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9A4837301EDC351E00422534 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				9A4837311EDC351E00422534 /* YARecommendSubNewsRequest.h */,
+				9A4837321EDC351E00422534 /* YARecommendSubNewsRequest.m */,
+				9A4837331EDC351E00422534 /* YARecommendTopicContentHeaderRequest.h */,
+				9A4837341EDC351E00422534 /* YARecommendTopicContentHeaderRequest.m */,
+				9A4837351EDC351E00422534 /* YARecommendTopicContentListRequest.h */,
+				9A4837361EDC351E00422534 /* YARecommendTopicContentListRequest.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		9A4837371EDC351E00422534 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A4837381EDC351E00422534 /* YARecommendTopicSectionHeaderView.h */,
+				9A4837391EDC351E00422534 /* YARecommendTopicSectionHeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9A48373A1EDC351E00422534 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9A48373B1EDC351E00422534 /* YARecommendTopicContentListModel.h */,
+				9A48373C1EDC351E00422534 /* YARecommendTopicContentListModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		9A5C90601EBECF6900209995 /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,27 +671,6 @@
 				9A746AD31EC343E5007FAAE8 /* YALiveCommentRequest.m */,
 				9A746AE31EC35D08007FAAE8 /* YALiveMessageRequest.h */,
 				9A746AE41EC35D08007FAAE8 /* YALiveMessageRequest.m */,
-			);
-			path = Util;
-			sourceTree = "<group>";
-		};
-		9A6190B71ECFE66E00270D39 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				9A6190B81ECFE6AF00270D39 /* YARecommendRequest.h */,
-				9A6190B91ECFE6AF00270D39 /* YARecommendRequest.m */,
-				9A5E9D401ED99D86009B7FF0 /* YARecommendTopicRequest.h */,
-				9A5E9D411ED99D86009B7FF0 /* YARecommendTopicRequest.m */,
-				9A4453501EDAA28700D96957 /* YARecommendTopicContentHeaderRequest.h */,
-				9A4453511EDAA28700D96957 /* YARecommendTopicContentHeaderRequest.m */,
-				9A4453531EDAA29D00D96957 /* YARecommendTopicContentListRequest.h */,
-				9A4453541EDAA29D00D96957 /* YARecommendTopicContentListRequest.m */,
-				9A4836D71EDBA15800422534 /* YARecommendInterestCatRequest.h */,
-				9A4836D81EDBA15800422534 /* YARecommendInterestCatRequest.m */,
-				9A4836DA1EDBA19F00422534 /* YARecommendInterestListRequest.h */,
-				9A4836DB1EDBA19F00422534 /* YARecommendInterestListRequest.m */,
-				9A4836F21EDBFAEB00422534 /* YARecommendSubNewsRequest.h */,
-				9A4836F31EDBFAEB00422534 /* YARecommendSubNewsRequest.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -789,81 +963,11 @@
 		9A85F57F1EBCC692009243B3 /* Recommend */ = {
 			isa = PBXGroup;
 			children = (
-				9A6190B71ECFE66E00270D39 /* Util */,
-				9A85F5801EBCC692009243B3 /* Controller */,
-				9A85F5811EBCC692009243B3 /* Model */,
-				9A85F5821EBCC692009243B3 /* View */,
-				9A85F5831EBCC692009243B3 /* ViewModel */,
+				9A4837231EDC351E00422534 /* TopicContent */,
+				9A48370B1EDC351E00422534 /* MainPage */,
+				9A4836F51EDC351E00422534 /* InterestCategory */,
 			);
 			path = Recommend;
-			sourceTree = "<group>";
-		};
-		9A85F5801EBCC692009243B3 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				9A6190DB1ED0894200270D39 /* YARecommendViewController.h */,
-				9A6190DC1ED0894200270D39 /* YARecommendViewController.m */,
-				9A6190DD1ED0894200270D39 /* YARecommendViewController.xib */,
-				9A6190D81ED0887700270D39 /* YARecommendContentViewController.h */,
-				9A6190D91ED0887700270D39 /* YARecommendContentViewController.m */,
-				9A6190D51ED0878400270D39 /* YARecommendDiscoverViewController.h */,
-				9A6190D61ED0878400270D39 /* YARecommendDiscoverViewController.m */,
-				9A4453561EDAA74900D96957 /* YARecommendTopicContentViewController.h */,
-				9A4453571EDAA74900D96957 /* YARecommendTopicContentViewController.m */,
-				9A4453581EDAA74900D96957 /* YARecommendTopicContentViewController.xib */,
-				9A4836ED1EDBE36900422534 /* YARecommendTopicSubscribeViewController.h */,
-				9A4836EE1EDBE36900422534 /* YARecommendTopicSubscribeViewController.m */,
-				9A4836EF1EDBE36900422534 /* YARecommendTopicSubscribeViewController.xib */,
-				9A4836E81EDBB5F600422534 /* YARecommendInterestViewController.h */,
-				9A4836E91EDBB5F600422534 /* YARecommendInterestViewController.m */,
-				9A4836EA1EDBB5F600422534 /* YARecommendInterestViewController.xib */,
-				9A4836D11EDBA06F00422534 /* YARecommendInterestTableViewController.h */,
-				9A4836D21EDBA06F00422534 /* YARecommendInterestTableViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		9A85F5811EBCC692009243B3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				9A5E9D431ED99DD0009B7FF0 /* YARecommendTopic.h */,
-				9A5E9D441ED99DD0009B7FF0 /* YARecommendTopic.m */,
-				9A5E9D4E1ED9ABF6009B7FF0 /* YARecommendTopicSection.h */,
-				9A5E9D4F1ED9ABF6009B7FF0 /* YARecommendTopicSection.m */,
-				9A4453601EDAB05300D96957 /* YARecommendTopicContentHeader.h */,
-				9A4453611EDAB05300D96957 /* YARecommendTopicContentHeader.m */,
-				9A4836E21EDBA5BE00422534 /* YARecommendInterest.h */,
-				9A4836E31EDBA5BE00422534 /* YARecommendInterest.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		9A85F5821EBCC692009243B3 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				9A5E9D491ED9A257009B7FF0 /* YARecommendTopicTableViewCell.h */,
-				9A5E9D4A1ED9A257009B7FF0 /* YARecommendTopicTableViewCell.m */,
-				9A5E9D4B1ED9A257009B7FF0 /* YARecommendTopicTableViewCell.xib */,
-				9A5E9D511ED9CA09009B7FF0 /* YARecommendTopicSectionHeaderView.h */,
-				9A5E9D521ED9CA0A009B7FF0 /* YARecommendTopicSectionHeaderView.m */,
-				9A4836DD1EDBA2A300422534 /* YARecommendInterestTableViewCell.h */,
-				9A4836DE1EDBA2A300422534 /* YARecommendInterestTableViewCell.m */,
-				9A4836DF1EDBA2A300422534 /* YARecommendInterestTableViewCell.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		9A85F5831EBCC692009243B3 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				9A5E9D461ED99F22009B7FF0 /* YARecommendTopicModel.h */,
-				9A5E9D471ED99F22009B7FF0 /* YARecommendTopicModel.m */,
-				9A4453631EDACD7E00D96957 /* YARecommendTopicContentListModel.h */,
-				9A4453641EDACD7E00D96957 /* YARecommendTopicContentListModel.m */,
-				9A4836E51EDBA88800422534 /* YARecommendInterestModel.h */,
-				9A4836E61EDBA88800422534 /* YARecommendInterestModel.m */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		9A85F5841EBCC692009243B3 /* Util */ = {
@@ -1080,14 +1184,11 @@
 				9A6C650B1ECDBA6600802C66 /* night-care_gif@2x.gif in Resources */,
 				9AE4367D1EBDB28B00921FD0 /* YACenterPhotoNewsCell.xib in Resources */,
 				9A6C65101ECDBA6600802C66 /* request_gif@2x.gif in Resources */,
-				9A44535A1EDAA74900D96957 /* YARecommendTopicContentViewController.xib in Resources */,
-				9A5E9D4D1ED9A257009B7FF0 /* YARecommendTopicTableViewCell.xib in Resources */,
 				9ABD1CD21EC14AF70074FBFC /* amr_sound_loading@3x.gif in Resources */,
 				9A746AC51EC2B6A0007FAAE8 /* YALiveCommentTableViewCell.xib in Resources */,
-				9A4836EC1EDBB5F600422534 /* YARecommendInterestViewController.xib in Resources */,
 				9A1222F91EC6E26400E81D3F /* YANewsCommentTableViewCell.xib in Resources */,
 				9A85F5521EBCBF9E009243B3 /* LaunchScreen.storyboard in Resources */,
-				9A4836E11EDBA2A300422534 /* YARecommendInterestTableViewCell.xib in Resources */,
+				9A4837481EDC351E00422534 /* YARecommendViewController.xib in Resources */,
 				9A85F54F1EBCBF9E009243B3 /* Assets.xcassets in Resources */,
 				9A98E2D11EC5E76400B9467A /* YANavigationView.xib in Resources */,
 				9A6C64F31ECD992000802C66 /* YANewsContentAttributeView.xib in Resources */,
@@ -1097,24 +1198,27 @@
 				9A6190CF1ED04D5B00270D39 /* YAProfileTableHeaderView.xib in Resources */,
 				9A6C650D1ECDBA6600802C66 /* night-request_gif@2x.gif in Resources */,
 				9A6C65121ECDBA6600802C66 /* sad_gif@2x.gif in Resources */,
+				9A48373F1EDC351E00422534 /* YARecommendInterestViewController.xib in Resources */,
 				9A6C650A1ECDBA6600802C66 /* happy_gif@2x.gif in Resources */,
 				9A6190D41ED052AB00270D39 /* YAProfileViewController.xib in Resources */,
 				9A6C65071ECDBA6600802C66 /* care_gif@2x.gif in Resources */,
-				9A4836F11EDBE36900422534 /* YARecommendTopicSubscribeViewController.xib in Resources */,
+				9A48374E1EDC351E00422534 /* YARecommendTopicTableViewCell.xib in Resources */,
 				9A6C65131ECDBA6600802C66 /* selected@2x.png in Resources */,
+				9A4837541EDC351E00422534 /* YARecommendTopicSubscribeViewController.xib in Resources */,
 				9ABD1CD11EC14AF70074FBFC /* amr_sound_loading@2x.gif in Resources */,
 				9A1223041EC7002500E81D3F /* YANewsShortCommentTableViewCell.xib in Resources */,
 				9A5C905A1EBEC15400209995 /* YALiveSingleTableViewCell.xib in Resources */,
 				9A85F54D1EBCBF9E009243B3 /* Main.storyboard in Resources */,
 				9A98E2DC1EC6024D00B9467A /* YANewsContentTitleView.xib in Resources */,
 				9AE4367F1EBDB28B00921FD0 /* YARightPhotoNewsCell.xib in Resources */,
-				9A6190DF1ED0894200270D39 /* YARecommendViewController.xib in Resources */,
 				9A6190C71ED044AB00270D39 /* YAProfileTableViewCell.xib in Resources */,
 				9A5C905F1EBEC16A00209995 /* YALiveGroupTableViewCell.xib in Resources */,
+				9A4837441EDC351E00422534 /* YARecommendInterestTableViewCell.xib in Resources */,
 				9A6C65081ECDBA6600802C66 /* emoji_ic_selected@2x.pdf in Resources */,
 				9A6C650F1ECDBA6600802C66 /* request@2x.png in Resources */,
 				9ABD1CE81EC1AF850074FBFC /* YALiveContentHeaderView.xib in Resources */,
 				9A6C65061ECDBA6500802C66 /* care@2x.png in Resources */,
+				9A4837521EDC351E00422534 /* YARecommendTopicContentViewController.xib in Resources */,
 				9A6C65091ECDBA6600802C66 /* happy@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1174,13 +1278,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A4453621EDAB05300D96957 /* YARecommendTopicContentHeader.m in Sources */,
 				9AE436681EBD785100921FD0 /* YANewsModel.m in Sources */,
+				9A4837571EDC351E00422534 /* YARecommendTopicContentHeaderRequest.m in Sources */,
 				9AE436751EBDB20F00921FD0 /* NSDate+YADateFormater.m in Sources */,
 				9ABD1CD51EC156570074FBFC /* YALiveChannelDataSource.m in Sources */,
 				9AE4365D1EBD616600921FD0 /* YANewsPageMenuViewController.m in Sources */,
-				9A5E9D501ED9ABF6009B7FF0 /* YARecommendTopicSection.m in Sources */,
-				9A5E9D4C1ED9A257009B7FF0 /* YARecommendTopicTableViewCell.m in Sources */,
+				9A4837421EDC351E00422534 /* YARecommendInterestListRequest.m in Sources */,
+				9A4837401EDC351E00422534 /* YARecommendInterest.m in Sources */,
 				9A5894201ECBCFBF000BD147 /* YANewsCommentRequest.m in Sources */,
 				9A5C90521EBEB38300209995 /* YALivePageMenuViewController.m in Sources */,
 				9A1223031EC7002500E81D3F /* YANewsShortCommentTableViewCell.m in Sources */,
@@ -1188,75 +1292,75 @@
 				9A8111651EC0A3860086635B /* YATableViewDataSource.m in Sources */,
 				9A85F5941EBCC7E0009243B3 /* YALiveViewController.m in Sources */,
 				9A746ADA1EC35CA4007FAAE8 /* YALiveMessageViewController.m in Sources */,
+				9A48374D1EDC351E00422534 /* YARecommendTopicTableViewCell.m in Sources */,
 				9A5C905E1EBEC16A00209995 /* YALiveGroupTableViewCell.m in Sources */,
 				9A746ACE1EC2BE53007FAAE8 /* YALiveCommentViewController.m in Sources */,
 				9AE436651EBD784100921FD0 /* YANews.m in Sources */,
 				9A6C65161ECDBF7700802C66 /* AFJSONResponseSerializer+YATypeSupport.m in Sources */,
+				9A48374F1EDC351E00422534 /* YARecommendTopicModel.m in Sources */,
 				9A1222F81EC6E26400E81D3F /* YANewsCommentTableViewCell.m in Sources */,
-				9A4453651EDACD7E00D96957 /* YARecommendTopicContentListModel.m in Sources */,
 				9AE4366F1EBD798C00921FD0 /* YANetWork.m in Sources */,
+				9A4837551EDC351E00422534 /* YARecommendTopicContentHeader.m in Sources */,
 				9A6190C61ED044AB00270D39 /* YAProfileTableViewCell.m in Sources */,
+				9A4837451EDC351E00422534 /* YARecommendInterestModel.m in Sources */,
+				9A4837511EDC351E00422534 /* YARecommendTopicContentViewController.m in Sources */,
+				9A4837471EDC351E00422534 /* YARecommendViewController.m in Sources */,
 				9A5C90691EBED1D300209995 /* YARefreshHeader.m in Sources */,
 				9A6C64F61ECD993400802C66 /* YANewsContentAttributeView.m in Sources */,
 				9ABD1CE61EC1AF660074FBFC /* YALiveContentHeaderView.m in Sources */,
 				9A5C90591EBEC15400209995 /* YALiveSingleTableViewCell.m in Sources */,
 				9A6190CA1ED046B600270D39 /* YAProfileDetail.m in Sources */,
 				9A98E2CC1EC5E3FA00B9467A /* YANewsContentViewController.m in Sources */,
-				9A6190D71ED0878400270D39 /* YARecommendDiscoverViewController.m in Sources */,
-				9A4836E71EDBA88800422534 /* YARecommendInterestModel.m in Sources */,
 				9A6190CD1ED04D5100270D39 /* YAProfileTableHeaderView.m in Sources */,
 				9A746AE21EC35CE5007FAAE8 /* YALiveMessage.m in Sources */,
 				9AA159B51EC460DE0019D947 /* YALiveRefreshFooter.m in Sources */,
-				9A4836E01EDBA2A300422534 /* YARecommendInterestTableViewCell.m in Sources */,
 				9A98E2C31EC5BAE000B9467A /* YANotification.m in Sources */,
 				9A98E2C61EC5C34900B9467A /* YANewsContentRequest.m in Sources */,
-				9A4836DC1EDBA19F00422534 /* YARecommendInterestListRequest.m in Sources */,
 				9A746AC41EC2B6A0007FAAE8 /* YALiveCommentTableViewCell.m in Sources */,
 				9A6190D31ED052AB00270D39 /* YAProfileViewController.m in Sources */,
 				9ABD1CE31EC1ABA00074FBFC /* YALiveContent.m in Sources */,
 				9A85F58B1EBCC71A009243B3 /* YATabBarController.m in Sources */,
 				9A85F5471EBCBF9E009243B3 /* AppDelegate.m in Sources */,
+				9A4837411EDC351E00422534 /* YARecommendInterestCatRequest.m in Sources */,
 				9A98E2DA1EC5F78B00B9467A /* YANewsContentTitleView.m in Sources */,
 				9A6A6BD61EC836770089CF09 /* YANewsContentAttribute.m in Sources */,
+				9A48373D1EDC351E00422534 /* YARecommendInterestTableViewController.m in Sources */,
 				9A33BE931EC49E6000516CF1 /* YALiveAboutViewController.m in Sources */,
 				9A8111601EC07DC10086635B /* YALiveNewsListRequest.m in Sources */,
-				9A4453551EDAA29D00D96957 /* YARecommendTopicContentListRequest.m in Sources */,
-				9A5E9D481ED99F22009B7FF0 /* YARecommendTopicModel.m in Sources */,
+				9A4837561EDC351E00422534 /* YARecommendSubNewsRequest.m in Sources */,
 				9A746ADE1EC35CD0007FAAE8 /* YALiveMessageTableViewCell.m in Sources */,
 				9AE4366C1EBD78B200921FD0 /* YAChannelRequest.m in Sources */,
 				9AE4367E1EBDB28B00921FD0 /* YARightPhotoNewsCell.m in Sources */,
-				9A4836E41EDBA5BE00422534 /* YARecommendInterest.m in Sources */,
 				9A98E2D41EC5EAB000B9467A /* YANewsContentTextViewController.m in Sources */,
-				9A5E9D531ED9CA0A009B7FF0 /* YARecommendTopicSectionHeaderView.m in Sources */,
-				9A5E9D421ED99D86009B7FF0 /* YARecommendTopicRequest.m in Sources */,
-				9A6190DE1ED0894200270D39 /* YARecommendViewController.m in Sources */,
+				9A48374C1EDC351E00422534 /* YARecommendTopicRequest.m in Sources */,
 				9A746AD41EC343E5007FAAE8 /* YALiveCommentRequest.m in Sources */,
-				9A4836EB1EDBB5F600422534 /* YARecommendInterestViewController.m in Sources */,
 				9A98E2C91EC5C45E00B9467A /* YANewsContent.m in Sources */,
 				9A5C90661EBED1B700209995 /* YARefreshFooter.m in Sources */,
-				9A6190DA1ED0887700270D39 /* YARecommendContentViewController.m in Sources */,
 				9A5C90721EBF13B800209995 /* YALiveHeaderLabel.m in Sources */,
 				9A746AE51EC35D08007FAAE8 /* YALiveMessageRequest.m in Sources */,
+				9A4837431EDC351E00422534 /* YARecommendInterestTableViewCell.m in Sources */,
+				9A48373E1EDC351E00422534 /* YARecommendInterestViewController.m in Sources */,
+				9A4837461EDC351E00422534 /* YARecommendDiscoverViewController.m in Sources */,
 				9A5C90551EBEB48B00209995 /* YALiveChannelViewController.m in Sources */,
-				9A6190BA1ECFE6AF00270D39 /* YARecommendRequest.m in Sources */,
+				9A4837591EDC351E00422534 /* YARecommendTopicSectionHeaderView.m in Sources */,
 				9AE4367C1EBDB28B00921FD0 /* YACenterPhotoNewsCell.m in Sources */,
+				9A48374A1EDC351E00422534 /* YARecommendTopicSection.m in Sources */,
+				9A4837501EDC351E00422534 /* YARecommendContentViewController.m in Sources */,
 				9A746AC01EC2B3CF007FAAE8 /* YALiveComment.m in Sources */,
-				9A4836D31EDBA07000422534 /* YARecommendInterestTableViewController.m in Sources */,
 				9A85F59D1EBCC939009243B3 /* UIImage+YARenderingMode.m in Sources */,
-				9A4836D91EDBA15800422534 /* YARecommendInterestCatRequest.m in Sources */,
-				9A4453591EDAA74900D96957 /* YARecommendTopicContentViewController.m in Sources */,
 				9AE436511EBD60D200921FD0 /* CAPSPageMenu.m in Sources */,
+				9A4837581EDC351E00422534 /* YARecommendTopicContentListRequest.m in Sources */,
 				9A85F5441EBCBF9E009243B3 /* main.m in Sources */,
 				9A5C906F1EBED2E900209995 /* YALiveModel.m in Sources */,
-				9A4836F41EDBFAEB00422534 /* YARecommendSubNewsRequest.m in Sources */,
-				9A4836F01EDBE36900422534 /* YARecommendTopicSubscribeViewController.m in Sources */,
+				9A4837531EDC351E00422534 /* YARecommendTopicSubscribeViewController.m in Sources */,
 				9A33BE961EC49EE400516CF1 /* YALiveAboutTableHeaderView.m in Sources */,
 				9A98E2D71EC5EB3900B9467A /* YANewsContentCommentViewController.m in Sources */,
+				9A4837491EDC351E00422534 /* YARecommendTopic.m in Sources */,
 				9ACFAC731ECEFD9B00625032 /* YANewsContentPhotoBrowser.m in Sources */,
-				9A4453521EDAA28700D96957 /* YARecommendTopicContentHeaderRequest.m in Sources */,
+				9A48375A1EDC351E00422534 /* YARecommendTopicContentListModel.m in Sources */,
 				9A746AD11EC2BFDD007FAAE8 /* YALiveContentPageViewController.m in Sources */,
 				9A85F59A1EBCC8F9009243B3 /* YATabBarItem.m in Sources */,
-				9A5E9D451ED99DD0009B7FF0 /* YARecommendTopic.m in Sources */,
+				9A48374B1EDC351E00422534 /* YARecommendRequest.m in Sources */,
 				9A85F58E1EBCC796009243B3 /* YANewsViewController.m in Sources */,
 				9A4836D01EDB9D4E00422534 /* YARecommendTopicPageMenuViewController.m in Sources */,
 				9ABD1CE01EC1A57B0074FBFC /* YALiveContentRequest.m in Sources */,
