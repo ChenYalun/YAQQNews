@@ -10,7 +10,7 @@
 
 @interface YARecommendTopicSectionHeaderView : UIView
 /** 标题 */
-@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *catTitle;
 // 快速创建方法
 + (instancetype)topicSectionHeaderView;
 @end

@@ -9,6 +9,7 @@
 #import "YARecommendTopicContentListModel.h"
 #import "YARecommendTopicContentListRequest.h"
 #import <MJExtension.h>
+#import "YARecommendSubNewsRequest.h"
 
 @implementation YARecommendTopicContentListModel
 + (void)loadTopicContentListForArray:(NSMutableArray *)topicList topicID:(NSString *)topicID ids:(NSMutableArray *)ids isFirst:(BOOL)isFirst completionBlockWithSuccess:(YALoadNewsListSuccessBlock)success failure:(YALoadNewsListFailureBlock)failure {
@@ -33,10 +34,32 @@
 
 }
 
++ (void)loadIDArrayWithChildID:(NSString *)childID completionBlockWithSuccess:(YALoadTopicNewsListSuccessBlock)success failure:(YALoadTopicNewsListFailureBlock)failure {
+    YARecommendSubNewsRequest *request = [[YARecommendSubNewsRequest alloc] initWithChildID:childID];
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+        // id数组
+        NSMutableArray *idArray = [NSMutableArray array];
+        [request.responseObject[@"ids"] enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [idArray addObject:obj[@"id"]];
+        }];
+        
+        // 新闻数组
+        NSMutableArray *topicArray = [NSMutableArray array];
+        [topicArray addObjectsFromArray:[YARecommendTopicContentListModel topicContentListWithKeyValues:request.responseObject]];
+        success(topicArray, idArray);
+        
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        failure(request.error);
+    }];
+
+}
+
+
  #pragma mark – Private Methods
 
 // 字典数组转模型数组
 + (NSArray *)topicContentListWithKeyValues:(id)keyValues {
-    return [YARecommendTopicContentListModel mj_objectArrayWithKeyValuesArray:keyValues[@"newslist"]];
+    return [YANewsModel newsModelWithOriginKeyValues:keyValues[@"newslist"]];
 }
 @end

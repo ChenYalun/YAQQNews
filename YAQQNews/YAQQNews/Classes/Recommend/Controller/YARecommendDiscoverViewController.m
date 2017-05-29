@@ -27,13 +27,8 @@ static NSString * const kYARecommendTopicTableViewCellIdentifier = @"YARecommend
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.automaticallyAdjustsScrollViewInsets = NO;
-
-    
-    
-
-    
     
     // tableView
     [self.view addSubview:self.tableView];
@@ -48,6 +43,11 @@ static NSString * const kYARecommendTopicTableViewCellIdentifier = @"YARecommend
     }];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    // 设置状态栏
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+}
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     
@@ -78,7 +78,7 @@ static NSString * const kYARecommendTopicTableViewCellIdentifier = @"YARecommend
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     YARecommendTopicSectionHeaderView *view = [YARecommendTopicSectionHeaderView topicSectionHeaderView];
-    view.title = self.sections[section].catName;
+    view.catTitle = self.sections[section].catName;
     return view;
 }
 

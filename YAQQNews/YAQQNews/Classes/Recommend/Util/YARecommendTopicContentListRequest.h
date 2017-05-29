@@ -9,6 +9,6 @@
 #import <YTKNetwork/YTKNetwork.h>
 
 @interface YARecommendTopicContentListRequest : YTKRequest
-// 初始化方法
+// 初始化方法:请求分类新闻列表
 - (instancetype)initWithCategoryID:(NSString *)topicID newsList:(NSArray *)ids;
 @end

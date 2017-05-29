@@ -64,6 +64,7 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
     [super viewDidLoad];
     
     // View相关设置
+    self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.titleView];
     self.tableView.tableHeaderView = self.webView;
     self.tableView.tableFooterView = [[UIView alloc] init];
@@ -130,8 +131,7 @@ static NSString * const kYANewsShortCommentTableViewCellIdentifier = @"YANewsSho
         [self presentViewController:browser animated:YES completion:nil];
 
     }
-    
-    
+
 
     decisionHandler(WKNavigationActionPolicyAllow);
     

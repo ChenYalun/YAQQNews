@@ -12,6 +12,7 @@
 #import "YARightPhotoNewsCell.h"
 #import <UITableView+FDTemplateLayoutCell.h>
 #import "YARefreshFooter.h"
+#import "YANewsContentViewController.h"
 
 static NSUInteger count = 20;
 
@@ -70,6 +71,12 @@ static NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell
     [self.tableView.mj_footer beginRefreshing];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    // 设置状态栏
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+}
+
  #pragma mark – Events
 
 // 上拉加载
@@ -124,6 +131,14 @@ static NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell
     return [tableView fd_heightForCellWithIdentifier:kYARightPhotoNewsCellIdentifier cacheByIndexPath:indexPath configuration:^(YARightPhotoNewsCell *cell) {
         cell.news = self.topicList[indexPath.row];
     }];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    YANewsModel *news = (YANewsModel *)self.topicList[indexPath.row];
+    if (news.articletype == NewsArticleTypeNormal) {
+        YANewsContentViewController *contentViewController = [[YANewsContentViewController alloc] initWithNews:news];
+        [self.navigationController pushViewController:contentViewController animated:YES];
+    }
 }
 
  #pragma mark - ScrollViewDelegate

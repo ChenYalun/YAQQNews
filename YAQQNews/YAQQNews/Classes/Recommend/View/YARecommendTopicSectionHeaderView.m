@@ -7,6 +7,7 @@
 //
 
 #import "YARecommendTopicSectionHeaderView.h"
+#import "YARecommendInterestViewController.h"
 
 @interface YARecommendTopicSectionHeaderView ()
 @property (nonatomic, strong) UILabel *titleLabel;
@@ -34,10 +35,10 @@
 }
 
 // 设置标题
-- (void)setTitle:(NSString *)title {
-    _title = title;
+- (void)setCatTitle:(NSString *)catTitle {
+    _catTitle = catTitle;
     
-    self.titleLabel.text = title;
+    self.titleLabel.text = catTitle;
 }
 
 // 便捷构造
@@ -48,6 +49,7 @@
 
 // 点击事件
 - (void)sectionViewDidTap {
-    kLog(@"点击了该view");
+    YARecommendInterestViewController *viewController = [[YARecommendInterestViewController alloc] initWithCatTitle:self.catTitle];
+    [self.superview.viewController.navigationController pushViewController:viewController animated:YES];
 }
 @end

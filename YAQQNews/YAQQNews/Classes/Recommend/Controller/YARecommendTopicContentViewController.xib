@@ -21,6 +21,7 @@
                 <outlet property="returnButton" destination="uui-8J-HmK" id="N7D-WL-k1u"/>
                 <outlet property="subButton" destination="Hjw-92-eRR" id="O7b-CG-EbM"/>
                 <outlet property="subLabel" destination="YP5-xn-JwO" id="wMd-OL-x5G"/>
+                <outlet property="titleLabel" destination="86S-lw-9nv" id="K4Y-In-MHv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

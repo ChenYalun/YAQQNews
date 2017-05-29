@@ -26,7 +26,9 @@
     return self;
 }
 
+
 - (NSString *)requestUrl {
     return [NSString stringWithFormat:@"http://r.inews.qq.com/getTopicNewsIndex?tpid=%@&ids=%@",self.topicID, self.idString];
+
 }
 @end
