@@ -10,6 +10,7 @@
 #import "YAProfileTableViewCell.h"
 #import "YAProfileDetail.h"
 #import "YAProfileTableHeaderView.h"
+#import "YANormalWebViewController.h"
 
 NSString * const kYAProfileTableViewCellIdentifier = @"YAProfileTableViewCell";
 
@@ -30,12 +31,19 @@ NSString * const kYAProfileTableViewCellIdentifier = @"YAProfileTableViewCell";
     
     self.navigationController.navigationBar.hidden = YES;
     
-    
+    UIEdgeInsets edge = self.tableView.contentInset;
+    edge.bottom = 60;
+    self.tableView.contentInset = edge;
     self.tableView.backgroundColor = [UIColor clearColor];
     self.detailList = [YAProfileDetail profileDetail];
     [self.tableView reloadData];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    self.tabBarController.tabBar.hidden = NO;
+}
 
 #pragma mark - Table view data source
 
@@ -50,6 +58,13 @@ NSString * const kYAProfileTableViewCellIdentifier = @"YAProfileTableViewCell";
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    if (self.detailList[indexPath.row].urlString) {
+        YANormalWebViewController *viewController = [[YANormalWebViewController alloc] initWithMainURL:[NSURL URLWithString:self.detailList[indexPath.row].urlString]];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
+}
  #pragma mark - ScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YANormalWebViewController">
+            <connections>
+                <outlet property="backButton" destination="Tau-bh-nh5" id="qSz-tp-YCp"/>
+                <outlet property="closeButton" destination="Mvf-cg-IeC" id="bGI-tW-EyC"/>
+                <outlet property="titleLabel" destination="ysA-Ll-xE2" id="yg1-NZ-IGa"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jP8-3B-ltD">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Blu-js-4Z1">
+                            <rect key="frame" x="0.0" y="19.5" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="7FD-zY-Y3m"/>
+                                <constraint firstAttribute="width" constant="35" id="kn9-x5-ZxU"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" image="navbar_icon_back_normal">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="returnBack:" destination="-1" eventType="touchUpInside" id="T7i-VD-Qx6"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tau-bh-nh5">
+                            <rect key="frame" x="35" y="22.5" width="30" height="29"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="返回">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="returnBack:" destination="-1" eventType="touchUpInside" id="qzV-sG-Fni"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mvf-cg-IeC">
+                            <rect key="frame" x="70" y="22.5" width="30" height="29"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="关闭">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="popBack" destination="-1" eventType="touchUpInside" id="EpH-u2-yvi"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIB-eV-wj1">
+                            <rect key="frame" x="335" y="17" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="5TG-tU-tRe"/>
+                                <constraint firstAttribute="height" constant="40" id="bqb-dv-r17"/>
+                            </constraints>
+                            <state key="normal" image="navbar_icon_black_more_normal"/>
+                            <connections>
+                                <action selector="openMenu" destination="-1" eventType="touchUpInside" id="n4P-jT-uhd"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysA-Ll-xE2">
+                            <rect key="frame" x="110" y="37" width="215" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Blu-js-4Z1" firstAttribute="centerY" secondItem="jP8-3B-ltD" secondAttribute="centerY" constant="5" id="798-fB-Rci"/>
+                        <constraint firstItem="NIB-eV-wj1" firstAttribute="leading" secondItem="ysA-Ll-xE2" secondAttribute="trailing" constant="10" id="DBJ-UO-b4q"/>
+                        <constraint firstItem="ysA-Ll-xE2" firstAttribute="centerY" secondItem="Blu-js-4Z1" secondAttribute="centerY" id="FHV-Ej-1F0"/>
+                        <constraint firstItem="Blu-js-4Z1" firstAttribute="leading" secondItem="jP8-3B-ltD" secondAttribute="leading" id="Lbe-A9-bJu"/>
+                        <constraint firstItem="Tau-bh-nh5" firstAttribute="centerY" secondItem="Blu-js-4Z1" secondAttribute="centerY" id="Nja-ck-MAL"/>
+                        <constraint firstItem="Mvf-cg-IeC" firstAttribute="centerY" secondItem="Tau-bh-nh5" secondAttribute="centerY" id="PqE-sZ-cAJ"/>
+                        <constraint firstItem="Tau-bh-nh5" firstAttribute="leading" secondItem="Blu-js-4Z1" secondAttribute="trailing" id="hJr-Xj-AHu"/>
+                        <constraint firstItem="ysA-Ll-xE2" firstAttribute="leading" secondItem="jP8-3B-ltD" secondAttribute="leading" constant="110" id="jaT-qB-2un"/>
+                        <constraint firstItem="NIB-eV-wj1" firstAttribute="centerY" secondItem="Blu-js-4Z1" secondAttribute="centerY" id="ldl-kw-a7G"/>
+                        <constraint firstAttribute="height" constant="64" id="sxT-89-6Mn"/>
+                        <constraint firstAttribute="trailing" secondItem="NIB-eV-wj1" secondAttribute="trailing" id="t8j-cO-rAD"/>
+                        <constraint firstItem="Mvf-cg-IeC" firstAttribute="leading" secondItem="Tau-bh-nh5" secondAttribute="trailing" constant="5" id="vkT-7e-z3m"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a8z-lR-MZN">
+                    <rect key="frame" x="0.0" y="64" width="375" height="1"/>
+                    <color key="backgroundColor" red="0.92156862745098034" green="0.92245003169999995" blue="0.92245003169999995" alpha="0.72155928938356162" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="RUY-oD-EcO"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="a8z-lR-MZN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1bV-T5-6ve"/>
+                <constraint firstItem="jP8-3B-ltD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Bkl-4L-kxN"/>
+                <constraint firstAttribute="trailing" secondItem="jP8-3B-ltD" secondAttribute="trailing" id="Ecf-u5-eon"/>
+                <constraint firstItem="a8z-lR-MZN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="Li0-8C-JHF"/>
+                <constraint firstItem="jP8-3B-ltD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gW2-My-aaV"/>
+                <constraint firstAttribute="trailing" secondItem="a8z-lR-MZN" secondAttribute="trailing" id="wAX-GP-JgS"/>
+            </constraints>
+            <point key="canvasLocation" x="26.5" y="51.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="navbar_icon_back_normal" width="61" height="61"/>
+        <image name="navbar_icon_black_more_normal" width="60" height="60"/>
+    </resources>
+</document>

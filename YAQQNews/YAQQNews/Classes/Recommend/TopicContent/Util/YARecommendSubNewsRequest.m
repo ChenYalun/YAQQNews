@@ -22,8 +22,9 @@
 
 - (instancetype)initWithNewsIdArray:(NSArray *)array {
     if (self = [super init]) {
+        _idString = [NSString string];
         [array enumerateObjectsUsingBlock:^(NSString *obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            _idString = [self.idString stringByAppendingString:[NSString stringWithFormat:@"%@,", obj]];
+            _idString = [_idString stringByAppendingString:[NSString stringWithFormat:@"%@,", obj]];
         }];
     }
     return self;

@@ -43,6 +43,8 @@ static NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell
 @property (nonatomic, strong) NSMutableArray <YARecommendTopicContentListModel *> *topicList;
 /** 新闻列表ID */
 @property (nonatomic, strong) NSMutableArray *ids;
+/** 数组截取位置 */
+@property (nonatomic, assign) NSUInteger loc;
 @end
 
 @implementation YARecommendTopicSubscribeViewController
@@ -77,6 +79,7 @@ static NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell
 
     [YARecommendTopicContentListModel loadIDArrayWithChildID:self.interest.ID completionBlockWithSuccess:^(NSArray<YARecommendTopicContentListModel *> *topicList, NSArray <NSString *> *ids) {
         [self.ids addObjectsFromArray:ids];
+        self.loc = topicList.count;
         [self.topicList addObjectsFromArray:topicList];
         [self.tableView reloadData];
         
@@ -87,7 +90,7 @@ static NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell
     
 
     self.tableView.mj_footer = [YARefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(refreshForMore)];
-    [self.tableView.mj_footer beginRefreshing];
+//    [self.tableView.mj_footer beginRefreshing];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -101,7 +104,29 @@ static NSString * const kYARightPhotoNewsCellIdentifier = @"YARightPhotoNewsCell
 // 上拉加载
 - (void)refreshForMore {
 
+    NSUInteger len = 0;
+    if (self.loc + count  <= self.ids.count) {
+        len = count;
+    } else if(self.ids.count <= count) { // 首次加载出现count 比 id数组长度小
+        len = self.ids.count;
+    } else{
+        len = self.ids.count - self.loc;
+    }
     
+    NSArray *array = [self.ids subarrayWithRange:NSMakeRange(self.loc, len)];
+    [YARecommendTopicContentListModel loadTopicSubscribeListWithIDArray:array completionBlockWithSuccess:^(NSArray<YARecommendTopicContentListModel *> *topicList) {
+        if (topicList.count == 0) {
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
+            return ;
+        }
+        [self.topicList addObjectsFromArray:topicList];
+        self.loc += len;
+        [self.tableView reloadData];
+        [self.tableView.mj_footer endRefreshing];
+    } failure:^(NSError *error) {
+        [self.tableView.mj_footer endRefreshing];
+    }];
+
 }
 
 - (IBAction)popBack:(UIButton *)sender {

@@ -35,6 +35,9 @@
                                 <constraint firstAttribute="height" constant="40" id="xNd-bl-880"/>
                             </constraints>
                             <state key="normal" image="navbar_icon_back_normal"/>
+                            <connections>
+                                <action selector="popBack:" destination="-1" eventType="touchUpInside" id="dDt-Ll-FgK"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -53,7 +56,7 @@
                 <constraint firstAttribute="trailing" secondItem="nm9-V6-Bqd" secondAttribute="trailing" id="R7X-jK-6bp"/>
                 <constraint firstItem="nm9-V6-Bqd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="nzc-ix-USg"/>
             </constraints>
-            <point key="canvasLocation" x="26.5" y="51.5"/>
+            <point key="canvasLocation" x="861" y="73"/>
         </view>
     </objects>
     <resources>

@@ -13,7 +13,8 @@
 @property (nonatomic, copy) NSString *title;
 /** 描述 */
 @property (nonatomic, copy) NSString *desc;
-
+/** 链接 */
+@property (nonatomic, strong) NSString *urlString;
 // 获取数据
 + (NSArray <YAProfileDetail *> *)profileDetail;
 @end

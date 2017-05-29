@@ -46,6 +46,8 @@
 		9A4837581EDC351E00422534 /* YARecommendTopicContentListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4837361EDC351E00422534 /* YARecommendTopicContentListRequest.m */; };
 		9A4837591EDC351E00422534 /* YARecommendTopicSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4837391EDC351E00422534 /* YARecommendTopicSectionHeaderView.m */; };
 		9A48375A1EDC351E00422534 /* YARecommendTopicContentListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A48373C1EDC351E00422534 /* YARecommendTopicContentListModel.m */; };
+		9A48375E1EDC618600422534 /* YANormalWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A48375C1EDC618600422534 /* YANormalWebViewController.m */; };
+		9A48375F1EDC618600422534 /* YANormalWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A48375D1EDC618600422534 /* YANormalWebViewController.xib */; };
 		9A5894201ECBCFBF000BD147 /* YANewsCommentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A58941F1ECBCFBF000BD147 /* YANewsCommentRequest.m */; };
 		9A5C90311EBE970F00209995 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90301EBE970F00209995 /* VideoToolbox.framework */; };
 		9A5C90331EBE971C00209995 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5C90321EBE971C00209995 /* UIKit.framework */; };
@@ -226,6 +228,9 @@
 		9A4837391EDC351E00422534 /* YARecommendTopicSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicSectionHeaderView.m; sourceTree = "<group>"; };
 		9A48373B1EDC351E00422534 /* YARecommendTopicContentListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YARecommendTopicContentListModel.h; sourceTree = "<group>"; };
 		9A48373C1EDC351E00422534 /* YARecommendTopicContentListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YARecommendTopicContentListModel.m; sourceTree = "<group>"; };
+		9A48375B1EDC618600422534 /* YANormalWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANormalWebViewController.h; sourceTree = "<group>"; };
+		9A48375C1EDC618600422534 /* YANormalWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANormalWebViewController.m; sourceTree = "<group>"; };
+		9A48375D1EDC618600422534 /* YANormalWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YANormalWebViewController.xib; sourceTree = "<group>"; };
 		9A58941E1ECBCFBF000BD147 /* YANewsCommentRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YANewsCommentRequest.h; sourceTree = "<group>"; };
 		9A58941F1ECBCFBF000BD147 /* YANewsCommentRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YANewsCommentRequest.m; sourceTree = "<group>"; };
 		9A5C90301EBE970F00209995 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
@@ -927,6 +932,9 @@
 				9A6190D01ED052AB00270D39 /* YAProfileViewController.h */,
 				9A6190D11ED052AB00270D39 /* YAProfileViewController.m */,
 				9A6190D21ED052AB00270D39 /* YAProfileViewController.xib */,
+				9A48375B1EDC618600422534 /* YANormalWebViewController.h */,
+				9A48375C1EDC618600422534 /* YANormalWebViewController.m */,
+				9A48375D1EDC618600422534 /* YANormalWebViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1186,6 +1194,7 @@
 				9A6C65101ECDBA6600802C66 /* request_gif@2x.gif in Resources */,
 				9ABD1CD21EC14AF70074FBFC /* amr_sound_loading@3x.gif in Resources */,
 				9A746AC51EC2B6A0007FAAE8 /* YALiveCommentTableViewCell.xib in Resources */,
+				9A48375F1EDC618600422534 /* YANormalWebViewController.xib in Resources */,
 				9A1222F91EC6E26400E81D3F /* YANewsCommentTableViewCell.xib in Resources */,
 				9A85F5521EBCBF9E009243B3 /* LaunchScreen.storyboard in Resources */,
 				9A4837481EDC351E00422534 /* YARecommendViewController.xib in Resources */,
@@ -1336,6 +1345,7 @@
 				9A746AD41EC343E5007FAAE8 /* YALiveCommentRequest.m in Sources */,
 				9A98E2C91EC5C45E00B9467A /* YANewsContent.m in Sources */,
 				9A5C90661EBED1B700209995 /* YARefreshFooter.m in Sources */,
+				9A48375E1EDC618600422534 /* YANormalWebViewController.m in Sources */,
 				9A5C90721EBF13B800209995 /* YALiveHeaderLabel.m in Sources */,
 				9A746AE51EC35D08007FAAE8 /* YALiveMessageRequest.m in Sources */,
 				9A4837431EDC351E00422534 /* YARecommendInterestTableViewCell.m in Sources */,

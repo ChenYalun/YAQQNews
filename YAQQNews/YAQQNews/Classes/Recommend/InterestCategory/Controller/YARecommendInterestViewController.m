@@ -48,9 +48,10 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+ #pragma mark – Events
+
+- (IBAction)popBack:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

@@ -55,6 +55,19 @@
 
 }
 
++ (void)loadTopicSubscribeListWithIDArray:(NSArray *)idArray completionBlockWithSuccess:(YALoadTopicSubscribeListSuccessBlock)success failure:(YALoadTopicSubscribeListFailureBlock)failure {
+    YARecommendSubNewsRequest *request = [[YARecommendSubNewsRequest alloc] initWithNewsIdArray:idArray];
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+        // 新闻数组
+        NSMutableArray *topicSubArray = [NSMutableArray array];
+        [topicSubArray addObjectsFromArray:[YARecommendTopicContentListModel topicContentListWithKeyValues:request.responseObject]];
+        success(topicSubArray);
+        
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        failure(request.error);
+    }];
+}
 
  #pragma mark – Private Methods
 

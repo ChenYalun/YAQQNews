@@ -26,6 +26,7 @@
     
     YAProfileDetail *packet = [[YAProfileDetail alloc] init];
     packet.title = @"红包";
+    packet.urlString = @"https://view.inews.qq.com/bonus?isnm=1";
     packet.desc = @"邀请好友得现金红包";
     
     YAProfileDetail *advice = [[YAProfileDetail alloc] init];
@@ -33,6 +34,7 @@
     
     YAProfileDetail *game = [[YAProfileDetail alloc] init];
     game.title = @"游戏";
+    game.urlString = @"http://iwan.qq.com/m/qqnews/hotgames.htm?isnm=1";
 
     return @[message, sub, collection, comment, packet, advice, game];
 }
