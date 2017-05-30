@@ -11,6 +11,7 @@
 #import "YAProfileDetail.h"
 #import "YAProfileTableHeaderView.h"
 #import "YANormalWebViewController.h"
+#import "YASettingViewController.h"
 
 NSString * const kYAProfileTableViewCellIdentifier = @"YAProfileTableViewCell";
 
@@ -35,7 +36,7 @@ NSString * const kYAProfileTableViewCellIdentifier = @"YAProfileTableViewCell";
     edge.bottom = 60;
     self.tableView.contentInset = edge;
     self.tableView.backgroundColor = [UIColor clearColor];
-    self.detailList = [YAProfileDetail profileDetail];
+    self.detailList = [YAProfileDetail loadProfileDetailList];
     [self.tableView reloadData];
 }
 
@@ -44,6 +45,14 @@ NSString * const kYAProfileTableViewCellIdentifier = @"YAProfileTableViewCell";
     
     self.tabBarController.tabBar.hidden = NO;
 }
+
+ #pragma mark – Events
+
+- (IBAction)pushSettingViewController:(UIButton *)sender {
+    
+        [self.navigationController pushViewController:[[YASettingViewController alloc] init] animated:YES];
+}
+
 
 #pragma mark - Table view data source
 
@@ -99,7 +108,7 @@ NSString * const kYAProfileTableViewCellIdentifier = @"YAProfileTableViewCell";
         YAProfileTableHeaderView *headView = [YAProfileTableHeaderView profileTableHeaderView];
         _tableView.tableHeaderView = headView;
         
-        [self.view addSubview:_tableView];
+        [self.view insertSubview:_tableView atIndex:1];
     }
     return _tableView;
 }

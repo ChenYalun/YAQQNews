@@ -11,5 +11,7 @@
 @interface YANavigationView : UIView
 /** 标题 */
 @property (nonatomic, copy) NSString *title;
+/** 隐藏菜单按钮 */
+@property (nonatomic, assign) BOOL hiddenMenuButton;
 + (instancetype)navigationView;
 @end

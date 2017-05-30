@@ -10,6 +10,7 @@
 
 @interface YANavigationView ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIButton *menuButton;
 
 @end
 @implementation YANavigationView
@@ -26,7 +27,13 @@
     self.titleLabel.text = title;
 }
 
+- (void)setHiddenMenuButton:(BOOL)hiddenMenuButton {
+    _hiddenMenuButton = hiddenMenuButton;
+    self.menuButton.hidden = hiddenMenuButton;
+    
+}
  #pragma mark – Events
+
 // 返回
 - (IBAction)back:(UIButton *)sender {
     [self.viewController.navigationController popViewControllerAnimated:YES];

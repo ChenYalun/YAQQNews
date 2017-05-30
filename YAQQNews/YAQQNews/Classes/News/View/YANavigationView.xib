@@ -57,6 +57,7 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="menuButton" destination="ep0-vI-n8j" id="5km-vH-TqW"/>
                 <outlet property="titleLabel" destination="wuW-DK-Qfj" id="iY2-fz-4Di"/>
             </connections>
             <point key="canvasLocation" x="26.5" y="52"/>

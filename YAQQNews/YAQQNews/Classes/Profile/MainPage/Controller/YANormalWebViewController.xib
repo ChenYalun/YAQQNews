@@ -71,7 +71,10 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysA-Ll-xE2">
-                            <rect key="frame" x="110" y="37" width="215" height="0.0"/>
+                            <rect key="frame" x="102.5" y="32" width="170" height="0.0"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="170" id="9u2-Sv-HED"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -79,14 +82,13 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="ysA-Ll-xE2" firstAttribute="centerY" secondItem="jP8-3B-ltD" secondAttribute="centerY" id="5Ok-WI-YVT"/>
                         <constraint firstItem="Blu-js-4Z1" firstAttribute="centerY" secondItem="jP8-3B-ltD" secondAttribute="centerY" constant="5" id="798-fB-Rci"/>
-                        <constraint firstItem="NIB-eV-wj1" firstAttribute="leading" secondItem="ysA-Ll-xE2" secondAttribute="trailing" constant="10" id="DBJ-UO-b4q"/>
-                        <constraint firstItem="ysA-Ll-xE2" firstAttribute="centerY" secondItem="Blu-js-4Z1" secondAttribute="centerY" id="FHV-Ej-1F0"/>
                         <constraint firstItem="Blu-js-4Z1" firstAttribute="leading" secondItem="jP8-3B-ltD" secondAttribute="leading" id="Lbe-A9-bJu"/>
                         <constraint firstItem="Tau-bh-nh5" firstAttribute="centerY" secondItem="Blu-js-4Z1" secondAttribute="centerY" id="Nja-ck-MAL"/>
                         <constraint firstItem="Mvf-cg-IeC" firstAttribute="centerY" secondItem="Tau-bh-nh5" secondAttribute="centerY" id="PqE-sZ-cAJ"/>
+                        <constraint firstItem="ysA-Ll-xE2" firstAttribute="centerX" secondItem="jP8-3B-ltD" secondAttribute="centerX" id="Z5L-L9-Xo2"/>
                         <constraint firstItem="Tau-bh-nh5" firstAttribute="leading" secondItem="Blu-js-4Z1" secondAttribute="trailing" id="hJr-Xj-AHu"/>
-                        <constraint firstItem="ysA-Ll-xE2" firstAttribute="leading" secondItem="jP8-3B-ltD" secondAttribute="leading" constant="110" id="jaT-qB-2un"/>
                         <constraint firstItem="NIB-eV-wj1" firstAttribute="centerY" secondItem="Blu-js-4Z1" secondAttribute="centerY" id="ldl-kw-a7G"/>
                         <constraint firstAttribute="height" constant="64" id="sxT-89-6Mn"/>
                         <constraint firstAttribute="trailing" secondItem="NIB-eV-wj1" secondAttribute="trailing" id="t8j-cO-rAD"/>

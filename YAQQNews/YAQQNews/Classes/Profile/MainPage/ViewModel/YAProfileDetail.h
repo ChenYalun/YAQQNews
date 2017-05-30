@@ -16,5 +16,5 @@
 /** 链接 */
 @property (nonatomic, strong) NSString *urlString;
 // 获取数据
-+ (NSArray <YAProfileDetail *> *)profileDetail;
++ (NSArray <YAProfileDetail *> *)loadProfileDetailList;
 @end

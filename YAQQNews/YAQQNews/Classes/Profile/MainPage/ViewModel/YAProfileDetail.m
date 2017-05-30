@@ -10,7 +10,7 @@
 
 @implementation YAProfileDetail
 
-+ (NSArray <YAProfileDetail *> *)profileDetail {
++ (NSArray <YAProfileDetail *> *)loadProfileDetailList {
 
     YAProfileDetail *message = [[YAProfileDetail alloc] init];
     message.title = @"我的消息";
